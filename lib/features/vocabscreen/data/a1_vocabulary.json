@@ -1,0 +1,186 @@
+{
+  "level": "A1",
+  "categories": [
+    {
+      "title": "Basics",
+      "items": [
+        {
+          "icon": "waving_hand",
+          "iconColor": "#9C27B0",
+          "title": "Greetings and Introduction",
+          "count": 6,
+          "progress": 0.0,
+          "category": "greetings",
+          "level": "A1",
+          "words": [
+            {
+              "id": "greeting_1",
+              "german": "Hallo",
+              "english": "Hello",
+              "partOfSpeech": "INT",
+              "examples": [
+                {
+                  "prefix": "Ich sage ",
+                  "highlight": "Hallo",
+                  "suffix": " zu meinem Freund.",
+                  "type": "INT",
+                  "translation": "I say hello to my friend."
+                },
+                {
+                  "prefix": "",
+                  "highlight": "Hallo",
+                  "suffix": ", wie geht es dir?",
+                  "type": "INT",
+                  "translation": "Hello, how are you?"
+                }
+              ]
+            },
+            {
+              "id": "greeting_2",
+              "german": "Guten Tag",
+              "english": "Good day",
+              "partOfSpeech": "INT",
+              "examples": [
+                {
+                  "prefix": "",
+                  "highlight": "Guten Tag",
+                  "suffix": ", Herr Schmidt!",
+                  "type": "INT",
+                  "translation": "Good day, Mr. Schmidt!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "family_restroom",
+          "iconColor": "#009688",
+          "title": "Family",
+          "count": 12,
+          "progress": 0.0,
+          "category": "family",
+          "level": "A1",
+          "words": [
+            {
+              "id": "family_1",
+              "german": "die Familie",
+              "english": "the family",
+              "partOfSpeech": "NOU",
+              "examples": [
+                {
+                  "prefix": "Meine ",
+                  "highlight": "Familie",
+                  "suffix": " ist sehr groß.",
+                  "type": "NOU",
+                  "translation": "My family is very big."
+                }
+              ]
+            },
+            {
+              "id": "family_2",
+              "german": "die Mutter",
+              "english": "the mother",
+              "partOfSpeech": "NOU",
+              "examples": [
+                {
+                  "prefix": "Meine ",
+                  "highlight": "Mutter",
+                  "suffix": " kocht sehr gut.",
+                  "type": "NOU",
+                  "translation": "My mother cooks very well."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Food & Drink",
+      "items": [
+        {
+          "icon": "local_drink",
+          "iconColor": "#2196F3",
+          "title": "Drinksasassas",
+          "count": 7,
+          "progress": 0.0,
+          "category": "drinks",
+          "level": "A1",
+          "words": [
+            {
+              "id": "drink_1",
+              "german": "das Wasser",
+              "english": "the water",
+              "partOfSpeech": "NOU",
+              "examples": [
+                {
+                  "prefix": "Ich trinke ",
+                  "highlight": "Wasser",
+                  "suffix": " jeden Tag.",
+                  "type": "NOU",
+                  "translation": "I drink water every day."
+                }
+              ]
+            },
+            {
+              "id": "drink_2",
+              "german": "der Kaffee",
+              "english": "the coffee",
+              "partOfSpeech": "NOU",
+              "examples": [
+                {
+                  "prefix": "Ich trinke morgens ",
+                  "highlight": "Kaffee",
+                  "suffix": ".",
+                  "type": "NOU",
+                  "translation": "I drink coffee in the morning."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "apple",
+          "iconColor": "#F44336",
+          "title": "Fruits",
+          "count": 5,
+          "progress": 0.0,
+          "category": "fruits",
+          "level": "A1",
+          "words": [
+            {
+              "id": "fruit_1",
+              "german": "der Apfel",
+              "english": "the apple",
+              "partOfSpeech": "NOU",
+              "examples": [
+                {
+                  "prefix": "Ich esse einen ",
+                  "highlight": "Apfel",
+                  "suffix": " jeden Tag.",
+                  "type": "NOU",
+                  "translation": "I eat an apple every day."
+                }
+              ]
+            },
+            {
+              "id": "fruit_2",
+              "german": "die Banane",
+              "english": "the banana",
+              "partOfSpeech": "NOU",
+              "examples": [
+                {
+                  "prefix": "Ich mag ",
+                  "highlight": "Bananen",
+                  "suffix": " sehr.",
+                  "type": "NOU",
+                  "translation": "I like bananas very much."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,2348 @@
+{
+  "categories": [
+    {
+      "categoryName": "Beginner",
+      "categoryDescription": "True crime podcasts that explore real cases, investigations and criminal psychology.",
+      "podcasts": [
+        {
+          "title": "Crime Junkie",
+          "author": "Ashley Flowers",
+          "description": "Weekly true crime podcast dedicated to giving you a fix of all cases that haunt you most.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "32 min",
+          "rating": 4.8,
+          "episodes": 245,
+          "color": "0xFF3F51B5",
+          "conversations": [
+            {
+              "episodeTitle": "The Delphi Murders",
+              "episodeDescription": "This episode examines the tragic case of two young girls who went missing during a hike.",
+              "releaseDate": "April 1, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hallo. Ich bin Ashley.",
+                  "english": "Hello. I'm Ashley.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und ich bin Brit.",
+                  "english": "And I'm Brit.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Heute sprechen wir über einen Fall aus Delphi.",
+                  "english": "Today we're talking about a case from Delphi.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Es geht um zwei Mädchen.",
+                  "english": "It's about two girls.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Abby und Libby. Sie waren beste Freundinnen.",
+                  "english": "Abby and Libby. They were best friends.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wie alt waren sie?",
+                  "english": "How old were they?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Abby war 13. Libby war 14.",
+                  "english": "Abby was 13. Libby was 14.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist passiert?",
+                  "english": "What happened?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es war ein freier Tag. Kein Unterricht.",
+                  "english": "It was a day off. No school.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Das Wetter war gut?",
+                  "english": "The weather was good?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Es war warm für Februar.",
+                  "english": "Yes. It was warm for February.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wohin sind sie gegangen?",
+                  "english": "Where did they go?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Zu einem Wanderweg. Mit einer alten Brücke.",
+                  "english": "To a hiking trail. With an old bridge.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wer hat sie dorthin gebracht?",
+                  "english": "Who took them there?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Libbys Schwester Kelsi.",
+                  "english": "Libby's sister Kelsi.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wann sollten sie abgeholt werden?",
+                  "english": "When were they supposed to be picked up?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Um 17 Uhr. Der Vater sollte sie abholen.",
+                  "english": "At 5 PM. The father was supposed to pick them up.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Aber sie waren nicht da?",
+                  "english": "But they weren't there?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Nein. Sie antworteten nicht auf Anrufe.",
+                  "english": "No. They didn't answer calls.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was haben die Familien gemacht?",
+                  "english": "What did the families do?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sie suchten zuerst selbst. Dann riefen sie die Polizei.",
+                  "english": "They searched themselves first. Then they called the police.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wann fanden sie die Mädchen?",
+                  "english": "When did they find the girls?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Am nächsten Tag. Am Vormittag.",
+                  "english": "The next day. In the morning.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wo waren sie?",
+                  "english": "Where were they?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Im Wald. Etwa 800 Meter von der Brücke entfernt.",
+                  "english": "In the woods. About half a mile from the bridge.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gab es Beweise?",
+                  "english": "Was there evidence?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Libby hatte ihr Handy dabei.",
+                  "english": "Yes. Libby had her phone with her.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Sie machte Fotos?",
+                  "english": "She took photos?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Und ein Video.",
+                  "english": "Yes. And a video.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Von dem Täter?",
+                  "english": "Of the perpetrator?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Man sieht einen Mann auf der Brücke.",
+                  "english": "Yes. You can see a man on the bridge.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Man hört ihn auch sprechen?",
+                  "english": "You can also hear him speaking?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Er sagt: 'Geht den Hügel runter.'",
+                  "english": "Yes. He says: 'Go down the hill.'",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gibt es eine Beschreibung?",
+                  "english": "Is there a description?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die Polizei veröffentlichte ein Bild und eine Stimme.",
+                  "english": "The police released a picture and a voice.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Hat das geholfen?",
+                  "english": "Did that help?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es gab tausende Hinweise. Aber keine Verhaftung.",
+                  "english": "There were thousands of tips. But no arrest.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wie geht es den Familien heute?",
+                  "english": "How are the families doing today?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sie kämpfen für Gerechtigkeit. Sie halten die Erinnerung wach.",
+                  "english": "They fight for justice. They keep the memory alive.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gibt es neue Entwicklungen?",
+                  "english": "Are there new developments?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die Polizei arbeitet noch immer an dem Fall.",
+                  "english": "The police are still working on the case.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und die Öffentlichkeit?",
+                  "english": "And the public?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Viele Menschen helfen. Mit Plakaten, Events, Spenden.",
+                  "english": "Many people help. With posters, events, donations.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was können unsere Zuhörer tun?",
+                  "english": "What can our listeners do?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Teilt die Informationen. Meldet Hinweise an die Polizei.",
+                  "english": "Share the information. Report tips to the police.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und unterstützt die Familien?",
+                  "english": "And support the families?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Es gibt eine Stiftung im Namen der Mädchen.",
+                  "english": "Yes. There is a foundation in the girls' names.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und was ist die wichtigste Lehre?",
+                  "english": "And what is the most important lesson?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Achtet auf eure Umgebung. Vertraut eurem Gefühl.",
+                  "english": "Pay attention to your surroundings. Trust your instincts.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und Eltern sollten wissen, wo ihre Kinder sind?",
+                  "english": "And parents should know where their children are?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Und Kinder sollten immer ein Handy haben.",
+                  "english": "Yes. And children should always have a phone.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Libby war mutig, mit ihrem Handy Beweise zu sammeln.",
+                  "english": "Libby was brave to collect evidence with her phone.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sehr mutig. Sie könnte anderen geholfen haben.",
+                  "english": "Very brave. She might have helped others.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wir vergessen sie nicht.",
+                  "english": "We won't forget them.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Niemals. Bis zum nächsten Mal, bleibt sicher.",
+                  "english": "Never. Until next time, stay safe.",
+                  "duration": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "My Favorite Murder",
+          "author": "Karen Kilgariff and Georgia Hardstark",
+          "description": "Lifelong fans of true crime discuss their favorite murder cases.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "45 min",
+          "rating": 4.5,
+          "episodes": 325,
+          "color": "0xFF008080",
+          "conversations": [
+            {
+              "episodeTitle": "Small Town Secrets",
+              "episodeDescription": "Karen and Georgia explore cases from small towns where dark secrets were hidden beneath the surface.",
+              "releaseDate": "March 28, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hey, wie geht's dir heute, Georgia?",
+                  "english": "Hey, how are you doing today, Georgia?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Mir geht's gut, Karen! Ich bin bereit für unsere heutigen Geschichten.",
+                  "english": "I'm good, Karen! I'm ready for our stories today.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Meine Geschichte spielt in einer kleinen Stadt, wo jeder jeden zu kennen scheint.",
+                  "english": "My story takes place in a small town where everyone seems to know everyone.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oh, das sind oft die unheimlichsten Fälle, nicht wahr?",
+                  "english": "Oh, those are often the creepiest cases, aren't they?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Genau! Niemand hätte gedacht, dass ihr netter Nachbar ein dunkles Geheimnis haben könnte.",
+                  "english": "Exactly! No one would have thought their nice neighbor could have a dark secret.",
+                  "duration": 5
+                }
+              ]
+            }
+          ]
+        },{
+          "title": "The Joe Rogan Experience",
+          "author": "Joe Rogan",
+          "description": "Long-form conversations with guests from all walks of life.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "180 min",
+          "rating": 4.7,
+          "episodes": 1850,
+          "color": "0xFFF0C05B",
+          "conversations": [
+            {
+              "episodeTitle": "Interview with Neil deGrasse Tyson",
+              "episodeDescription": "Joe and Neil discuss astronomy, space exploration, and the wonders of the universe.",
+              "releaseDate": "April 5, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Heute spreche ich mit Dr. Neil deGrasse Tyson, einem bekannten Astrophysiker.",
+                  "english": "Today I'm talking with Dr. Neil deGrasse Tyson, a well-known astrophysicist.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Danke für die Einladung, Joe. Ich freue mich, über das Universum zu sprechen.",
+                  "english": "Thanks for having me, Joe. I'm excited to talk about the universe.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was fasziniert dich am meisten an der Astronomie?",
+                  "english": "What fascinates you most about astronomy?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Die schiere Größe des Kosmos und wie klein wir im Vergleich dazu sind.",
+                  "english": "The sheer size of the cosmos and how small we are in comparison.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist wirklich erstaunlich zu bedenken. Wie viele Sterne gibt es eigentlich?",
+                  "english": "That's really amazing to consider. How many stars are there actually?",
+                  "duration": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "This American Life",
+          "author": "Ira Glass",
+          "description": "Weekly public radio program that explores a theme through stories and interviews.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "65 min",
+          "rating": 4.9,
+          "episodes": 760,
+          "color": "0xFFEA9999",
+          "conversations": [
+            {
+              "episodeTitle": "Small Decisions, Big Consequences",
+              "episodeDescription": "Stories about how seemingly minor choices can lead to major life changes.",
+              "releaseDate": "March 30, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Ich bin Ira Glass, und heute bei This American Life: kleine Entscheidungen, große Folgen.",
+                  "english": "I'm Ira Glass, and today on This American Life: small decisions, big consequences.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Unsere erste Geschichte kommt von Sarah. Sie hat eine spontane Entscheidung getroffen, die ihr Leben verändert hat.",
+                  "english": "Our first story comes from Sarah. She made a spontaneous decision that changed her life.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es begann mit einer einfachen Frage: Was wäre, wenn ich meinen Job kündige und eine Weltreise mache?",
+                  "english": "It began with a simple question: What if I quit my job and travel the world?",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Viele von uns haben solche Gedanken, aber Sarah hat es tatsächlich getan.",
+                  "english": "Many of us have such thoughts, but Sarah actually did it.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Innerhalb von zwei Wochen hatte sie ihren Job gekündigt, ihre Wohnung untervermietet und ein One-Way-Ticket gekauft.",
+                  "english": "Within two weeks, she had quit her job, sublet her apartment, and bought a one-way ticket.",
+                  "duration": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Laugh Lines",
+          "author": "Michael Klein & Sophie Weber",
+          "description": "A light-hearted comedy podcast that uses simple language to help beginners learn German through humor and everyday situations.",
+          "image": "https://images.theabcdn.com/i/comedy_basic",
+          "duration": "25 min",
+          "rating": 4.6,
+          "episodes": 68,
+          "color": "0xFF009688",
+          "conversations": [
+            {
+              "episodeTitle": "Ordering at a Restaurant",
+              "episodeDescription": "Michael and Sophie discuss funny restaurant experiences and common language mistakes when ordering food in Germany.",
+              "releaseDate": "April 5, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hallo! Ich bin Michael.",
+                  "english": "Hello! I'm Michael.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und ich bin Sophie.",
+                  "english": "And I'm Sophie.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Heute sprechen wir über Restaurants.",
+                  "english": "Today we're talking about restaurants.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, und lustige Situationen beim Essen bestellen.",
+                  "english": "Yes, and funny situations when ordering food.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sophie, warst du schon mal in einem deutschen Restaurant?",
+                  "english": "Sophie, have you ever been to a German restaurant?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Natürlich! Ich liebe deutsches Essen.",
+                  "english": "Of course! I love German food.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was ist dein Lieblingsessen?",
+                  "english": "What's your favorite food?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ich mag Schnitzel mit Pommes sehr gerne.",
+                  "english": "I really like schnitzel with fries.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Lecker! Ich mag Currywurst am liebsten.",
+                  "english": "Delicious! I like currywurst the most.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Erinnerst du dich an deine lustige Geschichte im Restaurant?",
+                  "english": "Do you remember your funny story in the restaurant?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Oh ja! Das war sehr peinlich.",
+                  "english": "Oh yes! That was very embarrassing.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Erzähl unseren Zuhörern davon.",
+                  "english": "Tell our listeners about it.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Also, ich war in einem Restaurant in Berlin.",
+                  "english": "Well, I was in a restaurant in Berlin.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist passiert?",
+                  "english": "What happened?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ich wollte ein Wasser bestellen. Ohne Kohlensäure.",
+                  "english": "I wanted to order water. Without carbonation.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Stilles Wasser, richtig?",
+                  "english": "Still water, right?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Genau. Aber ich habe die Wörter verwechselt.",
+                  "english": "Exactly. But I mixed up the words.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was hast du gesagt?",
+                  "english": "What did you say?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ich sagte: 'Ein Wasser ohne Explosion, bitte.'",
+                  "english": "I said: 'A water without explosion, please.'",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Hahaha! Anstatt 'ohne Kohlensäure'!",
+                  "english": "Hahaha! Instead of 'without carbonation'!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja! Der Kellner hat so laut gelacht.",
+                  "english": "Yes! The waiter laughed so loudly.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Das ist sehr lustig. Explosion im Wasser!",
+                  "english": "That's very funny. Explosion in the water!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ich war so rot im Gesicht.",
+                  "english": "My face was so red.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Hattest du auch Probleme mit der Speisekarte?",
+                  "english": "Did you also have problems with the menu?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Oh ja. Deutsche Speisekarten sind manchmal kompliziert.",
+                  "english": "Oh yes. German menus are sometimes complicated.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was verstehst du nicht?",
+                  "english": "What don't you understand?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Alle diese verschiedenen Wurstnamen!",
+                  "english": "All these different sausage names!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, wir haben über 1500 Sorten Wurst in Deutschland.",
+                  "english": "Yes, we have more than 1500 types of sausage in Germany.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist verrückt! Wie soll man die alle kennen?",
+                  "english": "That's crazy! How should one know them all?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Die meisten Deutschen kennen auch nicht alle.",
+                  "english": "Most Germans don't know all of them either.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was ist dein Tipp für Restaurantbesuche in Deutschland?",
+                  "english": "What's your tip for restaurant visits in Germany?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Einfach fragen, wenn du etwas nicht verstehst.",
+                  "english": "Just ask if you don't understand something.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Und was ist mit Trinkgeld?",
+                  "english": "And what about tipping?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "In Deutschland runden wir meist auf oder geben 5-10%.",
+                  "english": "In Germany, we usually round up or give 5-10%.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Nicht wie in Amerika mit 20%?",
+                  "english": "Not like in America with 20%?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Nein, hier bekommen Kellner einen besseren Lohn.",
+                  "english": "No, waiters get better wages here.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist gut zu wissen.",
+                  "english": "That's good to know.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Kennst du den Witz über das Restaurant?",
+                  "english": "Do you know the joke about the restaurant?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Nein, erzähl!",
+                  "english": "No, tell me!",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ein Mann im Restaurant: 'Herr Ober, mein Schnitzel ist sehr hart.'",
+                  "english": "A man in a restaurant: 'Waiter, my schnitzel is very tough.'",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Und was sagt der Kellner?",
+                  "english": "And what does the waiter say?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "'Das ist nicht schlimm. Unser Besteck ist sehr scharf!'",
+                  "english": "'That's not a problem. Our cutlery is very sharp!'",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Hahaha! Das ist gut!",
+                  "english": "Hahaha! That's good!",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, deutsche Witze sind manchmal sehr direkt.",
+                  "english": "Yes, German jokes are sometimes very direct.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das war's für heute. Was ist dein letzter Tipp?",
+                  "english": "That's it for today. What's your final tip?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Probier immer lokale Spezialitäten! Jede Region hat andere.",
+                  "english": "Always try local specialties! Each region has different ones.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Guter Tipp! Bis zum nächsten Mal!",
+                  "english": "Good tip! Until next time!",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Tschüss und guten Appetit!",
+                  "english": "Bye and enjoy your meal!",
+                  "duration": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Discover Germany",
+          "author": "Thomas Müller & Anna Schmidt",
+          "description": "A cultural exploration podcast designed for beginners to learn about German traditions, customs, and everyday life using simple language.",
+          "image": "https://images.theabcdn.com/i/culture_basic",
+          "duration": "20 min",
+          "rating": 4.7,
+          "episodes": 85,
+          "color": "0xFF2196F3",
+          "conversations": [
+            {
+              "episodeTitle": "German Festivals",
+              "episodeDescription": "Thomas and Anna discuss the most important festivals in Germany and the traditions associated with them.",
+              "releaseDate": "April 3, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hallo und herzlich willkommen! Ich bin Thomas.",
+                  "english": "Hello and welcome! I'm Thomas.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und ich bin Anna. Schön, dass ihr zuhört.",
+                  "english": "And I'm Anna. Nice that you're listening.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Heute sprechen wir über deutsche Feste.",
+                  "english": "Today we're talking about German festivals.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Genau! Deutschland hat viele traditionelle Feste.",
+                  "english": "Exactly! Germany has many traditional festivals.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was ist dein Lieblingsfest, Anna?",
+                  "english": "What is your favorite festival, Anna?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ich mag Weihnachten am liebsten. Und du?",
+                  "english": "I like Christmas the most. And you?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ich mag das Oktoberfest. Es ist sehr lustig.",
+                  "english": "I like Oktoberfest. It's very fun.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Lass uns mit Weihnachten beginnen.",
+                  "english": "Let's start with Christmas.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wann feiert man Weihnachten in Deutschland?",
+                  "english": "When is Christmas celebrated in Germany?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Hauptsächlich am 24. Dezember, dem Heiligabend.",
+                  "english": "Mainly on December 24th, Christmas Eve.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist anders als in manchen Ländern, oder?",
+                  "english": "That's different from some countries, right?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja. In Amerika ist der 25. Dezember wichtiger.",
+                  "english": "Yes. In America, December 25th is more important.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was macht man am Heiligabend?",
+                  "english": "What do people do on Christmas Eve?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Familien essen zusammen und öffnen die Geschenke.",
+                  "english": "Families eat together and open presents.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was isst man traditionell?",
+                  "english": "What do people traditionally eat?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oft Kartoffelsalat mit Würstchen. Einfach und lecker.",
+                  "english": "Often potato salad with sausages. Simple and delicious.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Interessant! Nicht Gans oder Ente?",
+                  "english": "Interesting! Not goose or duck?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Das isst man eher am ersten oder zweiten Weihnachtstag.",
+                  "english": "People eat that more on the first or second day of Christmas.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Jetzt zum Oktoberfest. Das kennst du auch gut, oder?",
+                  "english": "Now to Oktoberfest. You know that well too, right?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Natürlich! Es ist das größte Volksfest der Welt.",
+                  "english": "Of course! It's the largest folk festival in the world.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wann findet das Oktoberfest statt?",
+                  "english": "When does Oktoberfest take place?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Überraschenderweise hauptsächlich im September!",
+                  "english": "Surprisingly, mainly in September!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist verwirrend! Warum heißt es dann Oktoberfest?",
+                  "english": "That's confusing! Why is it called Oktoberfest then?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Es endet im Oktober. Früher war es nur im Oktober.",
+                  "english": "It ends in October. In the past, it was only in October.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wo findet das Oktoberfest statt?",
+                  "english": "Where does Oktoberfest take place?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "In München. Es ist sehr berühmt dort.",
+                  "english": "In Munich. It's very famous there.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was macht man auf dem Oktoberfest?",
+                  "english": "What do people do at Oktoberfest?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Man trinkt Bier, isst bayerische Spezialitäten und feiert.",
+                  "english": "People drink beer, eat Bavarian specialties, and celebrate.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Trägt man besondere Kleidung?",
+                  "english": "Do people wear special clothing?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, viele tragen Dirndl oder Lederhosen.",
+                  "english": "Yes, many wear dirndls or lederhosen.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was ist ein Dirndl?",
+                  "english": "What is a dirndl?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ein traditionelles Kleid für Frauen in Bayern.",
+                  "english": "A traditional dress for women in Bavaria.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Und Lederhosen sind für Männer, richtig?",
+                  "english": "And lederhosen are for men, right?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Genau! Kurze Hosen aus Leder. Sehr traditionell.",
+                  "english": "Exactly! Short pants made of leather. Very traditional.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Welche anderen Feste sind wichtig in Deutschland?",
+                  "english": "What other festivals are important in Germany?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Karneval ist sehr beliebt, besonders in Köln.",
+                  "english": "Carnival is very popular, especially in Cologne.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wann ist Karneval?",
+                  "english": "When is Carnival?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Im Februar, vor der Fastenzeit.",
+                  "english": "In February, before Lent.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was macht man da?",
+                  "english": "What do people do there?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Man verkleidet sich, tanzt und feiert auf der Straße.",
+                  "english": "People dress up, dance, and celebrate in the street.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das klingt wie Halloween.",
+                  "english": "That sounds like Halloween.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, aber es ist lustiger und nicht gruselig.",
+                  "english": "Yes, but it's more fun and not scary.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Feiern Deutsche auch Ostern?",
+                  "english": "Do Germans also celebrate Easter?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Natürlich! Mit Ostereiern und dem Osterhasen.",
+                  "english": "Of course! With Easter eggs and the Easter bunny.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Versteckt der Osterhase auch in Deutschland die Eier?",
+                  "english": "Does the Easter bunny also hide eggs in Germany?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja! Kinder suchen die Eier im Garten oder in der Wohnung.",
+                  "english": "Yes! Children search for eggs in the garden or in the apartment.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist wie in vielen anderen Ländern.",
+                  "english": "That's like in many other countries.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Genau. Manche Traditionen sind international.",
+                  "english": "Exactly. Some traditions are international.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das war interessant! Vielen Dank, Anna.",
+                  "english": "That was interesting! Thank you, Anna.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gerne! Nächste Woche sprechen wir über deutsche Musik.",
+                  "english": "You're welcome! Next week we'll talk about German music.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Super! Bis dann und tschüss!",
+                  "english": "Great! Until then and bye!",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Tschüss und bis zum nächsten Mal!",
+                  "english": "Bye and until next time!",
+                  "duration": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Family Talk",
+          "author": "Julia Berg & Felix Neumann",
+          "description": "A warm and friendly podcast about German family life, traditions, and relationships using simple vocabulary for beginners.",
+          "image": "https://images.theabcdn.com/i/family_basic",
+          "duration": "22 min",
+          "rating": 4.8,
+          "episodes": 42,
+          "color": "0xFFE91E63",
+          "conversations": [
+            {
+              "episodeTitle": "German Family Customs",
+              "episodeDescription": "Julia and Felix discuss everyday family life in Germany and common family traditions.",
+              "releaseDate": "April 7, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hallo! Ich bin Julia.",
+                  "english": "Hello! I'm Julia.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und ich bin Felix. Willkommen bei Family Talk.",
+                  "english": "And I'm Felix. Welcome to Family Talk.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Heute sprechen wir über deutsche Familien.",
+                  "english": "Today we're talking about German families.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Genau. Wie groß sind Familien in Deutschland?",
+                  "english": "Exactly. How big are families in Germany?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die meisten Familien haben ein oder zwei Kinder.",
+                  "english": "Most families have one or two children.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, große Familien mit mehr als drei Kindern sind selten.",
+                  "english": "Yes, large families with more than three children are rare.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Felix, wie groß ist deine Familie?",
+                  "english": "Felix, how big is your family?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ich habe eine Schwester und einen Bruder.",
+                  "english": "I have a sister and a brother.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wo wohnt deine Familie?",
+                  "english": "Where does your family live?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Meine Eltern wohnen in München. Meine Schwester auch.",
+                  "english": "My parents live in Munich. My sister too.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Und dein Bruder?",
+                  "english": "And your brother?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Er wohnt in Berlin, wie ich.",
+                  "english": "He lives in Berlin, like me.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wohnen viele deutsche Familien zusammen?",
+                  "english": "Do many German families live together?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Nicht so oft. Junge Leute ziehen früh aus.",
+                  "english": "Not so often. Young people move out early.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wann ziehen junge Leute normalerweise aus?",
+                  "english": "When do young people normally move out?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oft mit 18 oder 19, wenn sie studieren.",
+                  "english": "Often at 18 or 19, when they go to university.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist früh! In anderen Ländern ist das anders.",
+                  "english": "That's early! In other countries it's different.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja. Aber Familien treffen sich trotzdem oft.",
+                  "english": "Yes. But families still meet often.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wie oft siehst du deine Eltern?",
+                  "english": "How often do you see your parents?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Etwa einmal im Monat. München ist nicht so weit.",
+                  "english": "About once a month. Munich isn't so far.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was macht ihr zusammen als Familie?",
+                  "english": "What do you do together as a family?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wir essen zusammen. Das ist sehr wichtig.",
+                  "english": "We eat together. That's very important.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ah ja, Essen ist in Deutschland ein Familienereignis.",
+                  "english": "Ah yes, in Germany eating is a family event.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Genau. Besonders das Abendessen.",
+                  "english": "Exactly. Especially dinner.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was isst ihr zum Abendessen?",
+                  "english": "What do you eat for dinner?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oft Brot mit Käse und Wurst. Kein warmes Essen.",
+                  "english": "Often bread with cheese and cold cuts. No warm food.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist das typische 'Abendbrot', richtig?",
+                  "english": "That's the typical 'evening bread', right?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, sehr typisch für Deutschland.",
+                  "english": "Yes, very typical for Germany.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wann isst ihr das warme Mittagessen?",
+                  "english": "When do you eat the warm lunch?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Zwischen 12 und 14 Uhr. Das ist die Hauptmahlzeit.",
+                  "english": "Between 12 and 2 PM. That's the main meal.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sprechen wir über Familienfeste. Feiert ihr Geburtstage?",
+                  "english": "Let's talk about family celebrations. Do you celebrate birthdays?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Natürlich! Geburtstage sind sehr wichtig.",
+                  "english": "Of course! Birthdays are very important.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was macht ihr zum Geburtstag?",
+                  "english": "What do you do for birthdays?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wir essen Kuchen. Oft gibt es eine Party.",
+                  "english": "We eat cake. Often there's a party.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wer backt den Kuchen?",
+                  "english": "Who bakes the cake?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oft die Mutter oder Großmutter. Manchmal kauft man ihn.",
+                  "english": "Often the mother or grandmother. Sometimes you buy it.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Gibt es Geschenke?",
+                  "english": "Are there gifts?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, jeder bekommt Geschenke zum Geburtstag.",
+                  "english": "Yes, everyone gets gifts for their birthday.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "In Deutschland gibt es auch Namenstage, oder?",
+                  "english": "In Germany there are also name days, right?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ja, aber wir feiern sie nicht so viel.",
+                  "english": "Yes, but we don't celebrate them so much.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was ist ein Namenstag?",
+                  "english": "What is a name day?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 2,
+                  "german": "Der Tag des Heiligen, nach dem du benannt bist.",
+                  "english": "The day of the saint after whom you are named.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sprechen wir über Großeltern. Sind sie wichtig?",
+                  "english": "Let's talk about grandparents. Are they important?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Sehr wichtig! Sie helfen oft mit den Kindern.",
+                  "english": "Very important! They often help with the children.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wohnen Großeltern mit der Familie?",
+                  "english": "Do grandparents live with the family?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Nicht so oft. Aber vielleicht in der Nähe.",
+                  "english": "Not so often. But maybe nearby.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Wie nennt ihr eure Großeltern in Deutschland?",
+                  "english": "What do you call your grandparents in Germany?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oft Oma und Opa. Oder Großmutter und Großvater.",
+                  "english": "Often Grandma and Grandpa. Or Grandmother and Grandfather.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Gibt es typische Aktivitäten mit Großeltern?",
+                  "english": "Are there typical activities with grandparents?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Backen, Geschichten erzählen, und viele Süßigkeiten!",
+                  "english": "Baking, telling stories, and lots of sweets!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das klingt schön! Zum Schluss: dein bester Familientipp?",
+                  "english": "That sounds nice! Finally: your best family tip?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Zeit zusammen ist wichtiger als teure Geschenke.",
+                  "english": "Time together is more important than expensive gifts.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ein guter Tipp! Das war's für heute.",
+                  "english": "A good tip! That's all for today.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Danke fürs Zuhören! Bis zum nächsten Mal!",
+                  "english": "Thanks for listening! Until next time!",
+                  "duration": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Travel Easy",
+          "author": "Markus Becker & Laura König",
+          "description": "A beginner-friendly podcast about traveling in German-speaking countries with simple vocabulary and practical phrases for tourists.",
+          "image": "https://images.theabcdn.com/i/travel_basic",
+          "duration": "24 min",
+          "rating": 4.7,
+          "episodes": 56,
+          "color": "0xFF009688",
+          "conversations": [
+            {
+              "episodeTitle": "First Day in Berlin",
+              "episodeDescription": "Markus and Laura discuss what to see and do on your first day in Berlin, with simple vocabulary for beginners.",
+              "releaseDate": "April 4, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hallo! Ich bin Markus.",
+                  "english": "Hello! I'm Markus.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und ich bin Laura. Willkommen bei Travel Easy!",
+                  "english": "And I'm Laura. Welcome to Travel Easy!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Heute sprechen wir über Berlin.",
+                  "english": "Today we're talking about Berlin.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Genau! Berlin ist die Hauptstadt von Deutschland.",
+                  "english": "Exactly! Berlin is the capital of Germany.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es ist eine sehr große und interessante Stadt.",
+                  "english": "It's a very big and interesting city.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Laura, warst du schon in Berlin?",
+                  "english": "Laura, have you been to Berlin?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, ich wohne dort! Ich liebe diese Stadt.",
+                  "english": "Yes, I live there! I love this city.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was soll man am ersten Tag in Berlin machen?",
+                  "english": "What should one do on the first day in Berlin?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Zuerst sollte man das Brandenburger Tor besuchen.",
+                  "english": "First, one should visit the Brandenburg Gate.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist das Brandenburger Tor?",
+                  "english": "What is the Brandenburg Gate?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es ist ein berühmtes Monument aus dem 18. Jahrhundert.",
+                  "english": "It's a famous monument from the 18th century.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ist es weit vom Zentrum?",
+                  "english": "Is it far from the center?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Nein, es ist im Zentrum, in der Nähe vom Reichstag.",
+                  "english": "No, it's in the center, near the Reichstag.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist der Reichstag?",
+                  "english": "What is the Reichstag?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das Parlamentsgebäude mit einer Glaskuppel.",
+                  "english": "The parliament building with a glass dome.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Kann man die Kuppel besuchen?",
+                  "english": "Can you visit the dome?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, aber man muss sich vorher anmelden.",
+                  "english": "Yes, but you have to register in advance.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ist die Aussicht gut?",
+                  "english": "Is the view good?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 1,
+                  "german": "Fantastisch! Man sieht ganz Berlin von oben.",
+                  "english": "Fantastic! You can see all of Berlin from above.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was kann man noch am ersten Tag sehen?",
+                  "english": "What else can you see on the first day?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die Museumsinsel ist sehr interessant.",
+                  "english": "Museum Island is very interesting.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Eine Insel mit Museen?",
+                  "english": "An island with museums?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, fünf berühmte Museen auf einer Insel in der Spree.",
+                  "english": "Yes, five famous museums on an island in the Spree River.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Welches Museum ist dein Favorit?",
+                  "english": "Which museum is your favorite?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das Pergamonmuseum mit antiken Kunstwerken.",
+                  "english": "The Pergamon Museum with ancient art.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Braucht man viel Zeit für die Museen?",
+                  "english": "Do you need a lot of time for the museums?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, vielleicht nicht alle am ersten Tag besuchen.",
+                  "english": "Yes, maybe don't visit all of them on the first day.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wo kann man in Berlin gut essen?",
+                  "english": "Where can you eat well in Berlin?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es gibt viele gute Restaurants in Mitte.",
+                  "english": "There are many good restaurants in Mitte.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist Mitte?",
+                  "english": "What is Mitte?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 1,
+                  "german": "Der zentrale Stadtteil. 'Mitte' bedeutet 'center'.",
+                  "english": "The central district. 'Mitte' means 'center'.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist typisches Essen in Berlin?",
+                  "english": "What's typical food in Berlin?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Currywurst! Eine Wurst mit Currysoße.",
+                  "english": "Currywurst! A sausage with curry sauce.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Das klingt interessant. Wo kann man das probieren?",
+                  "english": "That sounds interesting. Where can you try it?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "An vielen Imbissbuden auf der Straße.",
+                  "english": "At many food stalls on the street.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wie kommt man in Berlin von A nach B?",
+                  "english": "How do you get from A to B in Berlin?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die U-Bahn ist sehr gut. Auch Busse und Straßenbahnen.",
+                  "english": "The subway is very good. Also buses and trams.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Braucht man ein Ticket für jeden Tag?",
+                  "english": "Do you need a ticket for each day?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es gibt Tageskarten. Die sind praktisch für Touristen.",
+                  "english": "There are day tickets. They're practical for tourists.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Kann man Berlin auch zu Fuß erkunden?",
+                  "english": "Can you also explore Berlin on foot?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, aber die Stadt ist sehr groß.",
+                  "english": "Yes, but the city is very big.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist mit Fahrrädern?",
+                  "english": "What about bicycles?",
+                  "duration": 1
+                },
+                {
+                  "speaker": 1,
+                  "german": "Eine super Idee! Berlin hat viele Fahrradwege.",
+                  "english": "A great idea! Berlin has many bike paths.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Kann man Fahrräder mieten?",
+                  "english": "Can you rent bicycles?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, es gibt viele Fahrradverleihstationen.",
+                  "english": "Yes, there are many bicycle rental stations.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was würdest du am Abend empfehlen?",
+                  "english": "What would you recommend in the evening?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ein Spaziergang am Spreeufer ist sehr schön.",
+                  "english": "A walk along the Spree riverbank is very nice.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Ist Berlin nachts sicher?",
+                  "english": "Is Berlin safe at night?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja, besonders in den zentralen Gebieten.",
+                  "english": "Yes, especially in the central areas.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gibt es noch einen letzten Tipp für Berlin?",
+                  "english": "Is there one last tip for Berlin?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Besuche die East Side Gallery, ein Teil der Berliner Mauer.",
+                  "english": "Visit the East Side Gallery, a part of the Berlin Wall.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Mit Graffiti und Kunst, richtig?",
+                  "english": "With graffiti and art, right?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Genau! Es ist Geschichte und Kunst zusammen.",
+                  "english": "Exactly! It's history and art together.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Vielen Dank für die tollen Tipps, Laura!",
+                  "english": "Thank you for the great tips, Laura!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Gerne! Berlin wartet auf euch!",
+                  "english": "You're welcome! Berlin is waiting for you!",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Das war's für heute. Bis zum nächsten Mal!",
+                  "english": "That's all for today. Until next time!",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Tschüss und gute Reise!",
+                  "english": "Bye and have a good trip!",
+                  "duration": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Intermediate",
+      "categoryDescription": "True crime podcasts that explore real cases, investigations and criminal psychology.",
+      "podcasts": [
+        {
+          "title": "Crime Junkie",
+          "author": "Ashley Flowers",
+          "description": "Weekly true crime podcast dedicated to giving you a fix of all cases that haunt you most.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "32 min",
+          "rating": 4.8,
+          "episodes": 245,
+          "color": "0xFF3F51B5",
+          "conversations": [
+            {
+              "episodeTitle": "The Delphi Murders",
+              "episodeDescription": "This episode examines the tragic case of two young girls who went missing during a hike.",
+              "releaseDate": "April 1, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hallo. Ich bin Ashley.",
+                  "english": "Hello. I'm Ashley.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und ich bin Brit.",
+                  "english": "And I'm Brit.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Heute sprechen wir über einen Fall aus Delphi.",
+                  "english": "Today we're talking about a case from Delphi.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Es geht um zwei Mädchen.",
+                  "english": "It's about two girls.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Abby und Libby. Sie waren beste Freundinnen.",
+                  "english": "Abby and Libby. They were best friends.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wie alt waren sie?",
+                  "english": "How old were they?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Abby war 13. Libby war 14.",
+                  "english": "Abby was 13. Libby was 14.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was ist passiert?",
+                  "english": "What happened?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es war ein freier Tag. Kein Unterricht.",
+                  "english": "It was a day off. No school.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Das Wetter war gut?",
+                  "english": "The weather was good?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Es war warm für Februar.",
+                  "english": "Yes. It was warm for February.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wohin sind sie gegangen?",
+                  "english": "Where did they go?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Zu einem Wanderweg. Mit einer alten Brücke.",
+                  "english": "To a hiking trail. With an old bridge.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wer hat sie dorthin gebracht?",
+                  "english": "Who took them there?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Libbys Schwester Kelsi.",
+                  "english": "Libby's sister Kelsi.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wann sollten sie abgeholt werden?",
+                  "english": "When were they supposed to be picked up?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Um 17 Uhr. Der Vater sollte sie abholen.",
+                  "english": "At 5 PM. The father was supposed to pick them up.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Aber sie waren nicht da?",
+                  "english": "But they weren't there?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Nein. Sie antworteten nicht auf Anrufe.",
+                  "english": "No. They didn't answer calls.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was haben die Familien gemacht?",
+                  "english": "What did the families do?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sie suchten zuerst selbst. Dann riefen sie die Polizei.",
+                  "english": "They searched themselves first. Then they called the police.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wann fanden sie die Mädchen?",
+                  "english": "When did they find the girls?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Am nächsten Tag. Am Vormittag.",
+                  "english": "The next day. In the morning.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wo waren sie?",
+                  "english": "Where were they?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Im Wald. Etwa 800 Meter von der Brücke entfernt.",
+                  "english": "In the woods. About half a mile from the bridge.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gab es Beweise?",
+                  "english": "Was there evidence?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Libby hatte ihr Handy dabei.",
+                  "english": "Yes. Libby had her phone with her.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Sie machte Fotos?",
+                  "english": "She took photos?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Und ein Video.",
+                  "english": "Yes. And a video.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 2,
+                  "german": "Von dem Täter?",
+                  "english": "Of the perpetrator?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Man sieht einen Mann auf der Brücke.",
+                  "english": "Yes. You can see a man on the bridge.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Man hört ihn auch sprechen?",
+                  "english": "You can also hear him speaking?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Er sagt: 'Geht den Hügel runter.'",
+                  "english": "Yes. He says: 'Go down the hill.'",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gibt es eine Beschreibung?",
+                  "english": "Is there a description?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die Polizei veröffentlichte ein Bild und eine Stimme.",
+                  "english": "The police released a picture and a voice.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Hat das geholfen?",
+                  "english": "Did that help?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es gab tausende Hinweise. Aber keine Verhaftung.",
+                  "english": "There were thousands of tips. But no arrest.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wie geht es den Familien heute?",
+                  "english": "How are the families doing today?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sie kämpfen für Gerechtigkeit. Sie halten die Erinnerung wach.",
+                  "english": "They fight for justice. They keep the memory alive.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Gibt es neue Entwicklungen?",
+                  "english": "Are there new developments?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Die Polizei arbeitet noch immer an dem Fall.",
+                  "english": "The police are still working on the case.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und die Öffentlichkeit?",
+                  "english": "And the public?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Viele Menschen helfen. Mit Plakaten, Events, Spenden.",
+                  "english": "Many people help. With posters, events, donations.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Was können unsere Zuhörer tun?",
+                  "english": "What can our listeners do?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Teilt die Informationen. Meldet Hinweise an die Polizei.",
+                  "english": "Share the information. Report tips to the police.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und unterstützt die Familien?",
+                  "english": "And support the families?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Es gibt eine Stiftung im Namen der Mädchen.",
+                  "english": "Yes. There is a foundation in the girls' names.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und was ist die wichtigste Lehre?",
+                  "english": "And what is the most important lesson?",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Achtet auf eure Umgebung. Vertraut eurem Gefühl.",
+                  "english": "Pay attention to your surroundings. Trust your instincts.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Und Eltern sollten wissen, wo ihre Kinder sind?",
+                  "english": "And parents should know where their children are?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Ja. Und Kinder sollten immer ein Handy haben.",
+                  "english": "Yes. And children should always have a phone.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Libby war mutig, mit ihrem Handy Beweise zu sammeln.",
+                  "english": "Libby was brave to collect evidence with her phone.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Sehr mutig. Sie könnte anderen geholfen haben.",
+                  "english": "Very brave. She might have helped others.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Wir vergessen sie nicht.",
+                  "english": "We won't forget them.",
+                  "duration": 2
+                },
+                {
+                  "speaker": 1,
+                  "german": "Niemals. Bis zum nächsten Mal, bleibt sicher.",
+                  "english": "Never. Until next time, stay safe.",
+                  "duration": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "My Favorite Murder",
+          "author": "Karen Kilgariff and Georgia Hardstark",
+          "description": "Lifelong fans of true crime discuss their favorite murder cases.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "45 min",
+          "rating": 4.5,
+          "episodes": 325,
+          "color": "0xFF3F51B5",
+          "conversations": [
+            {
+              "episodeTitle": "Small Town Secrets",
+              "episodeDescription": "Karen and Georgia explore cases from small towns where dark secrets were hidden beneath the surface.",
+              "releaseDate": "March 28, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Hey, wie geht's dir heute, Georgia?",
+                  "english": "Hey, how are you doing today, Georgia?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Mir geht's gut, Karen! Ich bin bereit für unsere heutigen Geschichten.",
+                  "english": "I'm good, Karen! I'm ready for our stories today.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Meine Geschichte spielt in einer kleinen Stadt, wo jeder jeden zu kennen scheint.",
+                  "english": "My story takes place in a small town where everyone seems to know everyone.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Oh, das sind oft die unheimlichsten Fälle, nicht wahr?",
+                  "english": "Oh, those are often the creepiest cases, aren't they?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Genau! Niemand hätte gedacht, dass ihr netter Nachbar ein dunkles Geheimnis haben könnte.",
+                  "english": "Exactly! No one would have thought their nice neighbor could have a dark secret.",
+                  "duration": 5
+                }
+              ]
+            }
+          ]
+        },{
+          "title": "The Joe Rogan Experience",
+          "author": "Joe Rogan",
+          "description": "Long-form conversations with guests from all walks of life.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "180 min",
+          "rating": 4.7,
+          "episodes": 1850,
+          "color": "0xFF3F51B5",
+          "conversations": [
+            {
+              "episodeTitle": "Interview with Neil deGrasse Tyson",
+              "episodeDescription": "Joe and Neil discuss astronomy, space exploration, and the wonders of the universe.",
+              "releaseDate": "April 5, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Heute spreche ich mit Dr. Neil deGrasse Tyson, einem bekannten Astrophysiker.",
+                  "english": "Today I'm talking with Dr. Neil deGrasse Tyson, a well-known astrophysicist.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Danke für die Einladung, Joe. Ich freue mich, über das Universum zu sprechen.",
+                  "english": "Thanks for having me, Joe. I'm excited to talk about the universe.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Was fasziniert dich am meisten an der Astronomie?",
+                  "english": "What fascinates you most about astronomy?",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Die schiere Größe des Kosmos und wie klein wir im Vergleich dazu sind.",
+                  "english": "The sheer size of the cosmos and how small we are in comparison.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Das ist wirklich erstaunlich zu bedenken. Wie viele Sterne gibt es eigentlich?",
+                  "english": "That's really amazing to consider. How many stars are there actually?",
+                  "duration": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "This American Life",
+          "author": "Ira Glass",
+          "description": "Weekly public radio program that explores a theme through stories and interviews.",
+          "image": "https://images.theabcdn.com/i/39267873",
+          "duration": "65 min",
+          "rating": 4.9,
+          "episodes": 760,
+          "color": "0xFF3F51B5",
+          "conversations": [
+            {
+              "episodeTitle": "Small Decisions, Big Consequences",
+              "episodeDescription": "Stories about how seemingly minor choices can lead to major life changes.",
+              "releaseDate": "March 30, 2025",
+              "dialogue": [
+                {
+                  "speaker": 1,
+                  "german": "Ich bin Ira Glass, und heute bei This American Life: kleine Entscheidungen, große Folgen.",
+                  "english": "I'm Ira Glass, and today on This American Life: small decisions, big consequences.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 2,
+                  "german": "Unsere erste Geschichte kommt von Sarah. Sie hat eine spontane Entscheidung getroffen, die ihr Leben verändert hat.",
+                  "english": "Our first story comes from Sarah. She made a spontaneous decision that changed her life.",
+                  "duration": 4
+                },
+                {
+                  "speaker": 1,
+                  "german": "Es begann mit einer einfachen Frage: Was wäre, wenn ich meinen Job kündige und eine Weltreise mache?",
+                  "english": "It began with a simple question: What if I quit my job and travel the world?",
+                  "duration": 4
+                },
+                {
+                  "speaker": 2,
+                  "german": "Viele von uns haben solche Gedanken, aber Sarah hat es tatsächlich getan.",
+                  "english": "Many of us have such thoughts, but Sarah actually did it.",
+                  "duration": 3
+                },
+                {
+                  "speaker": 1,
+                  "german": "Innerhalb von zwei Wochen hatte sie ihren Job gekündigt, ihre Wohnung untervermietet und ein One-Way-Ticket gekauft.",
+                  "english": "Within two weeks, she had quit her job, sublet her apartment, and bought a one-way ticket.",
+                  "duration": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

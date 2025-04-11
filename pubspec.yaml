@@ -32,6 +32,9 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/json/stories.json
+    - assets/json/podcast.json
+    - assets/json/vocabulary.json
   fonts:
     - family: Lato
       fonts:

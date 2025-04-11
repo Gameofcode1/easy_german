@@ -6,6 +6,8 @@ import '../../../core/constants/app_images.dart';
 import '../../homePage/view/home_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -24,40 +26,40 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
       title: "Learn German with Stories",
       description: "Immerse yourself in interactive German stories with text-to-speech to improve your reading and listening skills.",
       imagePath: cat,
-      bgColor: Color(0xFF3F51B5),
-      gradientColors: [Color(0xFF3F51B5), Color(0xFF5C6BC0)],
+      bgColor: const Color(0xFF3F51B5),
+      gradientColors: [const Color(0xFF3F51B5), const Color(0xFF5C6BC0)],
       icon: Icons.book,
     ),
     OnboardingPage(
       title: "Build Your Vocabulary",
       description: "Expand your German vocabulary through flashcards, categories, and interactive exercises.",
       imagePath: cat,
-      bgColor: Color(0xFF4CAF50),
-      gradientColors: [Color(0xFF4CAF50), Color(0xFF81C784)],
+      bgColor: const Color(0xFF4CAF50),
+      gradientColors: [const Color(0xFF4CAF50), const Color(0xFF81C784)],
       icon: Icons.translate,
     ),
     OnboardingPage(
       title: "Master Daily Phrases",
       description: "Learn and practice essential German phrases for real-life conversations and situations.",
       imagePath: cat,
-      bgColor: Color(0xFFF44336),
-      gradientColors: [Color(0xFFF44336), Color(0xFFE57373)],
+      bgColor: const Color(0xFFF44336),
+      gradientColors: [const Color(0xFFF44336), const Color(0xFFE57373)],
       icon: Icons.chat_bubble,
     ),
     OnboardingPage(
       title: "Play and Learn",
       description: "Reinforce your German skills with fun, interactive games designed to test your knowledge.",
       imagePath: cat,
-      bgColor: Color(0xFFFF9800),
-      gradientColors: [Color(0xFFFF9800), Color(0xFFFFB74D)],
+      bgColor: const Color(0xFFFF9800),
+      gradientColors: [const Color(0xFFFF9800), const Color(0xFFFFB74D)],
       icon: Icons.games,
     ),
     OnboardingPage(
       title: "Track Your Progress",
       description: "Monitor your improvement with detailed statistics and personalized learning paths.",
       imagePath: cat,
-      bgColor: Color(0xFF9C27B0),
-      gradientColors: [Color(0xFF9C27B0), Color(0xFFBA68C8)],
+      bgColor: const Color(0xFF9C27B0),
+      gradientColors: [const Color(0xFF9C27B0), const Color(0xFFBA68C8)],
       icon: Icons.insights,
     ),
   ];
@@ -72,12 +74,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
 
     _fadeController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
     );
 
     _slideController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
@@ -88,7 +90,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: Offset(0, 0.1),
+      begin: const Offset(0, 0.1),
       end: Offset.zero,
     ).animate(
       CurvedAnimation(
@@ -145,10 +147,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                 padding: const EdgeInsets.all(16.0),
                 child: AnimatedOpacity(
                   opacity: _isLastPage ? 0.0 : 1.0,
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   child: TextButton(
                     onPressed: _isLastPage ? null : _completeOnboarding,
-                    child: Text(
+                    child: const Text(
                       'Skip',
                       style: TextStyle(
                         color: Color(0xFF3F51B5),
@@ -190,7 +192,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
 
             // Navigation and indicator
             Container(
-              padding: EdgeInsets.all(24),
+              padding: const EdgeInsets.all(24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -208,7 +210,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                       dotDecoration: DotDecoration(
                         width: 8,
                         height: 8,
-                        color: Color(0xFFD1D1D1),
+                        color: const Color(0xFFD1D1D1),
                         borderRadius: BorderRadius.circular(4),
                       ),
                     ),
@@ -216,14 +218,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
 
                   // Next/Done button
                   AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
+                    duration: const Duration(milliseconds: 300),
                     width: _isLastPage ? 160 : 60,
                     height: 60,
                     child: ElevatedButton(
                       onPressed: _isLastPage
                           ? _completeOnboarding
                           : () => _pageController.nextPage(
-                        duration: Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       ),
                       style: ElevatedButton.styleFrom(
@@ -236,7 +238,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                         elevation: 5,
                       ),
                       child: _isLastPage
-                          ? Row(
+                          ? const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -250,7 +252,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                           Icon(Icons.arrow_forward, size: 20),
                         ],
                       )
-                          : Icon(Icons.arrow_forward, size: 24),
+                          : const Icon(Icons.arrow_forward, size: 24),
                     ),
                   ),
                 ],
@@ -272,7 +274,7 @@ class EnhancedOnboardingPageContent extends StatefulWidget {
   final IconData icon;
   final bool isCurrentPage;
 
-  const EnhancedOnboardingPageContent({
+  const EnhancedOnboardingPageContent({super.key, 
     required this.title,
     required this.description,
     required this.imagePath,
@@ -298,7 +300,7 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 2000),
     )..repeat(reverse: true);
 
     _floatAnimation = Tween<double>(begin: 0, end: 10).animate(
@@ -335,11 +337,11 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
       children: [
         // Illustration area
         AnimatedContainer(
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
           height: size.height * 0.4,
           width: double.infinity,
-          margin: EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.symmetric(horizontal: 24),
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
@@ -351,7 +353,7 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
               BoxShadow(
                 color: widget.bgColor.withOpacity(0.1),
                 blurRadius: 10,
-                offset: Offset(0, 5),
+                offset: const Offset(0, 5),
               ),
             ],
           ),
@@ -426,15 +428,15 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
           ),
         ),
 
-        SizedBox(height: 40),
+        const SizedBox(height: 40),
 
         // Title
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Text(
             widget.title,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
               color: Color(0xFF333333),
@@ -443,15 +445,15 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
           ),
         ),
 
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
 
         // Description
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 36),
+          padding: const EdgeInsets.symmetric(horizontal: 36),
           child: Text(
             widget.description,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               color: Color(0xFF666666),
               height: 1.5,

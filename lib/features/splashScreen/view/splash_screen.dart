@@ -5,6 +5,8 @@ import '../../../core/constants/app_images.dart';
 import '../../onboarding/view/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -30,47 +32,47 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     // Logo animations
     _logoAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
     );
 
     _logoScaleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _logoAnimationController,
-        curve: Interval(0.0, 0.6, curve: Curves.elasticOut),
+        curve: const Interval(0.0, 0.6, curve: Curves.elasticOut),
       ),
     );
 
     _logoRotateAnimation = Tween<double>(begin: 0.0, end: 2.0).animate(
       CurvedAnimation(
         parent: _logoAnimationController,
-        curve: Interval(0.0, 0.5, curve: Curves.easeOutBack),
+        curve: const Interval(0.0, 0.5, curve: Curves.easeOutBack),
       ),
     );
 
     // Text animations
     _textAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 1200),
     );
 
     _titleFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _textAnimationController,
-        curve: Interval(0.3, 0.6, curve: Curves.easeIn),
+        curve: const Interval(0.3, 0.6, curve: Curves.easeIn),
       ),
     );
 
     _subtitleFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _textAnimationController,
-        curve: Interval(0.5, 0.8, curve: Curves.easeIn),
+        curve: const Interval(0.5, 0.8, curve: Curves.easeIn),
       ),
     );
 
     // Background animation
     _backgroundAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 2000),
     );
 
     _backgroundAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
@@ -83,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     _loaderAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _textAnimationController,
-        curve: Interval(0.7, 1.0, curve: Curves.easeIn),
+        curve: const Interval(0.7, 1.0, curve: Curves.easeIn),
       ),
     );
 
@@ -92,17 +94,17 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
     _logoAnimationController.forward();
 
     // Delay text animation
-    Future.delayed(Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       _textAnimationController.forward();
     });
 
     // Navigate to onboarding screen after 3.5 seconds
-    Timer(Duration(milliseconds: 3500), () {
+    Timer(const Duration(milliseconds: 3500), () {
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) => OnboardingScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            var begin = Offset(0.0, 1.0);
+            var begin = const Offset(0.0, 1.0);
             var end = Offset.zero;
             var curve = Curves.easeOutCubic;
 
@@ -112,7 +114,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
               child: child,
             );
           },
-          transitionDuration: Duration(milliseconds: 800),
+          transitionDuration: const Duration(milliseconds: 800),
         ),
       );
     });
@@ -147,18 +149,18 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                 end: Alignment.bottomCenter,
                 colors: [
                   Color.lerp(
-                    Color(0xFF3F51B5),
-                    Color(0xFF303F9F),
+                    const Color(0xFF3F51B5),
+                    const Color(0xFF303F9F),
                     _backgroundAnimation.value,
                   )!,
                   Color.lerp(
-                    Color(0xFF5C6BC0),
-                    Color(0xFF3F51B5),
+                    const Color(0xFF5C6BC0),
+                    const Color(0xFF3F51B5),
                     _backgroundAnimation.value,
                   )!,
                   Color.lerp(
-                    Color(0xFF7986CB),
-                    Color(0xFF5C6BC0),
+                    const Color(0xFF7986CB),
+                    const Color(0xFF5C6BC0),
                     _backgroundAnimation.value,
                   )!,
                 ],
@@ -176,7 +178,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                       child: Container(
                         width: size.width * 0.4,
                         height: size.width * 0.4,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                           boxShadow: [
@@ -241,7 +243,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                             Colors.white,
                             Colors.white.withOpacity(0.5),
                           ],
-                          stops: [0.5, 1.0],
+                          stops: const [0.5, 1.0],
                         ).createShader(rect);
                       },
                       child:const CircularProgressIndicator(

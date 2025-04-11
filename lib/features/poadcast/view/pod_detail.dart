@@ -2,14 +2,15 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/poascast_vm.dart';
+import '../model/podcast_model.dart';
 
 class PodcastDetailScreen extends StatefulWidget {
-  final Map<String, dynamic> podcast;
+  final Podcast podcast;
 
   const PodcastDetailScreen({
-    Key? key,
+    super.key,
     required this.podcast,
-  }) : super(key: key);
+  });
 
   @override
   _PodcastDetailScreenState createState() => _PodcastDetailScreenState();
@@ -47,7 +48,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
 
   @override
   Widget build(BuildContext context) {
-    final Color primaryColor = Color(0xFF3F51B5);
+    final Color primaryColor = const Color(0xFF3F51B5);
 
     // Provide the ViewModel to the widget tree
     return ChangeNotifierProvider.value(
@@ -61,7 +62,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               Expanded(
                 child: isInitialized
                     ? SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   child: Column(
                     children: [
                       _buildPodcastInfo(primaryColor),
@@ -69,7 +70,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                       _buildSubtitles(primaryColor),
                       _buildProgressBar(primaryColor),
                       _buildControlButtons(primaryColor),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       _buildEpisodeInfo(primaryColor),
                     ],
                   ),
@@ -89,14 +90,14 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
 
   Widget _buildAppBar(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         children: [
           IconButton(
             icon: Icon(Icons.arrow_back_ios, color: primaryColor),
             onPressed: () => Navigator.pop(context),
           ),
-          Spacer(),
+          const Spacer(),
           IconButton(
             icon: Icon(Icons.share, color: primaryColor),
             onPressed: () {},
@@ -120,7 +121,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
-              widget.podcast['image'] as String,
+              widget.podcast.image,
               width: 120,
               height: 120,
               fit: BoxFit.cover,
@@ -140,7 +141,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               },
             ),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
 
           // Podcast details
           Expanded(
@@ -148,37 +149,37 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.podcast['title'] as String,
-                  style: TextStyle(
+                  widget.podcast.title,
+                  style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  widget.podcast['author'] as String,
+                  widget.podcast.author,
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.grey[600],
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Row(
                   children: [
-                    Icon(Icons.star, color: Colors.amber, size: 18),
-                    SizedBox(width: 4),
+                    const Icon(Icons.star, color: Colors.amber, size: 18),
+                    const SizedBox(width: 4),
                     Text(
-                      '${widget.podcast['rating']}',
-                      style: TextStyle(
+                      '${widget.podcast.rating}',
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     Icon(Icons.headset, color: Colors.grey[600], size: 18),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Text(
-                      '${widget.podcast['episodes']} episodes',
+                      '${widget.podcast.episodes} episodes',
                       style: TextStyle(
                         fontSize: 14,
                         color: Colors.grey[600],
@@ -207,7 +208,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               width: 2,
             ),
           ),
-          margin: EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
           child: Stack(
             children: [
               // Background audio wave - only if controllers are initialized
@@ -250,7 +251,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                                   BoxShadow(
                                     color: primaryColor.withOpacity(0.3),
                                     blurRadius: 10,
-                                    offset: Offset(0, 5),
+                                    offset: const Offset(0, 5),
                                   ),
                                 ],
                               ),
@@ -262,10 +263,10 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                                 ),
                               ),
                             ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             // Character name
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(20),
@@ -273,7 +274,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
                                     blurRadius: 5,
-                                    offset: Offset(0, 2),
+                                    offset: const Offset(0, 2),
                                   ),
                                 ],
                               ),
@@ -311,13 +312,13 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                               width: 100,
                               height: 100,
                               decoration: BoxDecoration(
-                                color: Color(0xFF3F51B5).withOpacity(0.8), // Different color for second character
+                                color: const Color(0xFF3F51B5).withOpacity(0.8), // Different color for second character
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color(0xFF3F51B5).withOpacity(0.3),
+                                    color: const Color(0xFF3F51B5).withOpacity(0.3),
                                     blurRadius: 10,
-                                    offset: Offset(0, 5),
+                                    offset: const Offset(0, 5),
                                   ),
                                 ],
                               ),
@@ -329,10 +330,10 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                                 ),
                               ),
                             ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             // Character name
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(20),
@@ -340,11 +341,11 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.1),
                                     blurRadius: 5,
-                                    offset: Offset(0, 2),
+                                    offset: const Offset(0, 2),
                                   ),
                                 ],
                               ),
-                              child: Text(
+                              child: const Text(
                                 'Max',
                                 style: TextStyle(
                                   fontSize: 14,
@@ -368,7 +369,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                 child: Center(
                   child: Container(
                     width: 250,
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
@@ -376,7 +377,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                         BoxShadow(
                           color: Colors.black.withOpacity(0.1),
                           blurRadius: 5,
-                          offset: Offset(0, 2),
+                          offset: const Offset(0, 2),
                         ),
                       ],
                     ),
@@ -386,7 +387,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: model.currentSpeaker == 1 ? primaryColor : Color(0xFF3F51B5),
+                        color: model.currentSpeaker == 1 ? primaryColor : const Color(0xFF3F51B5),
                       ),
                     ),
                   ),
@@ -452,8 +453,8 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
     return Consumer<PodcastPlayerViewModel>(
       builder: (context, model, child) {
         return Container(
-          margin: EdgeInsets.fromLTRB(20, 16, 20, 0),
-          padding: EdgeInsets.all(16),
+          margin: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(16),
@@ -461,7 +462,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               BoxShadow(
                 color: Colors.black.withOpacity(0.05),
                 blurRadius: 8,
-                offset: Offset(0, 2),
+                offset: const Offset(0, 2),
               ),
             ],
           ),
@@ -476,10 +477,10 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                   color: Colors.grey[600],
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 model.currentEnglishText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -520,7 +521,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                   },
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
@@ -560,7 +561,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               icon: Icon(Icons.replay_10, color: primaryColor, size: 32),
               onPressed: () => model.skipBackward(),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Container(
               width: 64,
               height: 64,
@@ -578,7 +579,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                   BoxShadow(
                     color: primaryColor.withOpacity(0.3),
                     blurRadius: 12,
-                    offset: Offset(0, 6),
+                    offset: const Offset(0, 6),
                   ),
                 ],
               ),
@@ -591,7 +592,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                 onPressed: () => model.togglePlayPause(),
               ),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             IconButton(
               icon: Icon(Icons.forward_10, color: primaryColor, size: 32),
               onPressed: () => model.skipForward(),
@@ -604,8 +605,8 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
 
   Widget _buildEpisodeInfo(Color primaryColor) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
-      padding: EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -613,21 +614,21 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
             blurRadius: 8,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Episode: Deutsche Gespräche für Anfänger',
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'This episode features common German conversations to help beginners practice their listening and speaking skills with natural dialogue.',
             style: TextStyle(
@@ -635,19 +636,19 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
               color: Colors.grey[700],
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Row(
             children: [
               _buildInfoChip(Icons.calendar_today, 'April 1, 2025', primaryColor),
-              SizedBox(width: 12),
-              _buildInfoChip(Icons.access_time, widget.podcast['duration'], primaryColor),
+              const SizedBox(width: 12),
+              _buildInfoChip(Icons.access_time, widget.podcast.duration, primaryColor),
             ],
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Row(
             children: [
               _buildActionButton('Download', Icons.download, primaryColor),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               _buildActionButton('Share', Icons.share, primaryColor),
             ],
           ),
@@ -658,7 +659,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
 
   Widget _buildInfoChip(IconData icon, String text, Color color) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(20),
@@ -666,7 +667,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
       child: Row(
         children: [
           Icon(icon, size: 14, color: color),
-          SizedBox(width: 6),
+          const SizedBox(width: 6),
           Text(
             text,
             style: TextStyle(
@@ -689,7 +690,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
           backgroundColor: color,
-          padding: EdgeInsets.symmetric(vertical: 12),
+          padding: const EdgeInsets.symmetric(vertical: 12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),

@@ -31,30 +31,59 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'German Language Learning',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFF3F51B5),
+        primaryColor:const Color(0xFF3F51B5),
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFF3F51B5),
-          secondary: Color(0xFFFF9800),
-          background: Colors.white,
+          seedColor:const Color(0xFF3F51B5),
+          secondary:const Color(0xFFFF9800),
         ),
-        textTheme: GoogleFonts.poppinsTextTheme(
+        textTheme: GoogleFonts.interTextTheme(
           Theme.of(context).textTheme,
+        ).copyWith(
+          // Heading styles with Montserrat
+          displayLarge: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w700,
+            fontSize: 32,
+            letterSpacing: -0.5,
+          ),
+          displayMedium: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w600,
+            fontSize: 28,
+          ),
+          displaySmall: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w600,
+            fontSize: 24,
+          ),
+          headlineMedium: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+          ),
+          // Keep Inter for body text
+          bodyLarge: GoogleFonts.inter(
+            fontWeight: FontWeight.w400,
+            fontSize: 16,
+          ),
+          bodyMedium: GoogleFonts.inter(
+            fontWeight: FontWeight.w400,
+            fontSize: 14,
+          ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF3F51B5),
+            backgroundColor:const Color(0xFF3F51B5),
             foregroundColor: Colors.white,
             elevation: 0,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           ),
         ),
       ),

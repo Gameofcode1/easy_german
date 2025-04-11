@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'dart:ui';
 
-class StoryItem {
-  final String germanText;
-  final String englishText;
+import '../model/stories_model.dart';
 
-  StoryItem({required this.germanText, required this.englishText});
-}
+
 
 class StoryDetailScreen extends StatefulWidget {
   final String title;
@@ -16,7 +13,7 @@ class StoryDetailScreen extends StatefulWidget {
   final String duration;
   final String description;
 
-  StoryDetailScreen({
+  const StoryDetailScreen({super.key, 
     required this.title,
     required this.storyItems,
     required this.level,
@@ -109,13 +106,13 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
     // Set up animations
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 2000),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Interval(0.0, 0.5, curve: Curves.easeIn),
+        curve: const Interval(0.0, 0.5, curve: Curves.easeIn),
       ),
     );
 
@@ -203,7 +200,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
     // key: _itemKeys[index] ??= GlobalKey(),
 
     // Direct approach using item height estimate
-    final itemHeight = 170.0; // Approximate height
+    const itemHeight = 170.0; // Approximate height
 
     // Calculate position to put the current item in the center
     final screenHeight = MediaQuery.of(context).size.height;
@@ -218,7 +215,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
     // Scroll with a simple animation
     _scrollController.animateTo(
       adjustedPosition,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeOut,
     );
   }
@@ -277,7 +274,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
   void _scrollToTop() {
     _scrollController.animateTo(
       0,
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
       curve: Curves.easeOutQuint,
     );
   }
@@ -290,7 +287,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
-          title: Row(
+          title: const Row(
             children: [
               Icon(Icons.celebration, color: Color(0xFF3F51B5)),
               SizedBox(width: 10),
@@ -300,18 +297,18 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              const Text(
                 'You have completed the story!',
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 height: 120,
                 decoration: BoxDecoration(
-                  color: Color(0xFF3F51B5).withOpacity(0.1),
+                  color: const Color(0xFF3F51B5).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     Icons.emoji_events,
                     size: 60,
@@ -326,11 +323,11 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('CLOSE'),
+              child: const Text('CLOSE'),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF3F51B5),
+                backgroundColor: const Color(0xFF3F51B5),
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -343,7 +340,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                 });
                 _scrollToCurrentItem();
               },
-              child: Text('START AGAIN'),
+              child: const Text('START AGAIN'),
             ),
           ],
         );
@@ -367,7 +364,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
           // Background pattern
           Positioned.fill(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFFF5F7FA),
                 image: DecorationImage(
                   image: NetworkImage(
@@ -393,20 +390,20 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [
-                              Color(0xFF2C3E50),
-                              Color(0xFF3F51B5).withOpacity(
+                              const Color(0xFF2C3E50),
+                              const Color(0xFF3F51B5).withOpacity(
                                   0.9 + _floatAnimation.value / 100),
                             ],
-                            stops: [0.3, 0.9],
+                            stops: const [0.3, 0.9],
                           ),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               color: Colors.black26,
                               blurRadius: 8,
                               offset: Offset(0, 3),
                             ),
                           ],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(16),
                             bottomRight: Radius.circular(16),
                           ),
@@ -414,15 +411,15 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                         child: Row(
                           children: [
                             IconButton(
-                              icon: Icon(Icons.arrow_back_ios_new,
+                              icon: const Icon(Icons.arrow_back_ios_new,
                                   color: Colors.white),
                               onPressed: () => Navigator.pop(context),
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 widget.title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -432,13 +429,13 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                               ),
                             ),
                             IconButton(
-                              icon: Icon(Icons.translate, color: Colors.white),
+                              icon: const Icon(Icons.translate, color: Colors.white),
                               onPressed: () {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content: Text('Translation mode is active'),
+                                    content: const Text('Translation mode is active'),
                                     behavior: SnackBarBehavior.floating,
-                                    backgroundColor: Color(0xFF3F51B5),
+                                    backgroundColor: const Color(0xFF3F51B5),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
@@ -447,14 +444,14 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                               },
                             ),
                             IconButton(
-                              icon: Icon(Icons.favorite_border,
+                              icon: const Icon(Icons.favorite_border,
                                   color: Colors.white),
                               onPressed: () {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content: Text('Added to favorites'),
+                                    content: const Text('Added to favorites'),
                                     behavior: SnackBarBehavior.floating,
-                                    backgroundColor: Color(0xFF3F51B5),
+                                    backgroundColor: const Color(0xFF3F51B5),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     ),
@@ -469,34 +466,34 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
 
                 // Story header with animation (collapsing on scroll)
                 AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   height: _headerHeight,
                   curve: Curves.easeOut,
                   child: SingleChildScrollView(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     child: Container(
-                      padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                       child: Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: Color(0xFF3F51B5).withOpacity(0.1),
+                              color: const Color(0xFF3F51B5).withOpacity(0.1),
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.menu_book,
                               color: Color(0xFF3F51B5),
                               size: 24,
                             ),
                           ),
-                          SizedBox(width: 12),
+                          const SizedBox(width: 12),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
+                                const Text(
                                   'German Story Reader',
                                   style: TextStyle(
                                     fontSize: 16,
@@ -514,7 +511,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                               ],
                             ),
                           ),
-                          SizedBox(width: 8),
+                          const SizedBox(width: 8),
                           _buildLevelBadge(widget.level),
                         ],
                       ),
@@ -530,7 +527,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                     children: [
                       RichText(
                         text: TextSpan(children: [
-                          TextSpan(
+                          const TextSpan(
                             text: 'Progress ',
                             style: TextStyle(
                               fontSize: 14,
@@ -541,7 +538,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                           TextSpan(
                             text:
                                 '${((_currentItemIndex + 1) / widget.storyItems.length * 100).toInt()}%',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF3F51B5),
@@ -551,21 +548,21 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                       ),
                       Container(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                         decoration: BoxDecoration(
-                          color: Color(0xFF3F51B5),
+                          color: const Color(0xFF3F51B5),
                           borderRadius: BorderRadius.circular(30),
                           boxShadow: [
                             BoxShadow(
-                              color: Color(0xFF3F51B5).withOpacity(0.3),
+                              color: const Color(0xFF3F51B5).withOpacity(0.3),
                               blurRadius: 4,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
                         child: Text(
                           '${_currentItemIndex + 1}/${widget.storyItems.length}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -594,7 +591,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.1),
                                   blurRadius: 2,
-                                  offset: Offset(0, 1),
+                                  offset: const Offset(0, 1),
                                 ),
                               ],
                             ),
@@ -611,7 +608,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                       gradient: LinearGradient(
                                         begin: Alignment.centerLeft,
                                         end: Alignment.centerRight,
-                                        colors: [
+                                        colors: const [
                                           Color(0xFF3F51B5),
                                           Color(0xFF5C6BC0),
                                           Color(0xFF3F51B5),
@@ -658,7 +655,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                   ),
                 ),
 
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
 
                 // Story content - scrollable list with enhanced cards
                 Expanded(
@@ -666,7 +663,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                     opacity: _fadeAnimation,
                     child: ListView.builder(
                       controller: _scrollController,
-                      padding: EdgeInsets.fromLTRB(
+                      padding: const EdgeInsets.fromLTRB(
                           16, 8, 16, 100), // Extra bottom padding
                       itemCount: widget.storyItems.length,
                       itemBuilder: (context, index) {
@@ -696,7 +693,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                       ? Offset(0, _floatAnimation.value / 2)
                                       : Offset.zero,
                                   child: AnimatedContainer(
-                                    duration: Duration(milliseconds: 400),
+                                    duration: const Duration(milliseconds: 400),
                                     curve: Curves.easeOutQuad,
                                     margin: EdgeInsets.only(
                                       bottom: 12,
@@ -710,23 +707,23 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                     ),
                                     decoration: BoxDecoration(
                                       color: isCurrentItem
-                                          ? Color(0xFF2C3E50)
+                                          ? const Color(0xFF2C3E50)
                                           : Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                       boxShadow: [
                                         BoxShadow(
                                           color: isCurrentItem
-                                              ? Color(0xFF3F51B5)
+                                              ? const Color(0xFF3F51B5)
                                                   .withOpacity(0.4)
                                               : Colors.black.withOpacity(0.05),
                                           blurRadius: isCurrentItem ? 12 : 4,
-                                          offset: Offset(0, 4),
+                                          offset: const Offset(0, 4),
                                           spreadRadius: isCurrentItem ? 1 : 0,
                                         ),
                                       ],
                                       border: isCurrentItem
                                           ? Border.all(
-                                              color: Color(0xFF3F51B5),
+                                              color: const Color(0xFF3F51B5),
                                               width: 2)
                                           : null,
                                     ),
@@ -738,7 +735,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                           sigmaY: isCurrentItem ? 0 : 0,
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(16),
+                                          padding: const EdgeInsets.all(16),
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -755,7 +752,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                                           .withOpacity(0.2),
                                                       shape: BoxShape.circle,
                                                     ),
-                                                    child: Center(
+                                                    child: const Center(
                                                       child: Icon(
                                                         Icons.check,
                                                         color: Colors.green,
@@ -779,14 +776,14 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                                             FontWeight.w600,
                                                         color: isCurrentItem
                                                             ? Colors.white
-                                                            : Color(0xFF2C3E50),
+                                                            : const Color(0xFF2C3E50),
                                                         height: 1.4,
                                                       ),
                                                     ),
                                                   ),
                                                   if (isCurrentItem)
                                                     Container(
-                                                      margin: EdgeInsets.only(
+                                                      margin: const EdgeInsets.only(
                                                           left: 8),
                                                       width: 32,
                                                       height: 32,
@@ -795,17 +792,17 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                                             ? Colors.red
                                                                 .withOpacity(
                                                                     0.8)
-                                                            : Color(0xFF3F51B5),
+                                                            : const Color(0xFF3F51B5),
                                                         shape: BoxShape.circle,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            color: Color(
+                                                            color: const Color(
                                                                     0xFF3F51B5)
                                                                 .withOpacity(
                                                                     0.3),
                                                             blurRadius: 8,
                                                             offset:
-                                                                Offset(0, 2),
+                                                                const Offset(0, 2),
                                                           ),
                                                         ],
                                                       ),
@@ -819,7 +816,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                                     ),
                                                 ],
                                               ),
-                                              SizedBox(height: 12),
+                                              const SizedBox(height: 12),
 
                                               // Divider between texts
                                               Container(
@@ -853,7 +850,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                                                           ],
                                                   ),
                                                 ),
-                                                margin: EdgeInsets.symmetric(
+                                                margin: const EdgeInsets.symmetric(
                                                     vertical: 8),
                                               ),
 
@@ -894,15 +891,15 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
               right: 16,
               child: AnimatedOpacity(
                 opacity: _showScrollTopButton ? 1.0 : 0.0,
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 child: FloatingActionButton.small(
                   backgroundColor: Colors.white,
                   onPressed: _scrollToTop,
+                  elevation: 4,
                   child: Icon(
                     Icons.arrow_upward,
                     color: Color(0xFF3F51B5),
                   ),
-                  elevation: 4,
                 ),
               ),
             ),
@@ -919,7 +916,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: (_isPlaying ? Colors.red : Color(0xFF3F51B5))
+                  color: (_isPlaying ? Colors.red : const Color(0xFF3F51B5))
                       .withOpacity(0.3 + _floatAnimation.value / 100),
                   blurRadius: 12 + _floatAnimation.value,
                   spreadRadius: 2 + _floatAnimation.value / 5,
@@ -927,13 +924,13 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
               ],
             ),
             child: FloatingActionButton(
-              backgroundColor: _isPlaying ? Colors.red : Color(0xFF3F51B5),
+              backgroundColor: _isPlaying ? Colors.red : const Color(0xFF3F51B5),
               onPressed: _togglePlayPause,
+              elevation: 6,
               child: Icon(
                 _isPlaying ? Icons.pause : Icons.play_arrow,
                 size: 32,
               ),
-              elevation: 6,
             ),
           );
         },
@@ -944,7 +941,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
         height: 80,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(24),
             topRight: Radius.circular(24),
           ),
@@ -952,7 +949,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
             BoxShadow(
               color: Colors.black.withOpacity(0.1),
               blurRadius: 10,
-              offset: Offset(0, -2),
+              offset: const Offset(0, -2),
               spreadRadius: 0,
             ),
           ],
@@ -964,16 +961,16 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
             GestureDetector(
               onTap: _currentItemIndex > 0 ? _goToPrevious : null,
               child: AnimatedContainer(
-                duration: Duration(milliseconds: 300),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                duration: const Duration(milliseconds: 300),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   color: _currentItemIndex > 0
-                      ? Color(0xFFEFF3FF)
+                      ? const Color(0xFFEFF3FF)
                       : Colors.grey[200],
                   borderRadius: BorderRadius.circular(30),
                   border: Border.all(
                     color: _currentItemIndex > 0
-                        ? Color(0xFF3F51B5).withOpacity(0.3)
+                        ? const Color(0xFF3F51B5).withOpacity(0.3)
                         : Colors.grey[300]!,
                     width: 1,
                   ),
@@ -985,15 +982,15 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                       Icons.arrow_back_ios,
                       size: 16,
                       color: _currentItemIndex > 0
-                          ? Color(0xFF3F51B5)
+                          ? const Color(0xFF3F51B5)
                           : Colors.grey[400],
                     ),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Text(
                       'Previous',
                       style: TextStyle(
                         color: _currentItemIndex > 0
-                            ? Color(0xFF3F51B5)
+                            ? const Color(0xFF3F51B5)
                             : Colors.grey[400],
                         fontWeight: FontWeight.w600,
                       ),
@@ -1004,7 +1001,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
             ),
 
             // Space for FAB
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
 
             // Next button
             GestureDetector(
@@ -1012,16 +1009,16 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                   ? _goToNext
                   : null,
               child: AnimatedContainer(
-                duration: Duration(milliseconds: 300),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                duration: const Duration(milliseconds: 300),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   color: _currentItemIndex < widget.storyItems.length - 1
-                      ? Color(0xFFEFF3FF)
+                      ? const Color(0xFFEFF3FF)
                       : Colors.grey[200],
                   borderRadius: BorderRadius.circular(30),
                   border: Border.all(
                     color: _currentItemIndex < widget.storyItems.length - 1
-                        ? Color(0xFF3F51B5).withOpacity(0.3)
+                        ? const Color(0xFF3F51B5).withOpacity(0.3)
                         : Colors.grey[300]!,
                     width: 1,
                   ),
@@ -1033,17 +1030,17 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
                       'Next',
                       style: TextStyle(
                         color: _currentItemIndex < widget.storyItems.length - 1
-                            ? Color(0xFF3F51B5)
+                            ? const Color(0xFF3F51B5)
                             : Colors.grey[400],
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 16,
                       color: _currentItemIndex < widget.storyItems.length - 1
-                          ? Color(0xFF3F51B5)
+                          ? const Color(0xFF3F51B5)
                           : Colors.grey[400],
                     ),
                   ],
@@ -1082,7 +1079,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
     }
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(16),
@@ -1099,7 +1096,7 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
             size: 12,
             color: color,
           ),
-          SizedBox(width: 4),
+          const SizedBox(width: 4),
           Text(
             level,
             style: TextStyle(

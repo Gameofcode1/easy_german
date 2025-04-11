@@ -1,0 +1,2784 @@
+{
+      "categories": [
+        {
+          "categoryName": "Culture",
+          "categoryDescription": "Geschichten über deutsche Kultur, Traditionen und gesellschaftliche Erfahrungen.",
+          "stories": [
+            {
+              "title": "Das Oktoberfest-Geheimnis",
+              "description": "Eine warmherzige Geschichte über Tradition, Familie und kulturelles Erbe. Perfekt für Intermediate-Lerner, um Vokabular rund um deutsche Traditionen zu lernen.",
+              "level": "Intermediate",
+              "duration": "13 min",
+              "image": "assets/images/story_oktoberfest.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Anna kehrte nach Jahren im Ausland in ihre Heimatstadt München zurück.",
+                  "englishText": "Anna returned to her hometown of Munich after years abroad."
+                },
+                {
+                  "germanText": "Die Straßen waren bereits mit bunten Plakaten und Festzelten geschmückt - das Oktoberfest stand bevor.",
+                  "englishText": "The streets were already decorated with colorful posters and festival tents - the Oktoberfest was approaching."
+                },
+                {
+                  "germanText": "Ihre Großmutter Helga wartete schon ungeduldig auf sie, mit einem geheimnisvollen Glanz in den Augen.",
+                  "englishText": "Her grandmother Helga was waiting impatiently for her, with a mysterious gleam in her eyes."
+                },
+                {
+                  "germanText": "In der Familienküche breitete Helga eine alte, vergilbte Mappe voller Familienrezepte aus.",
+                  "englishText": "In the family kitchen, Helga spread out an old, yellowed folder full of family recipes."
+                },
+                {
+                  "germanText": "Jedes Rezept erzählte eine Geschichte - von Generationen von Frauen, die Brezel, Strudel und Lebkuchen gebacken hatten.",
+                  "englishText": "Each recipe told a story - of generations of women who had baked pretzels, strudel, and gingerbread."
+                },
+                {
+                  "germanText": "Helga erklärte: 'Diese Rezepte sind mehr als nur Anleitungen. Sie sind unsere Familiengeschichte.'",
+                  "englishText": "Helga explained, 'These recipes are more than just instructions. They are our family history.'"
+                },
+                {
+                  "germanText": "Sie begannen gemeinsam, traditionelle Oktoberfest-Spezialitäten zuzubereiten.",
+                  "englishText": "They began preparing traditional Oktoberfest specialties together."
+                },
+                {
+                  "germanText": "Anna lernte, wie man perfekte Hefezöpfe und Apfelstrudel backt, genau wie ihre Urgroßmutter es einst tat.",
+                  "englishText": "Anna learned how to bake perfect braided yeast bread and apple strudel, just as her great-grandmother once did."
+                },
+                {
+                  "germanText": "Helga erzählte Geschichten vom Oktoberfest aus ihrer Jugend - von Musikkapellen, Trachten und alten Familientraditionen.",
+                  "englishText": "Helga told stories of Oktoberfest from her youth - of brass bands, traditional costumes, and old family traditions."
+                },
+                {
+                  "germanText": "Am Tag des Festes zogen sie beide ihre traditionellen Dirndl an, ein Erbe, das Generationen überdauert hatte.",
+                  "englishText": "On the day of the festival, they both put on their traditional dirndls, a heritage that had survived generations."
+                },
+                {
+                  "germanText": "Im Festzelt tanzten sie, lachten und teilten Geschichten, die Vergangenheit und Gegenwart verbanden.",
+                  "englishText": "In the festival tent, they danced, laughed, and shared stories that connected past and present."
+                },
+                {
+                  "germanText": "Anna verstand nun, dass Tradition mehr ist als nur alte Bräuche - es ist eine lebendige Verbindung zur Familie.",
+                  "englishText": "Anna now understood that tradition is more than just old customs - it's a living connection to family."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was macht Anna mit ihrer Großmutter?",
+                  "options": [
+                    "Sie reisen",
+                    "Sie backen traditionelle Rezepte",
+                    "Sie spielen Karten",
+                    "Sie kaufen ein"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Welche Kleidung tragen Anna und Helga zum Oktoberfest?",
+                  "options": [
+                    "Jeans und T-Shirts",
+                    "Anzüge",
+                    "Dirndl",
+                    "Sportkleidung"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was bedeutet Tradition für Anna am Ende der Geschichte?",
+                  "options": [
+                    "Nur alte Bräuche",
+                    "Verbindung zur Familie",
+                    "Langweilige Regeln",
+                    "Unnötige Aktivitäten"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Travel",
+          "categoryDescription": "Reisegeschichten durch Deutschland und Europa, perfekt für Sprachlerner.",
+          "stories": [
+            {
+              "title": "Die Rheinreise",
+              "description": "Eine aufregende Reise entlang des Rheins, die Landschaft, Geschichte und persönliche Entdeckungen verbindet. Ideal für Intermediate-Lerner.",
+              "level": "Intermediate",
+              "duration": "14 min",
+              "image": "assets/images/story_rhine_journey.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Tom war Geschichtslehrer aus Kanada und hatte schon immer von einer Reise den Rhein entlang geträumt.",
+                  "englishText": "Tom was a history teacher from Canada who had always dreamed of a journey along the Rhine."
+                },
+                {
+                  "germanText": "Seine Großeltern stammten ursprünglich aus Deutschland, und er wollte ihre Wurzeln erkunden.",
+                  "englishText": "His grandparents originally came from Germany, and he wanted to explore their roots."
+                },
+                {
+                  "germanText": "In Köln begann seine Reise, mit seiner alten Kamera und einem Notizbuch voller Fragen und Hoffnungen.",
+                  "englishText": "His journey began in Cologne, with his old camera and a notebook full of questions and hopes."
+                },
+                {
+                  "germanText": "Der Kölner Dom ragte majestätisch in den Himmel, seine gotischen Türme schienen Geschichten zu flüstern.",
+                  "englishText": "The Cologne Cathedral towered majestically into the sky, its Gothic spires seeming to whisper stories."
+                },
+                {
+                  "germanText": "Ein lokaler Reiseführer namens Klaus bot Tom an, ihn durch die historischen Stätten zu begleiten.",
+                  "englishText": "A local tour guide named Klaus offered to accompany Tom through the historical sites."
+                },
+                {
+                  "germanText": "Sie bestiegen ein kleines Ausflugsschiff in Bingen, das die Burgen des Rheintals durchquerte.",
+                  "englishText": "They boarded a small excursion ship in Bingen that traversed the castles of the Rhine Valley."
+                },
+                {
+                  "germanText": "Jede Burg erzählte eine andere Geschichte - von Rittergeschlechtern, Handel und jahrhundertealten Konflikten.",
+                  "englishText": "Each castle told a different story - of knight families, trade, and centuries-old conflicts."
+                },
+                {
+                  "germanText": "In Marksburg erklärte Klaus die mittelalterlichen Verteidigungstechniken und Lebensweisen.",
+                  "englishText": "In Marksburg, Klaus explained medieval defense techniques and ways of life."
+                },
+                {
+                  "germanText": "Tom fotografierte jedes Detail, jede Mauer und jedes Fenster, die Familiengeschichte zu dokumentieren.",
+                  "englishText": "Tom photographed every detail, every wall and window, documenting family history."
+                },
+                {
+                  "germanText": "In Sankt Goar kaufte er ein altes Familienfoto von einem Antiquitätenhändler, das seiner Großmutter ähnelte.",
+                  "englishText": "In Sankt Goar, he bought an old family photo from an antique dealer that resembled his grandmother."
+                },
+                {
+                  "germanText": "Die Reise war mehr als nur eine Touristenfahrt - es war eine Reise zur Selbstentdeckung.",
+                  "englishText": "The journey was more than just a tourist trip - it was a journey of self-discovery."
+                },
+                {
+                  "germanText": "Am Ende der Reise fühlte Tom eine tiefe Verbindung zu den Geschichten seiner Vorfahren.",
+                  "englishText": "At the end of the journey, Tom felt a deep connection to the stories of his ancestors."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Woher kommt Tom?",
+                  "options": [
+                    "Deutschland",
+                    "Frankreich",
+                    "Kanada",
+                    "Niederlande"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was war Tom von Beruf?",
+                  "options": [
+                    "Koch",
+                    "Geschichtslehrer",
+                    "Fotograf",
+                    "Reiseführer"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was kauft Tom in Sankt Goar?",
+                  "options": [
+                    "Ein Souvenir",
+                    "Ein Buch",
+                    "Ein altes Familienfoto",
+                    "Eine Postkarte"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Fairy",
+          "categoryDescription": "Magische Geschichten mit Märchenelementen, perfekt für Deutschlernende auf mittlerem Niveau.",
+          "stories": [
+            {
+              "title": "Der verzauberte Spiegel",
+              "description": "Eine moderne Märchenerzählung über Selbsterkenntnis und Magie. Ideal für Intermediate-Lerner, um Vokabular rund um Gefühle und Fantasie zu erweitern.",
+              "level": "Intermediate",
+              "duration": "12 min",
+              "image": "assets/images/story_magic_mirror.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "In einer kleinen Stadt lebte eine junge Frau namens Elena, die sich nach Veränderung sehnte.",
+                  "englishText": "In a small town lived a young woman named Elena, who longed for change."
+                },
+                {
+                  "germanText": "Ihr Alltag war von Routine und Unsicherheit geprägt. Sie arbeitete in einem kleinen Büro und träumte von mehr.",
+                  "englishText": "Her daily life was marked by routine and uncertainty. She worked in a small office and dreamed of something more."
+                },
+                {
+                  "germanText": "An einem nebligen Herbstmorgen entdeckte sie einen seltsamen Antiquitätenladen am Rande der Altstadt.",
+                  "englishText": "On a misty autumn morning, she discovered a strange antique shop on the edge of the old town."
+                },
+                {
+                  "germanText": "Die Ladentür quietschte leise, als sie eintrat. Eine Glocke über dem Eingang meldete ihre Ankunft.",
+                  "englishText": "The shop door creaked softly as she entered. A bell above the entrance announced her arrival."
+                },
+                {
+                  "germanText": "Im Schaufenster stand ein alter Spiegel mit kunstvoll geschnitztem Rahmen aus dunklem Holz.",
+                  "englishText": "In the shop window stood an old mirror with an intricately carved frame made of dark wood."
+                },
+                {
+                  "germanText": "Der alte Antiquitätenhändler lächelte sie geheimnisvoll an. Seine Augen funkelten wie zwei kleine Sterne.",
+                  "englishText": "The old antique dealer smiled at her mysteriously. His eyes sparkled like two small stars."
+                },
+                {
+                  "germanText": "Als Elena in den Spiegel blickte, sah sie nicht ihr gewöhnliches Spiegelbild.",
+                  "englishText": "When Elena looked into the mirror, she did not see her usual reflection."
+                },
+                {
+                  "germanText": "Stattdessen zeigte der Spiegel ihr eine Version von sich selbst, die mutig und selbstbewusst war.",
+                  "englishText": "Instead, the mirror showed her a version of herself that was brave and confident."
+                },
+                {
+                  "germanText": "Diese andere Elena trug ein elegantes Kostüm und lächelte mit einer Ausstrahlung von Stärke und Entschlossenheit.",
+                  "englishText": "This other Elena wore an elegant suit and smiled with an aura of strength and determination."
+                },
+                {
+                  "germanText": "Der Händler erklärte: 'Dieser Spiegel zeigt nicht das, was du bist, sondern das, was du sein könntest.'",
+                  "englishText": "The dealer explained, 'This mirror does not show what you are, but what you could be.'"
+                },
+                {
+                  "germanText": "Elena war fasziniert. Sie spürte, wie der Spiegel sie förmlich herausforderte, ihre Komfortzone zu verlassen.",
+                  "englishText": "Elena was fascinated. She felt as if the mirror was challenging her to leave her comfort zone."
+                },
+                {
+                  "germanText": "In den folgenden Wochen begann sie, sich zu verändern. Sie meldete sich für Kurse an, sprach mutiger mit Kollegen.",
+                  "englishText": "In the following weeks, she began to change. She signed up for courses and spoke more courageously with her colleagues."
+                },
+                {
+                  "germanText": "Schritt für Schritt wurde sie der Person ähnlicher, die sie im Spiegel gesehen hatte.",
+                  "englishText": "Step by step, she became more like the person she had seen in the mirror."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was entdeckt Elena an diesem Morgen?",
+                  "options": [
+                    "Ein altes Buch",
+                    "Einen Antiquitätenladen",
+                    "Einen magischen Hut",
+                    "Eine verzauberte Katze"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was ist besonders am Spiegel?",
+                  "options": [
+                    "Er ist sehr alt",
+                    "Er zeigt eine andere Version von Elena",
+                    "Er glänzt sehr hell",
+                    "Er hat einen goldenen Rahmen"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wie verändert sich Elena nach dem Besuch im Antiquitätenladen?",
+                  "options": [
+                    "Sie wird schüchterner",
+                    "Sie bleibt unverändert",
+                    "Sie wird selbstbewusster und aktiver",
+                    "Sie kauft den Spiegel"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Food",
+          "categoryDescription": "Kulinarische Geschichten über deutsche Küche, Rezepte und Essenskultur.",
+          "stories": [
+            {
+              "title": "Ein kulinarisches Abenteuer in Berlin",
+              "description": "Eine Geschichte über die Entdeckung der deutschen Streetfood-Szene. Perfekt für Intermediate-Lerner, um Vokabular rund um Essen und Stadtleben zu lernen.",
+              "level": "Intermediate",
+              "duration": "12 min",
+              "image": "assets/images/story_berlin_food.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Max war ein junger Koch, der die kulinarische Vielfalt Berlins erkunden wollte.",
+                  "englishText": "Max was a young chef who wanted to explore the culinary diversity of Berlin."
+                },
+                {
+                  "germanText": "Nach Jahren in traditionellen Restaurantküchen sehnte er sich nach neuen Inspirationen.",
+                  "englishText": "After years in traditional restaurant kitchens, he longed for new inspirations."
+                },
+                {
+                  "germanText": "Er hatte gehört, dass Berlin für seine internationalen Streetfood-Märkte berühmt war.",
+                  "englishText": "He had heard that Berlin was famous for its international street food markets."
+                },
+                {
+                  "germanText": "Sein Reiseplan war simpel: Verschiedene Märkte und Straßenecken der Stadt erkunden.",
+                  "englishText": "His travel plan was simple: explore various markets and street corners of the city."
+                },
+                {
+                  "germanText": "Sein erster Stopp war der Markthalle Neun in Kreuzberg, ein kulinarischer Hotspot.",
+                  "englishText": "His first stop was Markthalle Neun in Kreuzberg, a culinary hotspot."
+                },
+                {
+                  "germanText": "Die Halle war voller Gerüche und Klänge aus aller Welt. Sprachen mischten sich zwischen Verkaufsrufen.",
+                  "englishText": "The hall was full of smells and sounds from all over the world. Languages mixed between sales calls."
+                },
+                {
+                  "germanText": "Max probierte türkische Gözleme, vietnamesische Banh Mi und deutsche Currywurst.",
+                  "englishText": "Max tried Turkish gözleme, Vietnamese banh mi, and German currywurst."
+                },
+                {
+                  "germanText": "Bei jedem Gericht notierte er sich Zutaten und Zubereitungstechniken in seinem kleinen Notizbuch.",
+                  "englishText": "For each dish, he noted ingredients and preparation techniques in his small notebook."
+                },
+                {
+                  "germanText": "Ein alter türkischer Koch bemerkte sein Interesse und begann, ihmGeheimnisse seiner Küche zu verraten.",
+                  "englishText": "An old Turkish chef noticed his interest and began to reveal secrets of his cuisine."
+                },
+                {
+                  "germanText": "Am Abend besuchte Max den Street Food Thursday im Markthalle Neun, wo Köche aus aller Welt kochten.",
+                  "englishText": "In the evening, Max visited Street Food Thursday at Markthalle Neun, where chefs from all over the world cooked."
+                },
+                {
+                  "germanText": "Er lernte mehr über Fusion-Küche, lokale Zutaten und die Geschichten hinter den Gerichten.",
+                  "englishText": "He learned more about fusion cuisine, local ingredients, and the stories behind the dishes."
+                },
+                {
+                  "germanText": "Seine Reise durch Berlins Streetfood-Szene veränderte seine Sicht auf Kochen komplett.",
+                  "englishText": "His journey through Berlin's street food scene completely changed his view of cooking."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wo beginnt Max seine kulinarische Reise?",
+                  "options": [
+                    "In einem Restaurant",
+                    "Auf einem Bauernhof",
+                    "In der Markthalle Neun",
+                    "An einem Strandstand"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Welche Gerichte probiert Max?",
+                  "options": [
+                    "Pizza und Pasta",
+                    "Sushi und Ramen",
+                    "Gözleme, Banh Mi und Currywurst",
+                    "Hamburger und Pommes"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was macht Max während seiner kulinarischen Reise?",
+                  "options": [
+                    "Er macht nur Fotos",
+                    "Er notiert Zutaten und Techniken",
+                    "Er schläft die ganze Zeit",
+                    "Er verkauft Essen"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Travel",
+          "categoryDescription": "Geschichten über Reisen, Ausflüge und Abenteuer in Deutschland und anderen Ländern.",
+          "stories": [
+            {
+              "title": "Wanderung im Schwarzwald",
+              "description": "Eine Geschichte über eine Wanderung im berühmten Schwarzwald. Perfekt für Anfänger, um Natur- und Reisevokabular zu lernen.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_hiking.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Familie Müller plant eine Wanderung im Schwarzwald.",
+                  "englishText": "The Müller family is planning a hike in the Black Forest."
+                },
+                {
+                  "germanText": "Der Schwarzwald ist ein beliebtes Reiseziel in Süddeutschland.",
+                  "englishText": "The Black Forest is a popular destination in southern Germany."
+                },
+                {
+                  "germanText": "Sie packen Wanderschuhe, Regenjacken und einen Kompass ein.",
+                  "englishText": "They pack hiking boots, rain jackets, and a compass."
+                },
+                {
+                  "germanText": "Herr Müller studiert die Wanderkarte und plant die Route.",
+                  "englishText": "Mr. Müller studies the hiking map and plans the route."
+                },
+                {
+                  "germanText": "Am Samstagmorgen fahren sie mit dem Auto zum Startpunkt.",
+                  "englishText": "On Saturday morning, they drive to the starting point."
+                },
+                {
+                  "germanText": "Der Weg beginnt an einem kleinen Parkplatz neben einem Bach.",
+                  "englishText": "The path begins at a small parking lot next to a stream."
+                },
+                {
+                  "germanText": "Zuerst geht es durch einen dichten Tannenwald bergauf.",
+                  "englishText": "First, they go uphill through a dense pine forest."
+                },
+                {
+                  "germanText": "Die Luft riecht frisch nach Nadelbäumen und Moos.",
+                  "englishText": "The air smells fresh of conifers and moss."
+                },
+                {
+                  "germanText": "Nach einer Stunde erreichen sie eine Lichtung mit wunderschöner Aussicht.",
+                  "englishText": "After an hour, they reach a clearing with a beautiful view."
+                },
+                {
+                  "germanText": "Sie machen eine Pause und trinken Wasser aus ihren Flaschen.",
+                  "englishText": "They take a break and drink water from their bottles."
+                },
+                {
+                  "germanText": "Die Kinder entdecken Walderdbeeren und sammeln einige.",
+                  "englishText": "The children discover wild strawberries and collect some."
+                },
+                {
+                  "germanText": "Der Weg führt weiter über einen schmalen Pfad am Berghang entlang.",
+                  "englishText": "The path continues along a narrow trail on the mountainside."
+                },
+                {
+                  "germanText": "Manchmal sehen sie Rehe oder Eichhörnchen zwischen den Bäumen.",
+                  "englishText": "Sometimes they see deer or squirrels between the trees."
+                },
+                {
+                  "germanText": "Am höchsten Punkt ihrer Wanderung steht ein alter Aussichtsturm.",
+                  "englishText": "At the highest point of their hike stands an old observation tower."
+                },
+                {
+                  "germanText": "Sie steigen die Treppen hinauf und genießen den Panoramablick.",
+                  "englishText": "They climb the stairs and enjoy the panoramic view."
+                },
+                {
+                  "germanText": "Von hier aus können sie Dörfer, Wälder und Berge sehen.",
+                  "englishText": "From here they can see villages, forests, and mountains."
+                },
+                {
+                  "germanText": "Mittags machen sie ein Picknick auf einer Wiese neben dem Turm.",
+                  "englishText": "At noon, they have a picnic on a meadow next to the tower."
+                },
+                {
+                  "germanText": "Sie essen Brote mit Käse und Wurst und die gesammelten Walderdbeeren.",
+                  "englishText": "They eat bread with cheese and sausage and the collected wild strawberries."
+                },
+                {
+                  "germanText": "Der Rückweg führt an einem kleinen Wasserfall vorbei.",
+                  "englishText": "The way back leads past a small waterfall."
+                },
+                {
+                  "germanText": "Die Kinder spielen kurz im kühlen Wasser.",
+                  "englishText": "The children play briefly in the cool water."
+                },
+                {
+                  "germanText": "Gegen Abend kommen sie müde, aber glücklich zum Auto zurück.",
+                  "englishText": "Towards evening, they return to the car tired but happy."
+                },
+                {
+                  "germanText": "Diese Wanderung im Schwarzwald war ein wunderbares Abenteuer.",
+                  "englishText": "This hike in the Black Forest was a wonderful adventure."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wo wandert die Familie Müller?",
+                  "options": [
+                    "Im Schwarzwald",
+                    "In den Alpen",
+                    "Am Strand",
+                    "In der Stadt"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Was sammeln die Kinder während der Wanderung?",
+                  "options": [
+                    "Pilze",
+                    "Walderdbeeren",
+                    "Steine",
+                    "Blumen"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was steht am höchsten Punkt der Wanderung?",
+                  "options": [
+                    "Ein Restaurant",
+                    "Eine Kirche",
+                    "Ein Aussichtsturm",
+                    "Eine Höhle"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Woran führt der Rückweg vorbei?",
+                  "options": [
+                    "Einem See",
+                    "Einem Wasserfall",
+                    "Einer Brücke",
+                    "Einem Dorf"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wann kehrt die Familie zum Auto zurück?",
+                  "options": [
+                    "Am Mittag",
+                    "Am Nachmittag",
+                    "Gegen Abend",
+                    "In der Nacht"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            },
+            {
+              "title": "Städtereise nach Berlin",
+              "description": "Eine Geschichte über einen Wochenendausflug in die deutsche Hauptstadt. Ideal zum Erlernen von Stadtvokabular und kulturellen Begriffen.",
+              "level": "Beginner",
+              "duration": "6 min",
+              "image": "assets/images/story_berlin.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Markus besucht zum ersten Mal Berlin für ein langes Wochenende.",
+                  "englishText": "Markus visits Berlin for the first time for a long weekend."
+                },
+                {
+                  "germanText": "Er kommt mit dem Zug am Hauptbahnhof an.",
+                  "englishText": "He arrives by train at the main station."
+                },
+                {
+                  "germanText": "Der Hauptbahnhof ist groß, modern und voller Menschen.",
+                  "englishText": "The main station is large, modern, and full of people."
+                },
+                {
+                  "germanText": "Markus nimmt die U-Bahn zu seinem Hotel im Stadtteil Mitte.",
+                  "englishText": "Markus takes the subway to his hotel in the Mitte district."
+                },
+                {
+                  "germanText": "Das öffentliche Verkehrssystem in Berlin ist sehr gut.",
+                  "englishText": "The public transportation system in Berlin is very good."
+                },
+                {
+                  "germanText": "Nach dem Einchecken im Hotel geht er sofort los, um die Stadt zu erkunden.",
+                  "englishText": "After checking in at the hotel, he immediately sets off to explore the city."
+                },
+                {
+                  "germanText": "Zuerst besucht er das Brandenburger Tor, ein berühmtes Wahrzeichen.",
+                  "englishText": "First, he visits the Brandenburg Gate, a famous landmark."
+                },
+                {
+                  "germanText": "Viele Touristen machen Fotos vor dem historischen Monument.",
+                  "englishText": "Many tourists take photos in front of the historical monument."
+                },
+                {
+                  "germanText": "Danach geht er zum Reichstagsgebäude mit seiner beeindruckenden Glaskuppel.",
+                  "englishText": "Afterwards, he goes to the Reichstag building with its impressive glass dome."
+                },
+                {
+                  "germanText": "Er hat vorher online eine kostenlose Tour reserviert.",
+                  "englishText": "He has previously reserved a free tour online."
+                },
+                {
+                  "germanText": "Von der Kuppel aus hat er einen wunderbaren Blick über die ganze Stadt.",
+                  "englishText": "From the dome, he has a wonderful view over the entire city."
+                },
+                {
+                  "germanText": "Am Nachmittag besucht er die Museumsinsel mit ihren berühmten Galerien.",
+                  "englishText": "In the afternoon, he visits Museum Island with its famous galleries."
+                },
+                {
+                  "germanText": "Im Pergamonmuseum bewundert er antike Architektur und Kunstwerke.",
+                  "englishText": "In the Pergamon Museum, he admires ancient architecture and artworks."
+                },
+                {
+                  "germanText": "Am Abend geht er nach Kreuzberg, ein Viertel bekannt für gutes Essen und Nachtleben.",
+                  "englishText": "In the evening, he goes to Kreuzberg, a neighborhood known for good food and nightlife."
+                },
+                {
+                  "germanText": "Er isst in einem kleinen, gemütlichen Restaurant türkische Spezialitäten.",
+                  "englishText": "He eats Turkish specialties in a small, cozy restaurant."
+                },
+                {
+                  "germanText": "Am nächsten Tag mietet er ein Fahrrad, um die Stadt zu erkunden.",
+                  "englishText": "The next day, he rents a bicycle to explore the city."
+                },
+                {
+                  "germanText": "Berlin hat viele Fahrradwege und ist eine fahrradfreundliche Stadt.",
+                  "englishText": "Berlin has many bike lanes and is a bicycle-friendly city."
+                },
+                {
+                  "germanText": "Er fährt entlang der East Side Gallery, einem Teil der alten Berliner Mauer.",
+                  "englishText": "He rides along the East Side Gallery, a section of the old Berlin Wall."
+                },
+                {
+                  "germanText": "Die Mauer ist mit bunten Kunstwerken und Graffiti bemalt.",
+                  "englishText": "The wall is painted with colorful artwork and graffiti."
+                },
+                {
+                  "germanText": "Am Sonntag besucht er den Flohmarkt im Mauerpark.",
+                  "englishText": "On Sunday, he visits the flea market in Mauerpark."
+                },
+                {
+                  "germanText": "Dort findet er viele interessante Souvenirs und hört Straßenmusiker.",
+                  "englishText": "There he finds many interesting souvenirs and listens to street musicians."
+                },
+                {
+                  "germanText": "Bevor er abreist, probiert er noch eine echte Berliner Currywurst.",
+                  "englishText": "Before he leaves, he tries a real Berlin currywurst."
+                },
+                {
+                  "germanText": "Markus findet, dass Berlin eine faszinierende Stadt mit reicher Geschichte und Kultur ist.",
+                  "englishText": "Markus finds that Berlin is a fascinating city with rich history and culture."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wie reist Markus nach Berlin?",
+                  "options": [
+                    "Mit dem Auto",
+                    "Mit dem Flugzeug",
+                    "Mit dem Zug",
+                    "Mit dem Bus"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was besucht Markus zuerst in Berlin?",
+                  "options": [
+                    "Die Museumsinsel",
+                    "Das Brandenburger Tor",
+                    "Den Flohmarkt",
+                    "Das Pergamonmuseum"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Womit erkundet Markus die Stadt am zweiten Tag?",
+                  "options": [
+                    "Mit einem Fahrrad",
+                    "Mit dem Bus",
+                    "Zu Fuß",
+                    "Mit einem Touristenboot"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Welche Spezialität probiert Markus vor seiner Abreise?",
+                  "options": [
+                    "Berliner Pfannkuchen",
+                    "Sauerkraut",
+                    "Currywurst",
+                    "Brezel"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was ist die East Side Gallery?",
+                  "options": [
+                    "Ein Kunstmuseum",
+                    "Ein Einkaufszentrum",
+                    "Ein Teil der alten Berliner Mauer",
+                    "Eine Konzerthalle"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Food",
+          "categoryDescription": "Geschichten über deutsche Essgewohnheiten, Restaurants, Cafés und traditionelle Gerichte.",
+          "stories": [
+            {
+              "title": "Ein Besuch auf dem Wochenmarkt",
+              "description": "Eine Geschichte über den traditionellen deutschen Wochenmarkt. Ideal zum Erlernen von Lebensmittelvokabular und Einkaufsausdrücken.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_market.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Jeden Samstag findet in der Innenstadt ein großer Wochenmarkt statt.",
+                  "englishText": "Every Saturday, a large weekly market takes place in the city center."
+                },
+                {
+                  "germanText": "Frau Schmidt geht gerne früh am Morgen zum Markt, wenn es noch nicht so voll ist.",
+                  "englishText": "Mrs. Schmidt likes to go to the market early in the morning when it's not so crowded yet."
+                },
+                {
+                  "germanText": "Sie nimmt immer ihre eigenen Taschen und Körbe mit.",
+                  "englishText": "She always brings her own bags and baskets."
+                },
+                {
+                  "germanText": "Der Markt hat viele verschiedene Stände mit frischen Produkten.",
+                  "englishText": "The market has many different stalls with fresh products."
+                },
+                {
+                  "germanText": "Zuerst geht Frau Schmidt zum Bäckerstand.",
+                  "englishText": "First, Mrs. Schmidt goes to the baker's stall."
+                },
+                {
+                  "germanText": "Dort kauft sie frisches Brot und ein paar süße Brötchen zum Frühstück.",
+                  "englishText": "There she buys fresh bread and a few sweet rolls for breakfast."
+                },
+                {
+                  "germanText": "Der Bäcker begrüßt sie freundlich und gibt ihr eine Brotprobe zum Probieren.",
+                  "englishText": "The baker greets her kindly and gives her a bread sample to try."
+                },
+                {
+                  "germanText": "Als nächstes besucht sie den Gemüsestand.",
+                  "englishText": "Next, she visits the vegetable stand."
+                },
+                {
+                  "germanText": "Hier gibt es regionales und saisonales Gemüse aus der Umgebung.",
+                  "englishText": "Here there are regional and seasonal vegetables from the surrounding area."
+                },
+                {
+                  "germanText": "Frau Schmidt wählt Kartoffeln, Karotten, Zwiebeln und frischen Spinat aus.",
+                  "englishText": "Mrs. Schmidt selects potatoes, carrots, onions, and fresh spinach."
+                },
+                {
+                  "germanText": "Die Verkäuferin wiegt das Gemüse und nennt den Preis.",
+                  "englishText": "The saleswoman weighs the vegetables and states the price."
+                },
+                {
+                  "germanText": "Dann geht Frau Schmidt zum Obststand, der voller bunter Früchte ist.",
+                  "englishText": "Then Mrs. Schmidt goes to the fruit stand, which is full of colorful fruits."
+                },
+                {
+                  "germanText": "Sie kauft Äpfel, Birnen und Erdbeeren für einen Obstsalat.",
+                  "englishText": "She buys apples, pears, and strawberries for a fruit salad."
+                },
+                {
+                  "germanText": "Der Verkäufer gibt ihr eine reife Erdbeere zum Probieren.",
+                  "englishText": "The vendor gives her a ripe strawberry to try."
+                },
+                {
+                  "germanText": "Sie schmeckt süß und saftig.",
+                  "englishText": "It tastes sweet and juicy."
+                },
+                {
+                  "germanText": "Am Käsestand probiert sie verschiedene Käsesorten.",
+                  "englishText": "At the cheese stand, she tries different types of cheese."
+                },
+                {
+                  "germanText": "Sie entscheidet sich für einen milden Gouda und einen würzigen Bergkäse.",
+                  "englishText": "She decides on a mild Gouda and a spicy mountain cheese."
+                },
+                {
+                  "germanText": "Der Fleischer hat heute frische Bratwürste und Schinken im Angebot.",
+                  "englishText": "The butcher has fresh bratwurst and ham on offer today."
+                },
+                {
+                  "germanText": "Frau Schmidt kauft Würste für das Abendessen am Sonntag.",
+                  "englishText": "Mrs. Schmidt buys sausages for Sunday dinner."
+                },
+                {
+                  "germanText": "Zum Schluss besucht sie den Blumenstand und kauft einen bunten Blumenstrauß.",
+                  "englishText": "Finally, she visits the flower stand and buys a colorful bouquet."
+                },
+                {
+                  "germanText": "Bevor sie nach Hause geht, trinkt sie noch einen Kaffee am Marktcafé.",
+                  "englishText": "Before going home, she has a coffee at the market café."
+                },
+                {
+                  "germanText": "Sie genießt die lebendige Atmosphäre und beobachtet die anderen Marktbesucher.",
+                  "englishText": "She enjoys the lively atmosphere and observes the other market visitors."
+                },
+                {
+                  "germanText": "Der Wochenmarkt ist nicht nur zum Einkaufen da, sondern auch ein sozialer Treffpunkt.",
+                  "englishText": "The weekly market is not just for shopping, but also a social meeting point."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wann findet der Wochenmarkt statt?",
+                  "options": [
+                    "Jeden Sonntag",
+                    "Jeden Samstag",
+                    "Jeden Mittwoch",
+                    "Jeden Freitag"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wohin geht Frau Schmidt zuerst?",
+                  "options": [
+                    "Zum Bäckerstand",
+                    "Zum Gemüsestand",
+                    "Zum Obststand",
+                    "Zum Käsestand"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Was kauft Frau Schmidt für einen Obstsalat?",
+                  "options": [
+                    "Orangen, Bananen und Weintrauben",
+                    "Kirschen, Melonen und Beeren",
+                    "Äpfel, Birnen und Erdbeeren",
+                    "Pfirsiche, Ananas und Kiwis"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Welche Käsesorten kauft Frau Schmidt?",
+                  "options": [
+                    "Camembert und Blauschimmelkäse",
+                    "Gouda und Bergkäse",
+                    "Mozzarella und Parmesan",
+                    "Feta und Ricotta"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was macht Frau Schmidt, bevor sie nach Hause geht?",
+                  "options": [
+                    "Sie isst ein Eis",
+                    "Sie kauft eine Zeitung",
+                    "Sie trinkt einen Kaffee",
+                    "Sie besucht eine Freundin"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Culture",
+          "categoryDescription": "Geschichten über deutsche Feste, Bräuche, kulturelle Ereignisse und Alltagsgewohnheiten.",
+          "stories": [
+            {
+              "title": "Weihnachten in Deutschland",
+              "description": "Eine Geschichte über traditionelle Weihnachtsbräuche in Deutschland. Perfekt zum Erlernen von festlichem Vokabular und kulturellen Traditionen.",
+              "level": "Beginner",
+              "duration": "6 min",
+              "image": "assets/images/story_christmas.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Die Weihnachtszeit in Deutschland beginnt mit dem ersten Advent, vier Sonntage vor Weihnachten.",
+                  "englishText": "The Christmas season in Germany begins with the first Advent, four Sundays before Christmas."
+                },
+                {
+                  "germanText": "Familie Wagner bereitet sich auf das Fest vor und schmückt das Haus.",
+                  "englishText": "The Wagner family prepares for the holiday and decorates the house."
+                },
+                {
+                  "germanText": "Frau Wagner stellt einen Adventskranz mit vier roten Kerzen auf den Tisch.",
+                  "englishText": "Mrs. Wagner puts an Advent wreath with four red candles on the table."
+                },
+                {
+                  "germanText": "Jeden Adventssonntag zünden sie eine weitere Kerze an.",
+                  "englishText": "Every Advent Sunday, they light one more candle."
+                },
+                {
+                  "germanText": "Die Kinder haben einen Adventskalender mit kleinen Überraschungen.",
+                  "englishText": "The children have an Advent calendar with small surprises."
+                },
+                {
+                  "germanText": "Jeden Morgen im Dezember öffnen sie ein Türchen und finden Schokolade oder kleine Geschenke.",
+                  "englishText": "Every morning in December, they open a little door and find chocolate or small gifts."
+                },
+                {
+                  "germanText": "Am 6. Dezember ist Nikolaustag, ein besonderer Tag für Kinder.",
+                  "englishText": "December 6th is St. Nicholas Day, a special day for children."
+                },
+                {
+                  "germanText": "Am Vorabend stellen die Kinder ihre Stiefel vor die Tür.",
+                  "englishText": "The evening before, the children put their boots in front of the door."
+                },
+                {
+                  "germanText": "In der Nacht füllt der Nikolaus die Stiefel mit Nüssen, Mandarinen und Süßigkeiten.",
+                  "englishText": "During the night, St. Nicholas fills the boots with nuts, mandarins, and sweets."
+                },
+                {
+                  "germanText": "In den Wochen vor Weihnachten besucht die Familie einen Weihnachtsmarkt.",
+                  "englishText": "In the weeks before Christmas, the family visits a Christmas market."
+                },
+                {
+                  "germanText": "Dort gibt es Stände mit Handwerk, Essen und warmem Glühwein.",
+                  "englishText": "There are stalls with crafts, food, and warm mulled wine."
+                },
+                {
+                  "germanText": "Die Kinder fahren Karussell und probieren gebrannte Mandeln.",
+                  "englishText": "The children ride the carousel and try candied almonds."
+                },
+                {
+                  "germanText": "Zu Hause backt Frau Wagner traditionelle Plätzchen wie Vanillekipferl und Lebkuchen.",
+                  "englishText": "At home, Mrs. Wagner bakes traditional cookies like vanilla crescents and gingerbread."
+                },
+                {
+                  "germanText": "Die ganze Familie hilft beim Ausstechen und Verzieren der Plätzchen.",
+                  "englishText": "The whole family helps with cutting out and decorating the cookies."
+                },
+                {
+                  "germanText": "Ein wichtiger Teil der Vorbereitung ist das Aussuchen und Schmücken des Weihnachtsbaums.",
+                  "englishText": "An important part of the preparation is selecting and decorating the Christmas tree."
+                },
+                {
+                  "germanText": "Herr Wagner und die Kinder holen am 23. Dezember eine Tanne vom Weihnachtsbaumverkäufer.",
+                  "englishText": "Mr. Wagner and the children get a fir tree from the Christmas tree seller on December 23rd."
+                },
+                {
+                  "germanText": "Sie schmücken den Baum mit Kugeln, Sternen, Lametta und echten Kerzen.",
+                  "englishText": "They decorate the tree with baubles, stars, tinsel, and real candles."
+                },
+                {
+                  "germanText": "In Deutschland wird Weihnachten hauptsächlich am Heiligabend, dem 24. Dezember, gefeiert.",
+                  "englishText": "In Germany, Christmas is mainly celebrated on Christmas Eve, December 24th."
+                },
+                {
+                  "germanText": "Am Nachmittag gehen viele Familien in die Kirche zur Christmette.",
+                  "englishText": "In the afternoon, many families go to church for Christmas mass."
+                },
+                {
+                  "germanText": "Das traditionelle Weihnachtsessen bei Familie Wagner ist Kartoffelsalat mit Würstchen.",
+                  "englishText": "The traditional Christmas dinner at the Wagner family is potato salad with sausages."
+                },
+                {
+                  "germanText": "Nach dem Essen läuten Glöckchen, und die Kinder dürfen ins Wohnzimmer kommen.",
+                  "englishText": "After dinner, bells ring, and the children may come into the living room."
+                },
+                {
+                  "germanText": "Dort steht der leuchtende Weihnachtsbaum mit Geschenken darunter.",
+                  "englishText": "There stands the illuminated Christmas tree with gifts underneath."
+                },
+                {
+                  "germanText": "Die Familie singt Weihnachtslieder wie 'Stille Nacht' und 'O Tannenbaum'.",
+                  "englishText": "The family sings Christmas carols like 'Silent Night' and 'O Christmas Tree'."
+                },
+                {
+                  "germanText": "Dann werden die Geschenke ausgepackt und der Abend wird gemütlich mit der Familie verbracht.",
+                  "englishText": "Then the presents are unwrapped, and the evening is spent cozily with the family."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Womit beginnt die Weihnachtszeit in Deutschland?",
+                  "options": [
+                    "Mit Nikolaustag",
+                    "Mit dem ersten Advent",
+                    "Mit dem Weihnachtsmarkt",
+                    "Mit dem Backen von Plätzchen"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was stellen die Kinder am Vorabend des Nikolaustags vor die Tür?",
+                  "options": [
+                    "Teller",
+                    "Schuhe",
+                    "Stiefel",
+                    "Socken"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wann holt Familie Wagner den Weihnachtsbaum?",
+                  "options": [
+                    "Am 1. Dezember",
+                    "Am 6. Dezember",
+                    "Am 23. Dezember",
+                    "Am 24. Dezember"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was ist das traditionelle Weihnachtsessen bei Familie Wagner?",
+                  "options": [
+                    "Gänsebraten mit Rotkohl",
+                    "Kartoffelsalat mit Würstchen",
+                    "Karpfen mit Kartoffeln",
+                    "Ente mit Knödeln"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wann wird Weihnachten in Deutschland hauptsächlich gefeiert?",
+                  "options": [
+                    "Am 24. Dezember (Heiligabend)",
+                    "Am 25. Dezember",
+                    "Am 26. Dezember",
+                    "Am 1. Januar"
+                  ],
+                  "correctAnswer": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Work",
+          "categoryDescription": "Geschichten über verschiedene Berufe, Arbeitsalltag und berufliche Herausforderungen in Deutschland.",
+          "stories": [
+            {
+              "title": "Ein Tag im Büro",
+              "description": "Eine Geschichte über einen typischen Arbeitstag in einem deutschen Büro. Ideal zum Erlernen von Geschäftsvokabular und Arbeitsroutinen.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_office.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Herr Becker arbeitet als Marketingmanager bei einer Firma in München.",
+                  "englishText": "Mr. Becker works as a marketing manager at a company in Munich."
+                },
+                {
+                  "germanText": "Sein Arbeitstag beginnt um 8:30 Uhr morgens.",
+                  "englishText": "His workday begins at 8:30 in the morning."
+                },
+                {
+                  "germanText": "Er fährt mit der U-Bahn zur Arbeit und liest dabei die Nachrichten auf seinem Smartphone.",
+                  "englishText": "He takes the subway to work and reads the news on his smartphone."
+                },
+                {
+                  "germanText": "Im Büro angekommen, begrüßt er seine Kollegen freundlich.",
+                  "englishText": "Arriving at the office, he greets his colleagues kindly."
+                },
+                {
+                  "germanText": "Zuerst macht er sich eine Tasse Kaffee in der Küche.",
+                  "englishText": "First, he makes himself a cup of coffee in the kitchen."
+                },
+                {
+                  "germanText": "Dann schaltet er seinen Computer ein und überprüft seine E-Mails.",
+                  "englishText": "Then he turns on his computer and checks his emails."
+                },
+                {
+                  "germanText": "Er hat heute viele wichtige E-Mails bekommen und beantwortet sie sofort.",
+                  "englishText": "He has received many important emails today and answers them immediately."
+                },
+                {
+                  "germanText": "Um 9:30 Uhr hat er ein Meeting mit seinem Team im Konferenzraum.",
+                  "englishText": "At 9:30, he has a meeting with his team in the conference room."
+                },
+                {
+                  "germanText": "In dem Meeting besprechen sie die aktuelle Marketingkampagne.",
+                  "englishText": "In the meeting, they discuss the current marketing campaign."
+                },
+                {
+                  "germanText": "Herr Becker präsentiert die neuesten Ergebnisse mit einer PowerPoint-Präsentation.",
+                  "englishText": "Mr. Becker presents the latest results with a PowerPoint presentation."
+                },
+                {
+                  "germanText": "Seine Kollegen stellen Fragen und machen Vorschläge.",
+                  "englishText": "His colleagues ask questions and make suggestions."
+                },
+                {
+                  "germanText": "Nach dem Meeting arbeitet er an einem Bericht für seinen Chef.",
+                  "englishText": "After the meeting, he works on a report for his boss."
+                },
+                {
+                  "germanText": "Um 12:30 Uhr macht er Mittagspause und geht mit Kollegen in die Kantine.",
+                  "englishText": "At 12:30, he takes a lunch break and goes to the cafeteria with colleagues."
+                },
+                {
+                  "germanText": "Das Essen in der Kantine ist gut und nicht zu teuer.",
+                  "englishText": "The food in the cafeteria is good and not too expensive."
+                },
+                {
+                  "germanText": "Nach dem Mittagessen hat er einen Anruf mit einem wichtigen Kunden.",
+                  "englishText": "After lunch, he has a call with an important client."
+                },
+                {
+                  "germanText": "Der Kunde ist mit der Marketingstrategie sehr zufrieden.",
+                  "englishText": "The client is very satisfied with the marketing strategy."
+                },
+                {
+                  "germanText": "Am Nachmittag arbeitet Herr Becker an einem neuen Projekt.",
+                  "englishText": "In the afternoon, Mr. Becker works on a new project."
+                },
+                {
+                  "germanText": "Er erstellt einen Plan und bereitet eine Präsentation vor.",
+                  "englishText": "He creates a plan and prepares a presentation."
+                },
+                {
+                  "germanText": "Um 16:00 Uhr hat er noch ein kurzes Gespräch mit seinem Chef.",
+                  "englishText": "At 4:00 pm, he has a brief talk with his boss."
+                },
+                {
+                  "germanText": "Der Chef lobt seine Arbeit und gibt ihm Feedback für das neue Projekt.",
+                  "englishText": "The boss praises his work and gives him feedback for the new project."
+                },
+                {
+                  "germanText": "Herr Becker beendet seinen Arbeitstag gegen 17:30 Uhr.",
+                  "englishText": "Mr. Becker finishes his workday around 5:30 pm."
+                },
+                {
+                  "germanText": "Bevor er geht, plant er noch seine Aufgaben für den nächsten Tag.",
+                  "englishText": "Before leaving, he plans his tasks for the next day."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was ist Herr Beckers Beruf?",
+                  "options": [
+                    "Arzt",
+                    "Lehrer",
+                    "Marketingmanager",
+                    "Kellner"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wie kommt Herr Becker zur Arbeit?",
+                  "options": [
+                    "Mit dem Auto",
+                    "Mit dem Fahrrad",
+                    "Mit der U-Bahn",
+                    "Zu Fuß"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was macht Herr Becker zuerst im Büro?",
+                  "options": [
+                    "Er trinkt Kaffee",
+                    "Er telefoniert mit einem Kunden",
+                    "Er hat ein Meeting",
+                    "Er spricht mit seinem Chef"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Wo isst Herr Becker zu Mittag?",
+                  "options": [
+                    "In einem Restaurant",
+                    "In der Kantine",
+                    "Zu Hause",
+                    "Am Schreibtisch"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wann beendet Herr Becker seinen Arbeitstag?",
+                  "options": [
+                    "Um 16:00 Uhr",
+                    "Um 17:30 Uhr",
+                    "Um 18:00 Uhr",
+                    "Um 19:00 Uhr"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            },
+            {
+              "title": "Im Krankenhaus",
+              "description": "Eine Geschichte über den Arbeitsalltag einer Krankenschwester. Perfekt zum Erlernen von medizinischem Vokabular und Gesprächen über Gesundheit.",
+              "level": "Beginner",
+              "duration": "6 min",
+              "image": "assets/images/story_hospital.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Frau Meyer arbeitet als Krankenschwester im Städtischen Krankenhaus.",
+                  "englishText": "Mrs. Meyer works as a nurse at the City Hospital."
+                },
+                {
+                  "germanText": "Sie arbeitet heute in der Frühschicht von 6:00 Uhr bis 14:00 Uhr.",
+                  "englishText": "Today she works the early shift from 6:00 am to 2:00 pm."
+                },
+                {
+                  "germanText": "Um 5:30 Uhr klingelt ihr Wecker, und sie steht schnell auf.",
+                  "englishText": "At 5:30 am her alarm clock rings, and she gets up quickly."
+                },
+                {
+                  "germanText": "Nach einer schnellen Dusche zieht sie ihre weiße Uniform an.",
+                  "englishText": "After a quick shower, she puts on her white uniform."
+                },
+                {
+                  "germanText": "Sie fährt mit dem Fahrrad zum Krankenhaus, auch im Winter.",
+                  "englishText": "She cycles to the hospital, even in winter."
+                },
+                {
+                  "germanText": "Im Krankenhaus geht sie zuerst in den Umkleideraum.",
+                  "englishText": "At the hospital, she first goes to the changing room."
+                },
+                {
+                  "germanText": "Dort trifft sie ihre Kollegin Anna, und sie unterhalten sich kurz.",
+                  "englishText": "There she meets her colleague Anna, and they chat briefly."
+                },
+                {
+                  "germanText": "Um 6:00 Uhr beginnt die Übergabe mit der Nachtschicht.",
+                  "englishText": "At 6:00 am, the handover with the night shift begins."
+                },
+                {
+                  "germanText": "Die Nachtschwester berichtet über alle Patienten und wichtige Ereignisse.",
+                  "englishText": "The night nurse reports on all patients and important events."
+                },
+                {
+                  "germanText": "Frau Meyer ist heute für zehn Patienten auf der inneren Station verantwortlich.",
+                  "englishText": "Today, Mrs. Meyer is responsible for ten patients in the internal medicine ward."
+                },
+                {
+                  "germanText": "Ihre erste Aufgabe ist es, den Patienten Medikamente zu geben und Blutdruck zu messen.",
+                  "englishText": "Her first task is to give medications to patients and measure blood pressure."
+                },
+                {
+                  "germanText": "Sie hilft auch einigen Patienten beim Waschen und Anziehen.",
+                  "englishText": "She also helps some patients with washing and dressing."
+                },
+                {
+                  "germanText": "Um 8:00 Uhr kommt der Arzt zur Visite.",
+                  "englishText": "At 8:00 am, the doctor comes for rounds."
+                },
+                {
+                  "germanText": "Frau Meyer begleitet den Arzt und notiert alle neuen Anweisungen.",
+                  "englishText": "Mrs. Meyer accompanies the doctor and notes all new instructions."
+                },
+                {
+                  "germanText": "Nach der Visite bringt sie einem neuen Patienten das Frühstück.",
+                  "englishText": "After the rounds, she brings breakfast to a new patient."
+                },
+                {
+                  "germanText": "Der Patient hat viele Fragen, und sie nimmt sich Zeit, um alles zu erklären.",
+                  "englishText": "The patient has many questions, and she takes time to explain everything."
+                },
+                {
+                  "germanText": "Um 10:30 Uhr hat sie eine kurze Kaffeepause im Schwesternzimmer.",
+                  "englishText": "At 10:30 am, she has a short coffee break in the nurses' room."
+                },
+                {
+                  "germanText": "Danach wechselt sie Verbände und bereitet Infusionen vor.",
+                  "englishText": "Afterwards, she changes bandages and prepares infusions."
+                },
+                {
+                  "germanText": "Um 12:00 Uhr bringt sie den Patienten das Mittagessen.",
+                  "englishText": "At 12:00 noon, she brings lunch to the patients."
+                },
+                {
+                  "germanText": "Am Nachmittag dokumentiert sie alle Behandlungen im Computersystem.",
+                  "englishText": "In the afternoon, she documents all treatments in the computer system."
+                },
+                {
+                  "germanText": "Um 13:30 Uhr bereitet sie alles für die Spätschicht vor.",
+                  "englishText": "At 1:30 pm, she prepares everything for the late shift."
+                },
+                {
+                  "germanText": "Um 14:00 Uhr übergibt sie an ihre Kollegen und beendet ihren Arbeitstag.",
+                  "englishText": "At 2:00 pm, she hands over to her colleagues and ends her workday."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wann beginnt Frau Meyers Schicht?",
+                  "options": [
+                    "Um 5:30 Uhr",
+                    "Um 6:00 Uhr",
+                    "Um 7:00 Uhr",
+                    "Um 8:00 Uhr"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wie kommt Frau Meyer zum Krankenhaus?",
+                  "options": [
+                    "Mit dem Auto",
+                    "Mit dem Bus",
+                    "Mit dem Fahrrad",
+                    "Zu Fuß"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wie viele Patienten betreut Frau Meyer heute?",
+                  "options": [
+                    "Fünf",
+                    "Acht",
+                    "Zehn",
+                    "Zwölf"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was macht Frau Meyer um 8:00 Uhr?",
+                  "options": [
+                    "Sie frühstückt",
+                    "Sie begleitet den Arzt bei der Visite",
+                    "Sie hat Pause",
+                    "Sie gibt Medikamente"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wann endet Frau Meyers Arbeitstag?",
+                  "options": [
+                    "Um 13:00 Uhr",
+                    "Um 14:00 Uhr",
+                    "Um 15:00 Uhr",
+                    "Um 16:00 Uhr"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Fairy",
+          "categoryDescription": "Vereinfachte deutsche Märchen und fantastische Geschichten für Sprachlernende.",
+          "stories": [
+            {
+              "title": "Der kleine Drache",
+              "description": "Ein modernes Märchen über einen freundlichen Drachen. Perfekt zum Erlernen von einfachem Vokabular und fantastischen Elementen auf Deutsch.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_dragon.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "In einem dunklen Wald lebt ein kleiner grüner Drache namens Felix.",
+                  "englishText": "In a dark forest lives a small green dragon named Felix."
+                },
+                {
+                  "germanText": "Felix ist nicht wie andere Drachen. Er kann kein Feuer spucken.",
+                  "englishText": "Felix is not like other dragons. He cannot breathe fire."
+                },
+                {
+                  "germanText": "Stattdessen kommen bunte Seifenblasen aus seinem Mund.",
+                  "englishText": "Instead, colorful soap bubbles come out of his mouth."
+                },
+                {
+                  "germanText": "Die anderen Drachen lachen oft über ihn.",
+                  "englishText": "The other dragons often laugh at him."
+                },
+                {
+                  "germanText": "Felix ist traurig und fühlt sich einsam.",
+                  "englishText": "Felix is sad and feels lonely."
+                },
+                {
+                  "germanText": "Eines Tages hört er ein kleines Mädchen im Wald weinen.",
+                  "englishText": "One day, he hears a little girl crying in the forest."
+                },
+                {
+                  "germanText": "Das Mädchen heißt Lena und hat sich verlaufen.",
+                  "englishText": "The girl's name is Lena, and she is lost."
+                },
+                {
+                  "germanText": "Felix möchte Lena helfen, aber er hat Angst, dass sie vor ihm erschrickt.",
+                  "englishText": "Felix wants to help Lena, but he is afraid that she will be frightened of him."
+                },
+                {
+                  "germanText": "Schließlich fasst er Mut und geht zu ihr.",
+                  "englishText": "Finally, he musters courage and goes to her."
+                },
+                {
+                  "germanText": "Lena sieht den kleinen Drachen und ist überrascht, aber nicht ängstlich.",
+                  "englishText": "Lena sees the little dragon and is surprised, but not afraid."
+                },
+                {
+                  "germanText": "Felix erklärt, dass er ihr helfen möchte, den Weg nach Hause zu finden.",
+                  "englishText": "Felix explains that he wants to help her find the way home."
+                },
+                {
+                  "germanText": "Lena lächelt und steigt auf seinen Rücken.",
+                  "englishText": "Lena smiles and climbs onto his back."
+                },
+                {
+                  "germanText": "Felix fliegt mit ihr über den Wald.",
+                  "englishText": "Felix flies with her over the forest."
+                },
+                {
+                  "germanText": "Von oben können sie Lenas Haus am Rand des Waldes sehen.",
+                  "englishText": "From above, they can see Lena's house at the edge of the forest."
+                },
+                {
+                  "germanText": "Als sie ankommen, ist Lenas Familie überglücklich.",
+                  "englishText": "When they arrive, Lena's family is overjoyed."
+                },
+                {
+                  "germanText": "Lena erzählt ihnen von dem freundlichen Drachen, der ihr geholfen hat.",
+                  "englishText": "Lena tells them about the friendly dragon who helped her."
+                },
+                {
+                  "germanText": "Die Familie bedankt sich bei Felix und lädt ihn zum Abendessen ein.",
+                  "englishText": "The family thanks Felix and invites him to dinner."
+                },
+                {
+                  "germanText": "Als Nachtisch gibt es Kuchen, und Felix ist so aufgeregt.",
+                  "englishText": "For dessert, there is cake, and Felix is so excited."
+                },
+                {
+                  "germanText": "Plötzlich kommen keine Seifenblasen mehr aus seinem Mund, sondern eine kleine Flamme.",
+                  "englishText": "Suddenly, no more soap bubbles come out of his mouth, but a small flame."
+                },
+                {
+                  "germanText": "Alle sind erstaunt, und Felix ist überglücklich.",
+                  "englishText": "Everyone is amazed, and Felix is overjoyed."
+                },
+                {
+                  "germanText": "Von diesem Tag an besucht Felix Lena oft, und sie werden beste Freunde.",
+                  "englishText": "From that day on, Felix visits Lena often, and they become best friends."
+                },
+                {
+                  "germanText": "Felix lernt, dass seine Seifenblasen genauso wertvoll sind wie Feuer.",
+                  "englishText": "Felix learns that his soap bubbles are just as valuable as fire."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was kann Felix nicht wie andere Drachen?",
+                  "options": [
+                    "Er kann nicht fliegen",
+                    "Er kann nicht sprechen",
+                    "Er kann kein Feuer spucken",
+                    "Er hat keine Flügel"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was kommt aus Felix' Mund statt Feuer?",
+                  "options": [
+                    "Wasser",
+                    "Rauch",
+                    "Seifenblasen",
+                    "Eis"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wen trifft Felix im Wald?",
+                  "options": [
+                    "Einen Wolf",
+                    "Ein Mädchen namens Lena",
+                    "Einen anderen Drachen",
+                    "Einen Jäger"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wie hilft Felix Lena?",
+                  "options": [
+                    "Er gibt ihr etwas zu essen",
+                    "Er zeigt ihr den Weg zu Fuß",
+                    "Er ruft ihre Eltern an",
+                    "Er fliegt mit ihr über den Wald"
+                  ],
+                  "correctAnswer": 3
+                },
+                {
+                  "question": "Was passiert am Ende der Geschichte mit Felix?",
+                  "options": [
+                    "Er lernt Feuer zu spucken",
+                    "Er zieht bei Lena ein",
+                    "Er findet andere Drachen wie er",
+                    "Er verlässt den Wald für immer"
+                  ],
+                  "correctAnswer": 0
+                }
+              ]
+            },
+            {
+              "title": "Der kluge Fuchs",
+              "description": "Eine einfache Fabel über einen schlauen Fuchs und seine Freunde im Wald. Ideal für Anfänger, um Tiernamen und Naturbegriffe zu lernen.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_fox.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Im tiefen Wald lebt ein Fuchs mit rotem Fell und klugen Augen.",
+                  "englishText": "In the deep forest lives a fox with red fur and clever eyes."
+                },
+                {
+                  "germanText": "Sein Name ist Finn, und alle Tiere kennen ihn als den klügsten Fuchs im Wald.",
+                  "englishText": "His name is Finn, and all animals know him as the cleverest fox in the forest."
+                },
+                {
+                  "germanText": "Eines Tages gibt es ein großes Problem: Es hat seit Wochen nicht geregnet.",
+                  "englishText": "One day there is a big problem: it hasn't rained for weeks."
+                },
+                {
+                  "germanText": "Der Bach ist fast ausgetrocknet, und die Tiere haben Durst.",
+                  "englishText": "The stream is almost dried up, and the animals are thirsty."
+                },
+                {
+                  "germanText": "Die Tiere versammeln sich und diskutieren, was sie tun sollen.",
+                  "englishText": "The animals gather and discuss what they should do."
+                },
+                {
+                  "germanText": "Der Bär schlägt vor, einen neuen Bach zu graben, aber das würde zu lange dauern.",
+                  "englishText": "The bear suggests digging a new stream, but that would take too long."
+                },
+                {
+                  "germanText": "Der Hirsch möchte zu einem weit entfernten See wandern, aber viele Tiere sind zu klein dafür.",
+                  "englishText": "The deer wants to walk to a distant lake, but many animals are too small for that."
+                },
+                {
+                  "germanText": "Finn der Fuchs hört allen zu und denkt nach.",
+                  "englishText": "Finn the fox listens to everyone and thinks."
+                },
+                {
+                  "germanText": "Plötzlich hat er eine Idee und sagt: \"Ich kenne eine Lösung!\"",
+                  "englishText": "Suddenly he has an idea and says, \"I know a solution!\""
+                },
+                {
+                  "germanText": "Er erinnert sich an eine Quelle in einer Höhle am Berg.",
+                  "englishText": "He remembers a spring in a cave on the mountain."
+                },
+                {
+                  "germanText": "Die Quelle ist nicht weit entfernt, aber niemand kennt den Weg dorthin.",
+                  "englishText": "The spring is not far away, but nobody knows the way there."
+                },
+                {
+                  "germanText": "Finn sagt: \"Ich werde euch führen, aber wir brauchen Hilfe von allen.\"",
+                  "englishText": "Finn says, \"I will lead you, but we need help from everyone.\""
+                },
+                {
+                  "germanText": "Die kleine Maus kann durch enge Löcher kriechen, um den besten Weg zu finden.",
+                  "englishText": "The little mouse can crawl through tight holes to find the best way."
+                },
+                {
+                  "germanText": "Der starke Bär kann Steine aus dem Weg räumen.",
+                  "englishText": "The strong bear can clear stones out of the way."
+                },
+                {
+                  "germanText": "Die Vögel können von oben den Weg beobachten und warnen, wenn Gefahr droht.",
+                  "englishText": "The birds can observe the path from above and warn if danger threatens."
+                },
+                {
+                  "germanText": "Gemeinsam machen sie sich auf den Weg zur Quelle.",
+                  "englishText": "Together they set off for the spring."
+                },
+                {
+                  "germanText": "Der Weg ist nicht leicht, aber jedes Tier hilft mit seinen besonderen Fähigkeiten.",
+                  "englishText": "The path is not easy, but each animal helps with its special abilities."
+                },
+                {
+                  "germanText": "Nach einigen Stunden erreichen sie die Höhle mit der Quelle.",
+                  "englishText": "After a few hours, they reach the cave with the spring."
+                },
+                {
+                  "germanText": "Das frische, kühle Wasser schmeckt allen Tieren wunderbar.",
+                  "englishText": "The fresh, cool water tastes wonderful to all animals."
+                },
+                {
+                  "germanText": "Der Bär hat eine weitere Idee: Sie können das Wasser in großen Blättern zurück zum Wald tragen.",
+                  "englishText": "The bear has another idea: they can carry the water back to the forest in large leaves."
+                },
+                {
+                  "germanText": "So haben alle Tiere im Wald genug zu trinken, bis es wieder regnet.",
+                  "englishText": "This way, all animals in the forest have enough to drink until it rains again."
+                },
+                {
+                  "germanText": "Alle Tiere danken Finn dem Fuchs für seine Klugheit und seinen Plan.",
+                  "englishText": "All animals thank Finn the fox for his wisdom and his plan."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Warum haben die Tiere ein Problem?",
+                  "options": [
+                    "Es gibt zu viele Jäger im Wald",
+                    "Es hat seit Wochen nicht geregnet",
+                    "Der Winter kommt bald",
+                    "Es gibt zu wenig Nahrung"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was schlägt der Bär zuerst vor?",
+                  "options": [
+                    "Einen neuen Bach zu graben",
+                    "Zu einem See zu wandern",
+                    "In einer Höhle Schutz zu suchen",
+                    "Den Wald zu verlassen"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Wohin führt Finn die Tiere?",
+                  "options": [
+                    "Zu einem Fluss",
+                    "Zu einem anderen Wald",
+                    "Zu einer Quelle in einer Höhle",
+                    "Zu einem Dorf"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wie helfen die Vögel bei der Reise?",
+                  "options": [
+                    "Sie tragen Wasser",
+                    "Sie fliegen voraus",
+                    "Sie singen Lieder",
+                    "Sie beobachten den Weg von oben"
+                  ],
+                  "correctAnswer": 3
+                },
+                {
+                  "question": "Wie bringen die Tiere das Wasser zurück zum Wald?",
+                  "options": [
+                    "In Eimern",
+                    "In großen Blättern",
+                    "In ihren Mäulern",
+                    "Sie leiten es um"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Travel",
+          "categoryDescription": "Geschichten über Reisen, Ausflüge und Abenteuer in Deutschland und anderen Ländern.",
+          "stories": [
+            {
+              "title": "Wanderung im Schwarzwald",
+              "description": "Eine Geschichte über eine Wanderung im berühmten Schwarzwald. Perfekt für Anfänger, um Natur- und Reisevokabular zu lernen.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_hiking.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Familie Müller plant eine Wanderung im Schwarzwald.",
+                  "englishText": "The Müller family is planning a hike in the Black Forest."
+                },
+                {
+                  "germanText": "Der Schwarzwald ist ein beliebtes Reiseziel in Süddeutschland.",
+                  "englishText": "The Black Forest is a popular destination in southern Germany."
+                },
+                {
+                  "germanText": "Sie packen Wanderschuhe, Regenjacken und einen Kompass ein.",
+                  "englishText": "They pack hiking boots, rain jackets, and a compass."
+                },
+                {
+                  "germanText": "Herr Müller studiert die Wanderkarte und plant die Route.",
+                  "englishText": "Mr. Müller studies the hiking map and plans the route."
+                },
+                {
+                  "germanText": "Am Samstagmorgen fahren sie mit dem Auto zum Startpunkt.",
+                  "englishText": "On Saturday morning, they drive to the starting point."
+                },
+                {
+                  "germanText": "Der Weg beginnt an einem kleinen Parkplatz neben einem Bach.",
+                  "englishText": "The path begins at a small parking lot next to a stream."
+                },
+                {
+                  "germanText": "Zuerst geht es durch einen dichten Tannenwald bergauf.",
+                  "englishText": "First, they go uphill through a dense pine forest."
+                },
+                {
+                  "germanText": "Die Luft riecht frisch nach Nadelbäumen und Moos.",
+                  "englishText": "The air smells fresh of conifers and moss."
+                },
+                {
+                  "germanText": "Nach einer Stunde erreichen sie eine Lichtung mit wunderschöner Aussicht.",
+                  "englishText": "After an hour, they reach a clearing with a beautiful view."
+                },
+                {
+                  "germanText": "Sie machen eine Pause und trinken Wasser aus ihren Flaschen.",
+                  "englishText": "They take a break and drink water from their bottles."
+                },
+                {
+                  "germanText": "Die Kinder entdecken Walderdbeeren und sammeln einige.",
+                  "englishText": "The children discover wild strawberries and collect some."
+                },
+                {
+                  "germanText": "Der Weg führt weiter über einen schmalen Pfad am Berghang entlang.",
+                  "englishText": "The path continues along a narrow trail on the mountainside."
+                },
+                {
+                  "germanText": "Manchmal sehen sie Rehe oder Eichhörnchen zwischen den Bäumen.",
+                  "englishText": "Sometimes they see deer or squirrels between the trees."
+                },
+                {
+                  "germanText": "Am höchsten Punkt ihrer Wanderung steht ein alter Aussichtsturm.",
+                  "englishText": "At the highest point of their hike stands an old observation tower."
+                },
+                {
+                  "germanText": "Sie steigen die Treppen hinauf und genießen den Panoramablick.",
+                  "englishText": "They climb the stairs and enjoy the panoramic view."
+                },
+                {
+                  "germanText": "Von hier aus können sie Dörfer, Wälder und Berge sehen.",
+                  "englishText": "From here they can see villages, forests, and mountains."
+                },
+                {
+                  "germanText": "Mittags machen sie ein Picknick auf einer Wiese neben dem Turm.",
+                  "englishText": "At noon, they have a picnic on a meadow next to the tower."
+                },
+                {
+                  "germanText": "Sie essen Brote mit Käse und Wurst und die gesammelten Walderdbeeren.",
+                  "englishText": "They eat bread with cheese and sausage and the collected wild strawberries."
+                },
+                {
+                  "germanText": "Der Rückweg führt an einem kleinen Wasserfall vorbei.",
+                  "englishText": "The way back leads past a small waterfall."
+                },
+                {
+                  "germanText": "Die Kinder spielen kurz im kühlen Wasser.",
+                  "englishText": "The children play briefly in the cool water."
+                },
+                {
+                  "germanText": "Gegen Abend kommen sie müde, aber glücklich zum Auto zurück.",
+                  "englishText": "Towards evening, they return to the car tired but happy."
+                },
+                {
+                  "germanText": "Diese Wanderung im Schwarzwald war ein wunderbares Abenteuer.",
+                  "englishText": "This hike in the Black Forest was a wonderful adventure."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wo wandert die Familie Müller?",
+                  "options": [
+                    "Im Schwarzwald",
+                    "In den Alpen",
+                    "Am Strand",
+                    "In der Stadt"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Was sammeln die Kinder während der Wanderung?",
+                  "options": [
+                    "Pilze",
+                    "Walderdbeeren",
+                    "Steine",
+                    "Blumen"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was steht am höchsten Punkt der Wanderung?",
+                  "options": [
+                    "Ein Restaurant",
+                    "Eine Kirche",
+                    "Ein Aussichtsturm",
+                    "Eine Höhle"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Woran führt der Rückweg vorbei?",
+                  "options": [
+                    "Einem See",
+                    "Einem Wasserfall",
+                    "Einer Brücke",
+                    "Einem Dorf"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wann kehrt die Familie zum Auto zurück?",
+                  "options": [
+                    "Am Mittag",
+                    "Am Nachmittag",
+                    "Gegen Abend",
+                    "In der Nacht"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            },
+            {
+              "title": "Städtereise nach Berlin",
+              "description": "Eine Geschichte über einen Wochenendausflug in die deutsche Hauptstadt. Ideal zum Erlernen von Stadtvokabular und kulturellen Begriffen.",
+              "level": "Beginner",
+              "duration": "6 min",
+              "image": "assets/images/story_berlin.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Markus besucht zum ersten Mal Berlin für ein langes Wochenende.",
+                  "englishText": "Markus visits Berlin for the first time for a long weekend."
+                },
+                {
+                  "germanText": "Er kommt mit dem Zug am Hauptbahnhof an.",
+                  "englishText": "He arrives by train at the main station."
+                },
+                {
+                  "germanText": "Der Hauptbahnhof ist groß, modern und voller Menschen.",
+                  "englishText": "The main station is large, modern, and full of people."
+                },
+                {
+                  "germanText": "Markus nimmt die U-Bahn zu seinem Hotel im Stadtteil Mitte.",
+                  "englishText": "Markus takes the subway to his hotel in the Mitte district."
+                },
+                {
+                  "germanText": "Das öffentliche Verkehrssystem in Berlin ist sehr gut.",
+                  "englishText": "The public transportation system in Berlin is very good."
+                },
+                {
+                  "germanText": "Nach dem Einchecken im Hotel geht er sofort los, um die Stadt zu erkunden.",
+                  "englishText": "After checking in at the hotel, he immediately sets off to explore the city."
+                },
+                {
+                  "germanText": "Zuerst besucht er das Brandenburger Tor, ein berühmtes Wahrzeichen.",
+                  "englishText": "First, he visits the Brandenburg Gate, a famous landmark."
+                },
+                {
+                  "germanText": "Viele Touristen machen Fotos vor dem historischen Monument.",
+                  "englishText": "Many tourists take photos in front of the historical monument."
+                },
+                {
+                  "germanText": "Danach geht er zum Reichstagsgebäude mit seiner beeindruckenden Glaskuppel.",
+                  "englishText": "Afterwards, he goes to the Reichstag building with its impressive glass dome."
+                },
+                {
+                  "germanText": "Er hat vorher online eine kostenlose Tour reserviert.",
+                  "englishText": "He has previously reserved a free tour online."
+                },
+                {
+                  "germanText": "Von der Kuppel aus hat er einen wunderbaren Blick über die ganze Stadt.",
+                  "englishText": "From the dome, he has a wonderful view over the entire city."
+                },
+                {
+                  "germanText": "Am Nachmittag besucht er die Museumsinsel mit ihren berühmten Galerien.",
+                  "englishText": "In the afternoon, he visits Museum Island with its famous galleries."
+                },
+                {
+                  "germanText": "Im Pergamonmuseum bewundert er antike Architektur und Kunstwerke.",
+                  "englishText": "In the Pergamon Museum, he admires ancient architecture and artworks."
+                },
+                {
+                  "germanText": "Am Abend geht er nach Kreuzberg, ein Viertel bekannt für gutes Essen und Nachtleben.",
+                  "englishText": "In the evening, he goes to Kreuzberg, a neighborhood known for good food and nightlife."
+                },
+                {
+                  "germanText": "Er isst in einem kleinen, gemütlichen Restaurant türkische Spezialitäten.",
+                  "englishText": "He eats Turkish specialties in a small, cozy restaurant."
+                },
+                {
+                  "germanText": "Am nächsten Tag mietet er ein Fahrrad, um die Stadt zu erkunden.",
+                  "englishText": "The next day, he rents a bicycle to explore the city."
+                },
+                {
+                  "germanText": "Berlin hat viele Fahrradwege und ist eine fahrradfreundliche Stadt.",
+                  "englishText": "Berlin has many bike lanes and is a bicycle-friendly city."
+                },
+                {
+                  "germanText": "Er fährt entlang der East Side Gallery, einem Teil der alten Berliner Mauer.",
+                  "englishText": "He rides along the East Side Gallery, a section of the old Berlin Wall."
+                },
+                {
+                  "germanText": "Die Mauer ist mit bunten Kunstwerken und Graffiti bemalt.",
+                  "englishText": "The wall is painted with colorful artwork and graffiti."
+                },
+                {
+                  "germanText": "Am Sonntag besucht er den Flohmarkt im Mauerpark.",
+                  "englishText": "On Sunday, he visits the flea market in Mauerpark."
+                },
+                {
+                  "germanText": "Dort findet er viele interessante Souvenirs und hört Straßenmusiker.",
+                  "englishText": "There he finds many interesting souvenirs and listens to street musicians."
+                },
+                {
+                  "germanText": "Bevor er abreist, probiert er noch eine echte Berliner Currywurst.",
+                  "englishText": "Before he leaves, he tries a real Berlin currywurst."
+                },
+                {
+                  "germanText": "Markus findet, dass Berlin eine faszinierende Stadt mit reicher Geschichte und Kultur ist.",
+                  "englishText": "Markus finds that Berlin is a fascinating city with rich history and culture."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wie reist Markus nach Berlin?",
+                  "options": [
+                    "Mit dem Auto",
+                    "Mit dem Flugzeug",
+                    "Mit dem Zug",
+                    "Mit dem Bus"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was besucht Markus zuerst in Berlin?",
+                  "options": [
+                    "Die Museumsinsel",
+                    "Das Brandenburger Tor",
+                    "Den Flohmarkt",
+                    "Das Pergamonmuseum"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Womit erkundet Markus die Stadt am zweiten Tag?",
+                  "options": [
+                    "Mit einem Fahrrad",
+                    "Mit dem Bus",
+                    "Zu Fuß",
+                    "Mit einem Touristenboot"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Welche Spezialität probiert Markus vor seiner Abreise?",
+                  "options": [
+                    "Berliner Pfannkuchen",
+                    "Sauerkraut",
+                    "Currywurst",
+                    "Brezel"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was ist die East Side Gallery?",
+                  "options": [
+                    "Ein Kunstmuseum",
+                    "Ein Einkaufszentrum",
+                    "Ein Teil der alten Berliner Mauer",
+                    "Eine Konzerthalle"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            },
+            {
+              "title": "Eine Radtour am Bodensee",
+              "description": "Eine Geschichte über eine Fahrradtour am wunderschönen Bodensee. Ideal für Anfänger, um Natur- und Aktivitätsvokabular zu lernen.",
+              "level": "Beginner",
+              "duration": "6 min",
+              "image": "assets/images/story_cycling.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Tobias und seine Freundin Katrin planen eine Radtour am Bodensee.",
+                  "englishText": "Tobias and his girlfriend Katrin are planning a bike tour around Lake Constance."
+                },
+                {
+                  "germanText": "Der Bodensee liegt im Süden Deutschlands, an der Grenze zur Schweiz und Österreich.",
+                  "englishText": "Lake Constance is located in southern Germany, on the border with Switzerland and Austria."
+                },
+                {
+                  "germanText": "Sie leihen sich zwei Fahrräder in der Stadt Konstanz aus.",
+                  "englishText": "They rent two bicycles in the city of Constance."
+                },
+                {
+                  "germanText": "Es ist ein sonniger Tag im Mai, nicht zu heiß und nicht zu kalt.",
+                  "englishText": "It's a sunny day in May, not too hot and not too cold."
+                },
+                {
+                  "germanText": "Sie starten ihre Tour früh am Morgen und fahren erst nach Meersburg.",
+                  "englishText": "They start their tour early in the morning and first ride to Meersburg."
+                },
+                {
+                  "germanText": "Der Radweg führt direkt am Ufer des Sees entlang.",
+                  "englishText": "The bike path runs directly along the shore of the lake."
+                },
+                {
+                  "germanText": "Die Aussicht auf das blaue Wasser und die Alpen ist wunderschön.",
+                  "englishText": "The view of the blue water and the Alps is beautiful."
+                },
+                {
+                  "germanText": "In Meersburg machen sie eine Pause und besichtigen das alte Schloss.",
+                  "englishText": "In Meersburg, they take a break and visit the old castle."
+                },
+                {
+                  "germanText": "Von der Schlossterrasse haben sie einen tollen Blick über den ganzen See.",
+                  "englishText": "From the castle terrace, they have a great view over the entire lake."
+                },
+                {
+                  "germanText": "Zum Mittagessen essen sie ein Fischbrötchen an einem kleinen Stand am Hafen.",
+                  "englishText": "For lunch, they eat a fish sandwich at a small stand at the harbor."
+                },
+                {
+                  "germanText": "Nach dem Essen fahren sie weiter nach Friedrichshafen.",
+                  "englishText": "After eating, they continue on to Friedrichshafen."
+                },
+                {
+                  "germanText": "Unterwegs sehen sie viele Obstplantagen mit Apfel- und Kirschbäumen.",
+                  "englishText": "On the way, they see many fruit orchards with apple and cherry trees."
+                },
+                {
+                  "germanText": "In Friedrichshafen besuchen sie das Zeppelin-Museum.",
+                  "englishText": "In Friedrichshafen, they visit the Zeppelin Museum."
+                },
+                {
+                  "germanText": "Sie lernen viel über die Geschichte der Luftschiffe.",
+                  "englishText": "They learn a lot about the history of airships."
+                },
+                {
+                  "germanText": "Am Nachmittag kommt plötzlich Wind auf, und es beginnt leicht zu regnen.",
+                  "englishText": "In the afternoon, wind suddenly picks up, and it starts to rain lightly."
+                },
+                {
+                  "germanText": "Sie ziehen schnell ihre Regenjacken an und fahren weiter.",
+                  "englishText": "They quickly put on their rain jackets and continue riding."
+                },
+                {
+                  "germanText": "Der Regen hört bald wieder auf, und die Sonne kommt heraus.",
+                  "englishText": "The rain stops soon, and the sun comes out again."
+                },
+                {
+                  "germanText": "Sie machen einen Stopp in Langenargen und trinken einen Kaffee in einem Café.",
+                  "englishText": "They make a stop in Langenargen and drink a coffee in a café."
+                },
+                {
+                  "germanText": "Von dort nehmen sie eine Fähre zurück nach Konstanz.",
+                  "englishText": "From there, they take a ferry back to Constance."
+                },
+                {
+                  "germanText": "Auf dem Schiff genießen sie die Abendsonne und den Wind in den Haaren.",
+                  "englishText": "On the boat, they enjoy the evening sun and the wind in their hair."
+                },
+                {
+                  "germanText": "Nach der Rückkehr sind sie müde, aber glücklich über den schönen Tag.",
+                  "englishText": "After returning, they are tired but happy about the beautiful day."
+                },
+                {
+                  "germanText": "Sie planen schon ihre nächste Radtour, vielleicht im Schwarzwald.",
+                  "englishText": "They are already planning their next bike tour, maybe in the Black Forest."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wo machen Tobias und Katrin ihre Radtour?",
+                  "options": [
+                    "An der Ostsee",
+                    "Am Bodensee",
+                    "An der Nordsee",
+                    "Am Rhein"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "In welcher Stadt beginnt ihre Tour?",
+                  "options": [
+                    "Konstanz",
+                    "Friedrichshafen",
+                    "Meersburg",
+                    "Langenargen"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Was besuchen sie in Meersburg?",
+                  "options": [
+                    "Ein Museum",
+                    "Eine Kirche",
+                    "Ein altes Schloss",
+                    "Einen Markt"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was essen sie zum Mittagessen?",
+                  "options": [
+                    "Eine Pizza",
+                    "Ein Fischbrötchen",
+                    "Ein Sandwich",
+                    "Eine Suppe"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wie kommen sie zurück nach Konstanz?",
+                  "options": [
+                    "Mit dem Zug",
+                    "Mit dem Bus",
+                    "Mit einer Fähre",
+                    "Mit dem Taxi"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Food",
+          "categoryDescription": "Geschichten über deutsche Essgewohnheiten, Restaurants, Cafés und traditionelle Gerichte.",
+          "stories": [
+            {
+              "title": "Ein Besuch auf dem Wochenmarkt",
+              "description": "Eine Geschichte über den traditionellen deutschen Wochenmarkt. Ideal zum Erlernen von Lebensmittelvokabular und Einkaufsausdrücken.",
+              "level": "Beginner",
+              "duration": "5 min",
+              "image": "assets/images/story_market.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Jeden Samstag findet in der Innenstadt ein großer Wochenmarkt statt.",
+                  "englishText": "Every Saturday, a large weekly market takes place in the city center."
+                },
+                {
+                  "germanText": "Frau Schmidt geht gerne früh am Morgen zum Markt, wenn es noch nicht so voll ist.",
+                  "englishText": "Mrs. Schmidt likes to go to the market early in the morning when it's not so crowded yet."
+                },
+                {
+                  "germanText": "Sie nimmt immer ihre eigenen Taschen und Körbe mit.",
+                  "englishText": "She always brings her own bags and baskets."
+                },
+                {
+                  "germanText": "Der Markt hat viele verschiedene Stände mit frischen Produkten.",
+                  "englishText": "The market has many different stalls with fresh products."
+                },
+                {
+                  "germanText": "Zuerst geht Frau Schmidt zum Bäckerstand.",
+                  "englishText": "First, Mrs. Schmidt goes to the baker's stall."
+                },
+                {
+                  "germanText": "Dort kauft sie frisches Brot und ein paar süße Brötchen zum Frühstück.",
+                  "englishText": "There she buys fresh bread and a few sweet rolls for breakfast."
+                },
+                {
+                  "germanText": "Der Bäcker begrüßt sie freundlich und gibt ihr eine Brotprobe zum Probieren.",
+                  "englishText": "The baker greets her kindly and gives her a bread sample to try."
+                },
+                {
+                  "germanText": "Als nächstes besucht sie den Gemüsestand.",
+                  "englishText": "Next, she visits the vegetable stand."
+                },
+                {
+                  "germanText": "Hier gibt es regionales und saisonales Gemüse aus der Umgebung.",
+                  "englishText": "Here there are regional and seasonal vegetables from the surrounding area."
+                },
+                {
+                  "germanText": "Frau Schmidt wählt Kartoffeln, Karotten, Zwiebeln und frischen Spinat aus.",
+                  "englishText": "Mrs. Schmidt selects potatoes, carrots, onions, and fresh spinach."
+                },
+                {
+                  "germanText": "Die Verkäuferin wiegt das Gemüse und nennt den Preis.",
+                  "englishText": "The saleswoman weighs the vegetables and states the price."
+                },
+                {
+                  "germanText": "Dann geht Frau Schmidt zum Obststand, der voller bunter Früchte ist.",
+                  "englishText": "Then Mrs. Schmidt goes to the fruit stand, which is full of colorful fruits."
+                },
+                {
+                  "germanText": "Sie kauft Äpfel, Birnen und Erdbeeren für einen Obstsalat.",
+                  "englishText": "She buys apples, pears, and strawberries for a fruit salad."
+                },
+                {
+                  "germanText": "Der Verkäufer gibt ihr eine reife Erdbeere zum Probieren.",
+                  "englishText": "The vendor gives her a ripe strawberry to try."
+                },
+                {
+                  "germanText": "Sie schmeckt süß und saftig.",
+                  "englishText": "It tastes sweet and juicy."
+                },
+                {
+                  "germanText": "Am Käsestand probiert sie verschiedene Käsesorten.",
+                  "englishText": "At the cheese stand, she tries different types of cheese."
+                },
+                {
+                  "germanText": "Sie entscheidet sich für einen milden Gouda und einen würzigen Bergkäse.",
+                  "englishText": "She decides on a mild Gouda and a spicy mountain cheese."
+                },
+                {
+                  "germanText": "Der Fleischer hat heute frische Bratwürste und Schinken im Angebot.",
+                  "englishText": "The butcher has fresh bratwurst and ham on offer today."
+                },
+                {
+                  "germanText": "Frau Schmidt kauft Würste für das Abendessen am Sonntag.",
+                  "englishText": "Mrs. Schmidt buys sausages for Sunday dinner."
+                },
+                {
+                  "germanText": "Zum Schluss besucht sie den Blumenstand und kauft einen bunten Blumenstrauß.",
+                  "englishText": "Finally, she visits the flower stand and buys a colorful bouquet."
+                },
+                {
+                  "germanText": "Bevor sie nach Hause geht, trinkt sie noch einen Kaffee am Marktcafé.",
+                  "englishText": "Before going home, she has a coffee at the market café."
+                },
+                {
+                  "germanText": "Sie genießt die lebendige Atmosphäre und beobachtet die anderen Marktbesucher.",
+                  "englishText": "She enjoys the lively atmosphere and observes the other market visitors."
+                },
+                {
+                  "germanText": "Der Wochenmarkt ist nicht nur zum Einkaufen da, sondern auch ein sozialer Treffpunkt.",
+                  "englishText": "The weekly market is not just for shopping, but also a social meeting point."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wann findet der Wochenmarkt statt?",
+                  "options": [
+                    "Jeden Sonntag",
+                    "Jeden Samstag",
+                    "Jeden Mittwoch",
+                    "Jeden Freitag"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wohin geht Frau Schmidt zuerst?",
+                  "options": [
+                    "Zum Bäckerstand",
+                    "Zum Gemüsestand",
+                    "Zum Obststand",
+                    "Zum Käsestand"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Was kauft Frau Schmidt für einen Obstsalat?",
+                  "options": [
+                    "Orangen, Bananen und Weintrauben",
+                    "Kirschen, Melonen und Beeren",
+                    "Äpfel, Birnen und Erdbeeren",
+                    "Pfirsiche, Ananas und Kiwis"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Welche Käsesorten kauft Frau Schmidt?",
+                  "options": [
+                    "Camembert und Blauschimmelkäse",
+                    "Gouda und Bergkäse",
+                    "Mozzarella und Parmesan",
+                    "Feta und Ricotta"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was macht Frau Schmidt, bevor sie nach Hause geht?",
+                  "options": [
+                    "Sie isst ein Eis",
+                    "Sie kauft eine Zeitung",
+                    "Sie trinkt einen Kaffee",
+                    "Sie besucht eine Freundin"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+      ]
+},
+        {
+          "categoryName": "Travel",
+          "categoryDescription": "Geschichten über Reisen, Ausflüge und Abenteuer in Deutschland und anderen Ländern.",
+          "stories": [
+            {
+              "title": "Ein Wochenende in Hamburg",
+              "description": "Eine Geschichte über eine Städtereise nach Hamburg. Geeignet für Lernende auf mittlerem Niveau mit Fokus auf Stadtleben und Sehenswürdigkeiten.",
+              "level": "Intermediate",
+              "duration": "6 min",
+              "image": "assets/images/story_hamburg.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Anna und Lukas planen ein Wochenende in Hamburg.",
+                  "englishText": "Anna and Lukas are planning a weekend in Hamburg."
+                },
+                {
+                  "germanText": "Sie buchen ein Hotel in der Nähe der Reeperbahn.",
+                  "englishText": "They book a hotel near the Reeperbahn."
+                },
+                {
+                  "germanText": "Am Freitagabend fahren sie mit dem Zug von Berlin nach Hamburg.",
+                  "englishText": "On Friday evening, they take the train from Berlin to Hamburg."
+                },
+                {
+                  "germanText": "Die Fahrt dauert etwas mehr als zwei Stunden.",
+                  "englishText": "The journey takes a little more than two hours."
+                },
+                {
+                  "germanText": "Im Hotel angekommen, machen sie einen kurzen Spaziergang durch die Stadt.",
+                  "englishText": "After arriving at the hotel, they take a short walk through the city."
+                },
+                {
+                  "germanText": "Die Straßen sind lebendig, und viele Leute sind unterwegs.",
+                  "englishText": "The streets are lively, and many people are out and about."
+                },
+                {
+                  "germanText": "Am nächsten Morgen besuchen sie die Speicherstadt.",
+                  "englishText": "The next morning, they visit the Speicherstadt."
+                },
+                {
+                  "germanText": "Das historische Lagerhausviertel beeindruckt sie mit seiner Architektur.",
+                  "englishText": "The historic warehouse district impresses them with its architecture."
+                },
+                {
+                  "germanText": "Anschließend machen sie eine Hafenrundfahrt mit dem Boot.",
+                  "englishText": "Afterwards, they take a harbor tour by boat."
+                },
+                {
+                  "germanText": "Sie sehen riesige Containerschiffe und erfahren viel über den Hamburger Hafen.",
+                  "englishText": "They see huge container ships and learn a lot about the Port of Hamburg."
+                },
+                {
+                  "germanText": "Zum Mittagessen probieren sie frischen Fisch im Restaurant an den Landungsbrücken.",
+                  "englishText": "For lunch, they try fresh fish at a restaurant by the Landungsbrücken."
+                },
+                {
+                  "germanText": "Am Nachmittag besuchen sie das Miniatur Wunderland.",
+                  "englishText": "In the afternoon, they visit the Miniatur Wunderland."
+                },
+                {
+                  "germanText": "Dort gibt es detailreiche Modelleisenbahnen aus aller Welt.",
+                  "englishText": "There are detailed model trains from around the world there."
+                },
+                {
+                  "germanText": "Am Abend gehen sie auf die Reeperbahn, wo viele Bars und Clubs sind.",
+                  "englishText": "In the evening, they go to the Reeperbahn, where there are many bars and clubs."
+                },
+                {
+                  "germanText": "Die Atmosphäre ist laut, bunt und aufregend.",
+                  "englishText": "The atmosphere is loud, colorful, and exciting."
+                },
+                {
+                  "germanText": "Am Sonntag besuchen sie noch die Elbphilharmonie.",
+                  "englishText": "On Sunday, they visit the Elbphilharmonie."
+                },
+                {
+                  "germanText": "Vom Plaza haben sie einen tollen Blick über die Stadt und den Hafen.",
+                  "englishText": "From the plaza, they have a great view over the city and the harbor."
+                },
+                {
+                  "germanText": "Nach einem Kaffee im Café der Elbphilharmonie fahren sie zurück nach Hause.",
+                  "englishText": "After a coffee in the Elbphilharmonie’s café, they head back home."
+                },
+                {
+                  "germanText": "Sie sind begeistert von Hamburg und planen schon den nächsten Besuch.",
+                  "englishText": "They are thrilled by Hamburg and are already planning their next visit."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Wie reisen Anna und Lukas nach Hamburg?",
+                  "options": [
+                    "Mit dem Flugzeug",
+                    "Mit dem Auto",
+                    "Mit dem Zug",
+                    "Mit dem Bus"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Was besuchen sie am Samstagmorgen?",
+                  "options": [
+                    "Die Elbphilharmonie",
+                    "Die Speicherstadt",
+                    "Das Miniatur Wunderland",
+                    "Den Zoo"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was machen sie am Nachmittag?",
+                  "options": [
+                    "Eine Hafenrundfahrt",
+                    "Einkaufen",
+                    "Das Miniatur Wunderland besuchen",
+                    "Kaffee trinken"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wo essen sie zu Mittag?",
+                  "options": [
+                    "Im Hotel",
+                    "An den Landungsbrücken",
+                    "In der Speicherstadt",
+                    "Am Hauptbahnhof"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was machen sie am Sonntag?",
+                  "options": [
+                    "Sie fahren früh nach Hause",
+                    "Sie besuchen den Fischmarkt",
+                    "Sie gehen wandern",
+                    "Sie besuchen die Elbphilharmonie"
+                  ],
+                  "correctAnswer": 3
+                }
+              ]
+            }
+          ]
+        }, {
+          "categoryName": "Everyday",
+          "categoryDescription": "Tiefgründige Geschichten, die philosophische Reflexionen und existenzielle Fragen erkunden.",
+          "stories": [
+            {
+              "title": "Die Brücke der Erinnerungen",
+              "description": "Eine komplexe Erzählung über Gedächtnis, Identität und die Grenzen zwischen Realität und Erinnerung. Herausfordernd für fortgeschrittene Sprachlerner.",
+              "level": "Advanced",
+              "duration": "15 min",
+              "image": "assets/images/story_memory_bridge.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Die Archivkammer war erfüllt vom Geruch alter Papiere und vergessener Geschichten - ein Labyrinth aus Dokumenten, das Martin seit Wochen durchforstete.",
+                  "englishText": "The archive chamber was permeated with the smell of old papers and forgotten stories - a labyrinth of documents that Martin had been sifting through for weeks."
+                },
+                {
+                  "germanText": "Er war Historiker, aber diese Recherche war mehr als nur akademische Pflicht. Es ging um die verborgene Geschichte seiner eigenen Familie, deren Risse sich durch Generationen zogen wie Haarrisse in einem alten Spiegel.",
+                  "englishText": "He was a historian, but this research was more than just academic duty. It was about the hidden story of his own family, whose cracks ran through generations like hairline fractures in an old mirror."
+                },
+                {
+                  "germanText": "Die Dokumente, die er gefunden hatte, waren fragmentarisch - Briefe, Fotografien, Zeitungsausschnitte, die mehr Fragen aufwarfen als Antworten gaben.",
+                  "englishText": "The documents he had found were fragmentary - letters, photographs, newspaper clippings that raised more questions than they answered."
+                },
+                {
+                  "germanText": "Ein vergilbter Brief, adressiert an seine Urgroßmutter, fiel aus einer alten Mappe. Die Handschrift war elegant, aber die Tinte hatte an manchen Stellen die Bedeutung verwischt.",
+                  "englishText": "A yellowed letter, addressed to his great-grandmother, fell from an old folder. The handwriting was elegant, but the ink had blurred the meaning in some places."
+                },
+                {
+                  "germanText": "Die Geschichte schien sich zu entspinnen wie ein komplexes Gewebe: Ein Familiengeheimnis aus der Zeit des Zweiten Weltkriegs, verschlüsselt in Andeutungen und halben Wahrheiten.",
+                  "englishText": "The story seemed to unfold like a complex fabric: A family secret from the time of World War II, encrypted in hints and half-truths."
+                },
+                {
+                  "germanText": "Martin erkannte, dass Erinnerung keine lineare Erzählung ist, sondern ein Kaleidoskop aus Perspektiven, Interpretationen und unausgesprochenen Emotionen.",
+                  "englishText": "Martin realized that memory is not a linear narrative, but a kaleidoscope of perspectives, interpretations, and unspoken emotions."
+                },
+                {
+                  "germanText": "Jedes Dokument war wie ein Puzzleteil einer komplexen Identität - seiner Familie, seiner selbst, einer vergangenen Welt, die zu verschwinden drohte.",
+                  "englishText": "Each document was like a puzzle piece of a complex identity - of his family, of himself, of a past world that threatened to disappear."
+                },
+                {
+                  "germanText": "Die Grenzen zwischen Realität und Konstruktion begannen zu verschwimmen. Was war Wahrheit? Was war Interpretation? Was war Erinnerung?",
+                  "englishText": "The boundaries between reality and construction began to blur. What was truth? What was interpretation? What was memory?"
+                },
+                {
+                  "germanText": "Er dachte an die Worte seines Mentors: 'Geschichte ist nicht das, was geschah, sondern wie wir uns daran erinnern.'",
+                  "englishText": "He thought of the words of his mentor: 'History is not what happened, but how we remember it.'"
+                },
+                {
+                  "germanText": "Die Dokumente erzählten von Mut, von Verrat, von Liebe und Überleben - Geschichten, die zwischen den Zeilen verborgen waren.",
+                  "englishText": "The documents spoke of courage, of betrayal, of love and survival - stories hidden between the lines."
+                },
+                {
+                  "germanText": "Am Ende ging es nicht mehr nur um historische Rekonstruktion, sondern um eine tiefere Suche nach Verstehen - von Familiennarrativen, von Schuld, von Versöhnung.",
+                  "englishText": "In the end, it was no longer just about historical reconstruction, but about a deeper search for understanding - of family narratives, of guilt, of reconciliation."
+                },
+                {
+                  "germanText": "Martin wusste, diese Arbeit würde ihn für immer verändern - nicht als Historiker, sondern als Mensch.",
+                  "englishText": "Martin knew this work would change him forever - not as a historian, but as a human being."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was ist die zentrale Aufgabe von Martin?",
+                  "options": [
+                    "Ein Buch zu schreiben",
+                    "Familiengeschichte zu erforschen",
+                    "Ein Museum zu kuratieren",
+                    "Alte Dokumente zu digitalisieren"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Welche philosophische Frage erkundet die Geschichte?",
+                  "options": [
+                    "Die Natur der wissenschaftlichen Forschung",
+                    "Die Bedeutung von Technologie",
+                    "Die Natur des Gedächtnisses und der Erinnerung",
+                    "Die Komplexität moderner Beziehungen"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Wie beschreibt Martin die Bedeutung von Geschichte?",
+                  "options": [
+                    "Als eine Reihe von Fakten",
+                    "Als eine Sammlung von Dokumenten",
+                    "Als eine Interpretation von Erinnerungen",
+                    "Als eine wissenschaftliche Disziplin"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Everyday",
+          "categoryDescription": "Komplexe Geschichten, die zeitgenössische gesellschaftliche Herausforderungen und menschliche Beziehungen erkunden.",
+          "stories": [
+            {
+              "title": "Digitale Grenzen",
+              "description": "Eine vielschichtige Erzählung über Technologie, menschliche Verbindungen und die Herausforderungen der digitalen Ära. Anspruchsvoll für fortgeschrittene Sprachlerner.",
+              "level": "Advanced",
+              "duration": "16 min",
+              "image": "assets/images/story_digital_boundaries.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Lea saß in ihrem minimalistischen Berliner Apartment, umgeben von Bildschirmen, die mehr Realität zu sein schienen als die Wände um sie herum.",
+                  "englishText": "Lea sat in her minimalist Berlin apartment, surrounded by screens that seemed more real than the walls around her."
+                },
+                {
+                  "germanText": "Als Sozialpsychologin spezialisiert auf digitale Kommunikation, war ihr Leben selbst ein permanentes Experiment zwischen Vernetzung und Isolation.",
+                  "englishText": "As a social psychologist specializing in digital communication, her life was itself a permanent experiment between connectivity and isolation."
+                },
+                {
+                  "germanText": "Ihr aktuelles Forschungsprojekt untersuchte die psychologischen Auswirkungen von künstlicher Intelligenz auf menschliche Beziehungen - eine Arbeit, die sie persönlich wie beruflich herausforderte.",
+                  "englishText": "Her current research project examined the psychological impacts of artificial intelligence on human relationships - a work that challenged her both personally and professionally."
+                },
+                {
+                  "germanText": "Der Algorithmus, den sie entwickelte, war mehr als nur ein technisches Konstrukt. Er war eine Brücke zwischen menschlicher Intuition und maschinellem Lernen.",
+                  "englishText": "The algorithm she developed was more than just a technical construct. It was a bridge between human intuition and machine learning."
+                },
+                {
+                  "germanText": "Ihre Forschung zeigte, wie digitale Interaktionen die Wahrnehmung von Empathie, Nähe und Identität fundamental veränderten.",
+                  "englishText": "Her research revealed how digital interactions fundamentally altered the perception of empathy, intimacy, and identity."
+                },
+                {
+                  "germanText": "Ein Videoanruf mit ihrer Kollegin Elena, die in São Paulo arbeitete, verdeutlichte die Paradoxie: Nähe durch Distanz, Verbindung durch Technologie.",
+                  "englishText": "A video call with her colleague Elena, working in São Paulo, illustrated the paradox: Proximity through distance, connection through technology."
+                },
+                {
+                  "germanText": "Der Algorithmus lernte nicht nur Daten, sondern scheinbar auch menschliche Nuancen - Tonfall, Kontext, emotionale Unterströmungen.",
+                  "englishText": "The algorithm was learning not just data, but seemingly human nuances - tone, context, emotional undercurrents."
+                },
+                {
+                  "germanText": "Lea zweifelte. War dies wissenschaftlicher Fortschritt oder der Beginn einer Transformation, deren Konsequenzen noch nicht absehbar waren?",
+                  "englishText": "Lea doubted. Was this scientific progress or the beginning of a transformation whose consequences were not yet foreseeable?"
+                },
+                {
+                  "germanText": "Die Grenze zwischen menschlicher Intelligenz und künstlicher Intelligenz wurde zusehends durchlässiger - ein Gedanke, der sie gleichermaßen faszinierte und beunruhigte.",
+                  "englishText": "The boundary between human and artificial intelligence was becoming increasingly permeable - a thought that both fascinated and disturbed her."
+                },
+                {
+                  "germanText": "Ihr persönliches Leben spiegelte ihre Forschung wider: Verbunden, aber irgendwie losgelöst. Präsent, aber nicht ganz da.",
+                  "englishText": "Her personal life mirrored her research: Connected, but somehow detached. Present, but not quite there."
+                },
+                {
+                  "germanText": "In ihren Notizen schrieb sie: 'Technologie ist nicht gut oder böse. Sie ist ein Spiegel unserer komplexen menschlichen Natur.'",
+                  "englishText": "In her notes, she wrote: 'Technology is neither good nor evil. It is a mirror of our complex human nature.'"
+                },
+                {
+                  "germanText": "Am Ende ging es nicht um Technologie gegen Menschlichkeit, sondern um ein tieferes Verständnis dessen, was es bedeutet, miteinander verbunden zu sein.",
+                  "englishText": "In the end, it was not about technology versus humanity, but about a deeper understanding of what it means to be connected."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was ist Leas Beruf?",
+                  "options": [
+                    "Informatikerin",
+                    "Psychologin",
+                    "Sozialpsychologin",
+                    "Programmiererin"
+                  ],
+                  "correctAnswer": 2
+                },
+                {
+                  "question": "Worauf konzentriert sich Leas Forschung?",
+                  "options": [
+                    "Künstliche Intelligenz und menschliche Beziehungen",
+                    "Raumfahrttechnologie",
+                    "Medizinische Diagnostik",
+                    "Klimawandelforschung"
+                  ],
+                  "correctAnswer": 0
+                },
+                {
+                  "question": "Wie beschreibt Lea Technologie?",
+                  "options": [
+                    "Als Bedrohung für die Menschheit",
+                    "Als neutralen Spiegel menschlicher Natur",
+                    "Als vollständig positiv",
+                    "Als komplett negativ"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Fairy",
+          "categoryDescription": "Sophisticated, contemporary fairy tales that blend magical realism with deep philosophical and psychological themes.",
+          "stories": [
+            {
+              "title": "Der Schatten der Worte",
+              "description": "A complex, metaphysical fairy tale exploring the power of language, memory, and the thin line between reality and imagination.",
+              "level": "Advanced",
+              "duration": "16 min",
+              "image": "assets/images/story_shadow_words.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "In einer Stadt, wo die Grenzen zwischen Realität und Imagination verschwammen, lebte Helena, eine Bibliothekarin mit der ungewöhnlichen Gabe, Geschichten zum Leben zu erwecken.",
+                  "englishText": "In a city where the boundaries between reality and imagination blurred, lived Helena, a librarian with the extraordinary ability to bring stories to life."
+                },
+                {
+                  "germanText": "Ihre Bibliothek war kein gewöhnlicher Ort - jedes Buch war ein Portal, jedes Wort ein Zauber, der Realitäten zu weben vermochte.",
+                  "englishText": "Her library was no ordinary place - every book was a portal, every word a spell capable of weaving realities."
+                },
+                {
+                  "germanText": "Jahre der Zurückhaltung und Vorsicht hatten Helena gelehrt, ihre Gabe zu verbergen. Worte waren mächtig - und gefährlich.",
+                  "englishText": "Years of restraint and caution had taught Helena to conceal her gift. Words were powerful - and dangerous."
+                },
+                {
+                  "germanText": "An einem nebeligen Herbstmorgen fiel ihr ein alter, vergessener Foliant in die Hände - gebunden in verblichenes Leder, mit Runen und Symbolen bedeckt, die älter waren als die Stadt selbst.",
+                  "englishText": "On a misty autumn morning, an old, forgotten tome fell into her hands - bound in faded leather, covered with runes and symbols older than the city itself."
+                },
+                {
+                  "germanText": "Als sie die erste Seite berührte, spürte sie, wie die Worte zu pulsieren begannen - lebendig, athmend, wartend darauf, freigelassen zu werden.",
+                  "englishText": "As she touched the first page, she felt the words begin to pulse - alive, breathing, waiting to be released."
+                },
+                {
+                  "germanText": "Die Geschichte begann sich zu entfalten: Von einem verlorenen Königreich, das in Sprache gefangen war, von einer Königin, deren Worte Welten erschaffen und zerstören konnten.",
+                  "englishText": "The story began to unfold: Of a lost kingdom trapped in language, of a queen whose words could create and destroy worlds."
+                },
+                {
+                  "germanText": "Helena erkannte, dass dieses Buch mehr war als nur ein Artefakt - es war ein Schlüssel zu einem Geheimnis, das Generationen überdauert hatte.",
+                  "englishText": "Helena realized that this book was more than just an artifact - it was a key to a secret that had survived generations."
+                },
+                {
+                  "germanText": "Mit jedem gelesenen Absatz wurde die Grenze zwischen dem Geschriebenen und der Realität durchlässiger.",
+                  "englishText": "With each paragraph read, the boundary between the written and reality became more permeable."
+                },
+                {
+                  "germanText": "Schatten von Worten begannen, sich um sie zu materialisieren - Fragmente von Geschichten, die nach Befreiung verlangten.",
+                  "englishText": "Shadows of words began to materialize around her - fragments of stories demanding release."
+                },
+                {
+                  "germanText": "Sie verstand nun: Sprache war nicht nur ein Kommunikationsmittel, sondern eine lebendige Kraft, die Realitäten formen und umformen konnte.",
+                  "englishText": "She now understood: Language was not just a means of communication, but a living force capable of shaping and reshaping realities."
+                },
+                {
+                  "germanText": "Die Entscheidung lag bei ihr - würde sie die Worte freilassen und die Konsequenzen tragen, oder würde sie sie für immer im Buch gefangen halten?",
+                  "englishText": "The decision was hers - would she release the words and bear the consequences, or keep them imprisoned in the book forever?"
+                },
+                {
+                  "germanText": "In diesem Moment wusste Helena, dass ihre Reise gerade erst begann.",
+                  "englishText": "At that moment, Helena knew her journey was just beginning."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was ist Helenas besondere Gabe?",
+                  "options": [
+                    "Zeitreisen",
+                    "Geschichten zum Leben erwecken",
+                    "Unsichtbar werden",
+                    "Gedanken lesen"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wie beschreibt die Geschichte die Natur der Sprache?",
+                  "options": [
+                    "Als einfaches Kommunikationsmittel",
+                    "Als eine lebendige Kraft, die Realitäten formen kann",
+                    "Als bedeutungslos",
+                    "Als gefährlichen Mechanismus"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was findet Helena in der Bibliothek?",
+                  "options": [
+                    "Einen gewöhnlichen Roman",
+                    "Eine Schatzkarte",
+                    "Einen alten Foliant mit besonderen Runen",
+                    "Ein modernes Buch"
+                  ],
+                  "correctAnswer": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Travel",
+          "categoryDescription": "Sophisticated travel narratives exploring deep cultural encounters, personal transformation, and philosophical journeys.",
+          "stories": [
+            {
+              "title": "Die Kartographie der Erinnerung",
+              "description": "A profound exploration of identity, memory, and cultural roots through a transformative journey across multiple landscapes.",
+              "level": "Advanced",
+              "duration": "16 min",
+              "image": "assets/images/story_memory_cartography.jpg",
+              "favorite": false,
+              "storyItems": [
+                {
+                  "germanText": "Daniel war ein Kartograph, dessen Leben selbst eine Karte unvollendeter Reisen und unausgesprochener Geschichten war.",
+                  "englishText": "Daniel was a cartographer whose life was itself a map of unfinished journeys and unspoken stories."
+                },
+                {
+                  "germanText": "Seine Großmutter hatte ihm kurz vor ihrem Tod eine alte, vergilbte Karte hinterlassen - ein Dokument, das mehr Geheimnisse als Wegweiser zu sein schien.",
+                  "englishText": "Shortly before her death, his grandmother had left him an old, yellowed map - a document that seemed more a collection of secrets than a guide."
+                },
+                {
+                  "germanText": "Die Karte zeigte keine bekannten Grenzen. Sie war ein Palimpsest von Reisewegen, persönlichen Notizen und fragmentarischen Erinnerungen.",
+                  "englishText": "The map showed no known borders. It was a palimpsest of travel routes, personal notes, and fragmentary memories."
+                },
+                {
+                  "germanText": "Seine Reise begann in den Bergen Patagoniens, wo die Landschaft selbst eine Metapher für Gedächtnis und Vergänglichkeit war.",
+                  "englishText": "His journey began in the mountains of Patagonia, where the landscape itself was a metaphor for memory and transience."
+                },
+                {
+                  "germanText": "Jeder Schritt war eine Archäologie der Erinnerung - er grub nicht nur physische Wege aus, sondern verborgene Familiennarrative.",
+                  "englishText": "Each step was an archaeology of memory - he was excavating not just physical paths, but hidden family narratives."
+                },
+                {
+                  "germanText": "In einem abgelegenen Dorf traf er auf Elena, eine Historikerin, die Geschichten sammelte wie andere Münzen oder Briefmarken.",
+                  "englishText": "In a remote village, he met Elena, a historian who collected stories the way others might collect coins or stamps."
+                },
+                {
+                  "germanText": "Sie erzählte ihm von Migrationswegen, von Familien, die Kontinente durchquerten, von Identitäten, die sich wie Landschaften ständig veränderten.",
+                  "englishText": "She told him of migration routes, of families traversing continents, of identities constantly shifting like landscapes."
+                },
+                {
+                  "germanText": "Die Karte seiner Großmutter entpuppte sich als mehr als ein geographisches Dokument - sie war eine emotionale Topographie.",
+                  "englishText": "His grandmother's map revealed itself as more than a geographical document - it was an emotional topography."
+                },
+                {
+                  "germanText": "In den Andenhochebenen verstand Daniel, dass Reisen nicht das Zurücklegen von Distanzen bedeutet, sondern das Überbrücken von Erinnerungslücken.",
+                  "englishText": "In the Andean highlands, Daniel understood that traveling was not about covering distances, but bridging memory gaps."
+                },
+                {
+                  "germanText": "Jede Markierung auf der Karte war ein Versprechen, ein unausgesprochenes Geheimnis, eine Familiengeschichte, die darauf wartete, erzählt zu werden.",
+                  "englishText": "Each marking on the map was a promise, an unspoken secret, a family story waiting to be told."
+                },
+                {
+                  "germanText": "Am Ende seiner Reise erkannte er: Kartographie war mehr als die Wissenschaft des Vermessens - es war die Kunst des Erinnerns.",
+                  "englishText": "At the end of his journey, he realized: Cartography was more than the science of measurement - it was the art of remembering."
+                },
+                {
+                  "germanText": "Die Karte war nicht vollendet. Sie wartete darauf, dass er ihre nächste Geschichte schriebe.",
+                  "englishText": "The map was not complete. It was waiting for him to write its next story."
+                }
+              ],
+              "questions": [
+                {
+                  "question": "Was ist Daniels Beruf?",
+                  "options": [
+                    "Historiker",
+                    "Kartograph",
+                    "Tourist",
+                    "Geologe"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Was symbolisiert die Karte seiner Großmutter?",
+                  "options": [
+                    "Einen einfachen Reiseweg",
+                    "Eine emotionale Topographie",
+                    "Ein geografisches Dokument",
+                    "Eine Schatzkarte"
+                  ],
+                  "correctAnswer": 1
+                },
+                {
+                  "question": "Wie beschreibt Daniel das Reisen?",
+                  "options": [
+                    "Als Zurücklegen von Distanzen",
+                    "Als Überbrücken von Erinnerungslücken",
+                    "Als Touristische Aktivität",
+                    "Als Nervige Notwendigkeit"
+                  ],
+                  "correctAnswer": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]}

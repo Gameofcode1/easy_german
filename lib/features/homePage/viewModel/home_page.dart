@@ -15,7 +15,7 @@ class AppProvider with ChangeNotifier {
   List<VocabularyWord> _vocabularyWords = [];
 
   // Wishlist
-  List<WishlistItem> _wishlist = [];
+  final List<WishlistItem> _wishlist = [];
 
   // Selected level filter for stories
   String _selectedStoryLevel = 'All';

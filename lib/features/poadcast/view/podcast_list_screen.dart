@@ -1,7 +1,11 @@
-import 'package:flutter/material.dart';
-import 'dart:ui';
+// lib/screens/podcast_list_screen.dart
 
+import 'package:flutter/material.dart';
 import 'package:job_finder/features/poadcast/view/pod_detail.dart';
+import 'dart:ui';
+import '../model/podcast_model.dart';
+import '../service/podcast_service.dart';
+
 
 class PodcastListScreen extends StatefulWidget {
   final String title;
@@ -9,11 +13,11 @@ class PodcastListScreen extends StatefulWidget {
   final String? category;
 
   const PodcastListScreen({
-    Key? key,
+    super.key,
     required this.title,
     this.level,
     this.category,
-  }) : super(key: key);
+  });
 
   @override
   _PodcastListScreenState createState() => _PodcastListScreenState();
@@ -21,8 +25,9 @@ class PodcastListScreen extends StatefulWidget {
 
 class _PodcastListScreenState extends State<PodcastListScreen>
     with SingleTickerProviderStateMixin {
-  List<Map<String, dynamic>> _podcasts = [];
+  List<Podcast> _podcasts = [];
   bool _isLoading = true;
+  final PodcastService _podcastService = PodcastService();
 
   late AnimationController _animationController;
   late Animation<double> _floatAnimation;
@@ -33,7 +38,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 2000),
     );
 
     _floatAnimation = Tween<double>(begin: 0, end: 6).animate(
@@ -56,177 +61,34 @@ class _PodcastListScreenState extends State<PodcastListScreen>
   }
 
   Future<void> _loadPodcasts() async {
-    // Simulate loading from API
-    await Future.delayed(Duration(milliseconds: 1500));
+    try {
+      await _podcastService.loadPodcastData();
+      List<Podcast> filteredPodcasts = [];
 
-    // Mock data based on category or level
-    setState(() {
-      _podcasts = _getMockPodcasts();
-      _isLoading = false;
-    });
-  }
+      if (widget.category != null) {filteredPodcasts = _podcastService.getPodcastsByCategory(widget.category!);
+      } else if (widget.level != null) {filteredPodcasts = _podcastService.getPodcastsByCategory(widget.level!);
+      } else {
+        final categories = _podcastService.getCategories();
+        for (final category in categories) {
+          filteredPodcasts.addAll(category.podcasts);
+        }
+      }
+      setState(() {
+        _podcasts = filteredPodcasts;
+        _isLoading = false;
+      });
+    } catch (e) {
+      print('Error loading podcasts: $e');
+      setState(() {
+        _isLoading = false;
+      });
 
-  List<Map<String, dynamic>> _getMockPodcasts() {
-    if (widget.category == 'True Crime') {
-      return [
-      {
-        'title': 'Crime Junkie',
-    'author': 'Ashley Flowers',
-    'description': 'Weekly true crime podcast dedicated to giving you a fix of all cases that haunt you most.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '32 min',
-    'rating': 4.8,
-    'episodes': 245,
-    'color': Color(0xFF3F51B5),
-  },
-    {
-    'title': 'My Favorite Murder',
-    'author': 'Karen Kilgariff and Georgia Hardstark',
-    'description': 'Lifelong fans of true crime discuss their favorite murder cases.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '45 min',
-    'rating': 4.5,
-    'episodes': 325,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Serial',
-    'author': 'Sarah Koenig',
-    'description': 'Investigative journalism that unfolds one story over the course of a season.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '40 min',
-    'rating': 4.9,
-    'episodes': 80,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Criminal',
-    'author': 'Phoebe Judge',
-    'description': 'Stories of people who',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '28 min',
-    'rating': 4.7,
-    'episodes': 178,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Casefile',
-    'author': 'Anonymous Host',
-    'description': 'Explores solved and unsolved cases from around the world with a factual storytelling approach.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '55 min',
-    'rating': 4.6,
-    'episodes': 210,
-    'color': Color(0xFF3F51B5),
-    },
-    ];
-    } else if (widget.level == 'Popular') {
-    return [
-    {
-    'title': 'The Joe Rogan Experience',
-    'author': 'Joe Rogan',
-    'description': 'Long-form conversations with guests from all walks of life.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '180 min',
-    'rating': 4.7,
-    'episodes': 1850,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'This American Life',
-    'author': 'Ira Glass',
-    'description': 'Weekly public radio program that explores a theme through stories and interviews.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '65 min',
-    'rating': 4.9,
-    'episodes': 760,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'The Daily',
-    'author': 'The New York Times',
-    'description': 'Daily news podcast that covers one major story per episode.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '25 min',
-    'rating': 4.8,
-    'episodes': 1200,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Stuff You Should Know',
-    'author': 'Josh Clark and Chuck Bryant',
-    'description': 'Explores a variety of topics to explain how things work.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '50 min',
-    'rating': 4.6,
-    'episodes': 1500,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Armchair Expert',
-    'author': 'Dax Shepard',
-    'description': 'Interviews with celebrities, journalists, and academics about their lives.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '120 min',
-    'rating': 4.5,
-    'episodes': 310,
-    'color': Color(0xFF3F51B5),
-    },
-    ];
-    } else {
-    // Default list for other categories
-    return [
-    {
-    'title': 'RadioLab',
-    'author': 'Jad Abumrad & Robert Krulwich',
-    'description': 'A show about curiosity where sound illuminates ideas.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '55 min',
-    'rating': 4.8,
-    'episodes': 350,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Planet Money',
-    'author': 'NPR',
-    'description': 'The economy explained with entertaining stories about the world around us.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '25 min',
-    'rating': 4.7,
-    'episodes': 1100,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'How I Built This',
-    'author': 'Guy Raz',
-    'description': 'Stories of entrepreneurs and the companies they built.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '45 min',
-    'rating': 4.9,
-    'episodes': 275,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': '99% Invisible',
-    'author': 'Roman Mars',
-    'description': 'A show about all the thought that goes into the things we don',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '35 min',
-    'rating': 4.8,
-    'episodes': 450,
-    'color': Color(0xFF3F51B5),
-    },
-    {
-    'title': 'Freakonomics Radio',
-    'author': 'Stephen J. Dubner',
-    'description': 'Explores the hidden side of everything, with economic theory applied to everyday topics.',
-    'image': 'https://images.theabcdn.com/i/39267873',
-    'duration': '45 min',
-    'rating': 4.6,
-    'episodes': 485,
-    'color': Color(0xFF3F51B5),
-    },
-    ];
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Failed to load podcasts: $e'),
+          backgroundColor: Colors.red,
+        ),
+      );
     }
   }
 
@@ -235,11 +97,11 @@ class _PodcastListScreenState extends State<PodcastListScreen>
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: [
           _buildAppBar(),
           _isLoading
-              ? SliverFillRemaining(
+              ? const SliverFillRemaining(
             child: Center(
               child: CircularProgressIndicator(
                 color: Color(0xFF3F51B5),
@@ -247,7 +109,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
             ),
           )
               : _buildPodcastList(),
-          SliverToBoxAdapter(child: SizedBox(height: 20)),
+          const SliverToBoxAdapter(child: SizedBox(height: 20)),
         ],
       ),
     );
@@ -257,8 +119,8 @@ class _PodcastListScreenState extends State<PodcastListScreen>
     return SliverAppBar(
       expandedHeight: 150,
       pinned: true,
-      backgroundColor: Color(0xFF3F51B5),
-      shape: RoundedRectangleBorder(
+      backgroundColor:const Color(0xFF3F51B5),
+      shape:const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(24),
           bottomRight: Radius.circular(24),
@@ -270,7 +132,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
           children: [
             // Background gradient
             Container(
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(24),
                   bottomRight: Radius.circular(24),
@@ -331,15 +193,15 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                 children: [
                   Text(
                     widget.title,
-                    style: TextStyle(
+                    style:const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 6),
+                  const SizedBox(height: 6),
                   Container(
-                    padding: EdgeInsets.symmetric(
+                    padding:const EdgeInsets.symmetric(
                       horizontal: 10,
                       vertical: 5,
                     ),
@@ -349,7 +211,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                     ),
                     child: Text(
                       '${_isLoading ? '...' : _podcasts.length} podcasts',
-                      style: TextStyle(
+                      style:const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
@@ -362,23 +224,23 @@ class _PodcastListScreenState extends State<PodcastListScreen>
         ),
       ),
       leading: IconButton(
-        icon: Icon(Icons.arrow_back, color: Colors.white),
+        icon:const Icon(Icons.arrow_back, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
       actions: [
         IconButton(
-          icon: Icon(Icons.search, color: Colors.white),
+          icon:const Icon(Icons.search, color: Colors.white),
           onPressed: () {
             // Implement search functionality
           },
         ),
         IconButton(
-          icon: Icon(Icons.filter_list, color: Colors.white),
+          icon:const Icon(Icons.filter_list, color: Colors.white),
           onPressed: () {
             // Implement filter functionality
           },
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
       ],
     );
   }
@@ -395,9 +257,9 @@ class _PodcastListScreenState extends State<PodcastListScreen>
     );
   }
 
-  Widget _buildPodcastCard(Map<String, dynamic> podcast) {
+  Widget _buildPodcastCard(Podcast podcast) {
     return Container(
-      margin: EdgeInsets.fromLTRB(16, 16, 16, 0),
+      margin:const EdgeInsets.fromLTRB(16, 16, 16, 0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -405,7 +267,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
             blurRadius: 8,
-            offset: Offset(0, 2),
+            offset:const Offset(0, 2),
           ),
         ],
       ),
@@ -415,7 +277,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
           onTap: () {
-            // Navigate to podcast detail when implemented
+            // Navigate to podcast detail page
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -432,7 +294,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.network(
-                    podcast['image'] as String,
+                    podcast.image,
                     width: 100,
                     height: 100,
                     fit: BoxFit.cover,
@@ -440,21 +302,19 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                       return Container(
                         width: 100,
                         height: 100,
-                        color: (podcast['color'] as Color).withOpacity(0.2),
+                        color: podcast.color.withOpacity(0.2),
                         child: Center(
                           child: Icon(
                             Icons.headset,
                             size: 40,
-                            color: podcast['color'] as Color,
+                            color: podcast.color,
                           ),
                         ),
                       );
                     },
                   ),
                 ),
-                SizedBox(width: 16),
-
-                // Podcast info
+               const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -462,9 +322,9 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
-                              color: (podcast['color'] as Color).withOpacity(0.1),
+                              color: podcast.color.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Row(
@@ -473,32 +333,32 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                                 Icon(
                                   Icons.graphic_eq,
                                   size: 12,
-                                  color: podcast['color'] as Color,
+                                  color: podcast.color,
                                 ),
-                                SizedBox(width: 4),
+                                const SizedBox(width: 4),
                                 Text(
-                                  podcast['duration'] as String,
+                                  podcast.duration,
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
-                                    color: podcast['color'] as Color,
+                                    color: podcast.color,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.star,
                                 size: 16,
                                 color: Colors.amber,
                               ),
-                              SizedBox(width: 2),
+                              const SizedBox(width: 2),
                               Text(
-                                '${podcast['rating']}',
-                                style: TextStyle(
+                                '${podcast.rating}',
+                                style:const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 14,
                                 ),
@@ -507,19 +367,19 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                           ),
                         ],
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
-                        podcast['title'] as String,
-                        style: TextStyle(
+                        podcast.title,
+                        style:const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Text(
-                        podcast['author'] as String,
+                        podcast.author,
                         style: TextStyle(
                           color: Colors.grey[600],
                           fontSize: 14,
@@ -527,9 +387,9 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 8),
+                      const  SizedBox(height: 8),
                       Text(
-                        podcast['description'] as String,
+                        podcast.description,
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.grey[800],
@@ -537,17 +397,17 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 8),
+                      const  SizedBox(height: 8),
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                             decoration: BoxDecoration(
                               color: Colors.grey[200],
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(
-                              '${podcast['episodes']} episodes',
+                              '${podcast.episodes} episodes',
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
@@ -555,11 +415,11 @@ class _PodcastListScreenState extends State<PodcastListScreen>
                               ),
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Icon(
                             Icons.play_circle_fill_rounded,
                             size: 32,
-                            color: podcast['color'] as Color,
+                            color: podcast.color,
                           ),
                         ],
                       ),
@@ -574,4 +434,3 @@ class _PodcastListScreenState extends State<PodcastListScreen>
     );
   }
 }
-

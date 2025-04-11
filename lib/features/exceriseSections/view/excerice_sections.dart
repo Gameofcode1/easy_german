@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+
 class ExerciseScreen extends StatefulWidget {
+  const ExerciseScreen({super.key});
+
   @override
   _ExerciseScreenState createState() => _ExerciseScreenState();
 }
@@ -15,13 +18,13 @@ class _ExerciseScreenState extends State<ExerciseScreen>
       'title': 'Total Learning Hours',
       'value': '126 hrs',
       'icon': Icons.timer_outlined,
-      'color': Color(0xFF9C27B0),
+      'color': const Color(0xFF9C27B0),
     },
     {
       'title': 'Completed Lessons',
       'value': '78',
       'icon': Icons.check_circle_outline,
-      'color': Color(0xFF4CAF50),
+      'color': const Color(0xFF4CAF50),
     }
   ];
 
@@ -30,21 +33,21 @@ class _ExerciseScreenState extends State<ExerciseScreen>
       'title': 'Stories',
       'subtitle': 'Reading Practice',
       'icon': Icons.book_outlined,
-      'color': Color(0xFF2196F3),
+      'color': const Color(0xFF2196F3),
       'progress': 0.6,
     },
     {
       'title': 'Vocabulary',
       'subtitle': 'Word Learning',
       'icon': Icons.language_outlined,
-      'color': Color(0xFFFF9800),
+      'color': const Color(0xFFFF9800),
       'progress': 0.4,
     },
     {
       'title': 'Listening',
       'subtitle': 'Podcast & Audio',
       'icon': Icons.headphones_outlined,
-      'color': Color(0xFF4CAF50),
+      'color': const Color(0xFF4CAF50),
       'progress': 0.7,
     }
   ];
@@ -54,7 +57,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 3000),
+      duration: const Duration(milliseconds: 3000),
     );
 
     _floatAnimation = Tween<double>(begin: 0, end: 8).animate(
@@ -80,13 +83,13 @@ class _ExerciseScreenState extends State<ExerciseScreen>
       body: Container(
         color: Colors.grey[50],
         child: CustomScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           slivers: [
             _buildAppBar(),
             _buildTotalLearningSection(),
             _buildTodayLessonSection(),
             _buildExerciseCategorySection(),
-            SliverToBoxAdapter(child: SizedBox(height: 80)),
+            const SliverToBoxAdapter(child: SizedBox(height: 80)),
           ],
         ),
       ),
@@ -97,8 +100,8 @@ class _ExerciseScreenState extends State<ExerciseScreen>
     return SliverAppBar(
       expandedHeight: 200,
       pinned: true,
-      backgroundColor:const Color(0xFF3F51B5),
-      shape:const RoundedRectangleBorder(
+      backgroundColor: const Color(0xFF3F51B5),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(32),
           bottomRight: Radius.circular(32),
@@ -109,7 +112,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
           fit: StackFit.expand,
           children: [
             Container(
-              decoration:const BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(32),
                   bottomRight: Radius.circular(32),
@@ -163,7 +166,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Learning Journey',
                     style: TextStyle(
                       fontSize: 32,
@@ -172,15 +175,14 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                       letterSpacing: 1.0,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Container(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Your Daily German Learning Path',
                       style: TextStyle(
                         fontSize: 16,
@@ -202,10 +204,10 @@ class _ExerciseScreenState extends State<ExerciseScreen>
     return SliverToBoxAdapter(
       child: Container(
         height: 220,
-        margin: EdgeInsets.only(top: 16),
+        margin: const EdgeInsets.only(top: 16),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           itemCount: _learningStats.length,
           itemBuilder: (context, index) {
             final stat = _learningStats[index];
@@ -229,7 +231,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
   }) {
     return Container(
       width: 220,
-      margin: EdgeInsets.only(right: 16),
+      margin: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [color.withOpacity(0.9), color],
@@ -239,7 +241,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
           BoxShadow(
             color: color.withOpacity(0.3),
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -269,8 +271,8 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                     return Transform.translate(
                       offset: Offset(0, _floatAnimation.value / 2),
                       child: Container(
-                        padding:const EdgeInsets.all(8),
-                        decoration:const BoxDecoration(
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                           boxShadow: [
@@ -296,10 +298,10 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const  SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     Text(
                       title,
-                      style:const TextStyle(
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -308,7 +310,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                     const SizedBox(height: 8),
                     Text(
                       value,
-                      style:const TextStyle(
+                      style: const TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -324,54 +326,100 @@ class _ExerciseScreenState extends State<ExerciseScreen>
     );
   }
 
+  // Enhanced Today's Lesson section with simpler, more stable animations
   Widget _buildTodayLessonSection() {
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            borderRadius: BorderRadius.circular(20),
-            onTap: () {
-              // TODO: Start today's lesson
-            },
-            child: Container(
+        child: AnimatedBuilder(
+          animation: _animationController,
+          builder: (context, child) {
+            return Container(
               decoration: BoxDecoration(
-                gradient:const LinearGradient(
-                  colors: [
-                    Color(0xFF3F51B5),
-                    Color(0xFF5C6BC0),
-                  ],
-                ),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color:const Color(0xFF3F51B5).withOpacity(0.3),
+                    color: const Color(0xFF3F51B5).withOpacity(0.3),
                     blurRadius: 8,
-                    offset:const Offset(0, 4),
+                    spreadRadius: 2 + _floatAnimation.value / 4,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
-              padding:const EdgeInsets.all(24),
-              child:const Row(
-                children: [
-                  Icon(Icons.play_circle_outline, size: 40, color: Colors.white),
-                  SizedBox(width: 16),
-                  Expanded(
-                    child: Text(
-                      'Start Today\'s Lesson',
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+              child: Material(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(20),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () {
+                    // Handle tap
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xFF3F51B5),
+                          Color(0xFF5C6BC0),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.all(24),
+                    child: Row(
+                      children: [
+                        // Animated play icon with simple animation
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Transform.translate(
+                            offset: Offset(0, -_floatAnimation.value / 2),
+                            child: const Icon(
+                              Icons.play_circle_outline,
+                              size: 36,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        // Text
+                        const Expanded(
+                          child: Text(
+                            'Start Today\'s Lesson',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              shadows: [
+                                Shadow(
+                                  color: Colors.black26,
+                                  offset: Offset(0, 2),
+                                  blurRadius: 3,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // Animated arrow with simple animation
+                        Transform.translate(
+                          offset: Offset(_floatAnimation.value / 2, 0),
+                          child: const Icon(
+                            Icons.arrow_forward_ios,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.white),
-                ],
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
     );
@@ -384,8 +432,8 @@ class _ExerciseScreenState extends State<ExerciseScreen>
         child: Column(
           children: _exerciseCategories.map((category) {
             return Container(
-              margin: EdgeInsets.only(bottom: 16),
-              padding: EdgeInsets.all(16),
+              margin: const EdgeInsets.only(bottom: 16),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: category['color'].withOpacity(0.1),
                 borderRadius: BorderRadius.circular(20),
@@ -401,14 +449,14 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                       size: 28,
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           category['title'],
-                          style:const TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.black87,
@@ -416,7 +464,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                         ),
                         Text(
                           category['subtitle'],
-                          style:const TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.black54,
                           ),
@@ -425,8 +473,7 @@ class _ExerciseScreenState extends State<ExerciseScreen>
                         LinearProgressIndicator(
                           value: category['progress'],
                           color: category['color'],
-                          backgroundColor:
-                          category['color'].withOpacity(0.3),
+                          backgroundColor: category['color'].withOpacity(0.3),
                           minHeight: 6,
                         ),
                       ],

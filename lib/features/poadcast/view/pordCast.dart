@@ -3,6 +3,8 @@ import 'package:job_finder/features/poadcast/view/podcast_list_screen.dart';
 import 'dart:ui';
 
 class PodcastCategoryScreen extends StatefulWidget {
+  const PodcastCategoryScreen({super.key});
+
   @override
   _PodcastCategoryScreenState createState() => _PodcastCategoryScreenState();
 }
@@ -18,7 +20,7 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 3000),
+      duration: const Duration(milliseconds: 3000),
     );
 
     _floatAnimation = Tween<double>(begin: 0, end: 8).animate(
@@ -44,15 +46,13 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
       body: Container(
         color: Colors.grey[50],
         child: CustomScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           slivers: [
             _buildAppBar(),
             _buildFeaturedPodcast(),
             _buildSectionTitle('Podcast Levels'),
-            _buildLevelCategories(),
-            _buildSectionTitle('Podcast Categories'),
-            _buildPodcastCategories(),
-            SliverToBoxAdapter(child: SizedBox(height: 80)),
+            _buildVerticalLevelCategories(),
+            const SliverToBoxAdapter(child: SizedBox(height: 80)),
           ],
         ),
       ),
@@ -60,8 +60,9 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
         onPressed: () {
           // Navigate to now playing screen
         },
-        backgroundColor: Color(0xFF3F51B5),
-        child: Icon(Icons.headphones, color: Colors.white),
+        backgroundColor: const Color(0xFF3F51B5),
+        elevation: 8,
+        child: const Icon(Icons.headphones, color: Colors.white),
       ),
     );
   }
@@ -70,8 +71,8 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
     return SliverAppBar(
       expandedHeight: 200,
       pinned: true,
-      backgroundColor: Color(0xFF3F51B5),
-      shape: RoundedRectangleBorder(
+      backgroundColor: const Color(0xFF3F51B5),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(32),
           bottomRight: Radius.circular(32),
@@ -83,7 +84,7 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
           children: [
             // Background pattern
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(32),
                   bottomRight: Radius.circular(32),
@@ -142,7 +143,7 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
+                  const Text(
                     'AudioCast',
                     style: TextStyle(
                       fontSize: 32,
@@ -151,9 +152,9 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
                       letterSpacing: 1.0,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Container(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 12,
                       vertical: 8,
                     ),
@@ -161,7 +162,7 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Discover Amazing Podcasts',
                       style: TextStyle(
                         fontSize: 16,
@@ -176,15 +177,6 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
           ],
         ),
       ),
-      actions: [
-        IconButton(
-          icon: Icon(Icons.search, color: Colors.white, size: 26),
-          onPressed: () {
-            // Implement search functionality
-          },
-        ),
-        SizedBox(width: 8),
-      ],
     );
   }
 
@@ -193,18 +185,19 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 30, 20, 16),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              height: 32,
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              height: 40,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: Color(0xFF3F51B5),
+                color: const Color(0xFF3F51B5),
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xFF3F51B5).withOpacity(0.3),
+                    color: const Color(0xFF3F51B5).withOpacity(0.3),
                     blurRadius: 8,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
@@ -215,10 +208,10 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
                     color: Colors.white,
                     size: 16,
                   ),
-                  SizedBox(width: 6),
+                  const SizedBox(width: 6),
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -237,527 +230,394 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-        child: AnimatedBuilder(
-            animation: _animationController,
-            builder: (context, child) {
-              return Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xFF3F51B5).withOpacity(0.4),
-                      blurRadius: 15,
-                      offset: Offset(0, 8),
-                      spreadRadius: -5,
-                    ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Stack(
-                    fit: StackFit.expand,
+        child: Card(
+          elevation: 6,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Container(
+            height: 180,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              gradient: const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF3F51B5),
+                  Color(0xFF5C6BC0),
+                ],
+              ),
+            ),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                // Background decorative elements
+
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Background image
-                      Image.network(
-                        'https://cdn.ocs.yale.edu/wp-content/uploads/sites/77/2021/08/Neon-podcast-logo.jpeg',
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            color: Color(0xFF3F51B5).withOpacity(0.2),
-                            child: Center(
+                      // Top section
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: Colors.white,
+                              size: 12,
+                            ),
+                            SizedBox(width: 4),
+                            Text(
+                              'FEATURED',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Podcast info
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'The Daily Tech',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'Tech news and insights for your daily commute',
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.9),
+                              fontSize: 14,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+
+                      // Bottom section with stats
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // Creator and stats
+                          const Row(
+                            children: [
+                              Icon(Icons.mic, color: Colors.white, size: 16),
+                              SizedBox(width: 4),
+                              Text(
+                                'TechCrunch',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              SizedBox(width: 12),
+                              Icon(Icons.people, color: Colors.white, size: 16),
+                              SizedBox(width: 4),
+                              Text(
+                                '1.2M',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          // Play button with small bubble accent
+                          Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              // Small accent bubble
+
+                              // Play button
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: const Icon(
+                                  Icons.play_arrow,
+                                  color: Color(0xFF3F51B5),
+                                  size: 24,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildVerticalLevelCategories() {
+    final levels = [
+      {
+        'title': 'Beginner',
+        'subtitle': 'Easy listening for new language learners',
+        'description': 'Perfect for those just starting out. Simple vocabulary and slower speech to help you build confidence.',
+        'color': const Color(0xFF4CAF50),
+        'icon': Icons.school,
+        'podcasts': 15,
+      },
+      {
+        'title': 'Intermediate',
+        'subtitle': 'For those with some language experience',
+        'description': 'Step up your skills with more complex topics and natural conversation speed. Expand your vocabulary and comprehension.',
+        'color': const Color(0xFF2196F3),
+        'icon': Icons.trending_up,
+        'podcasts': 12,
+      },
+      {
+        'title': 'Advanced',
+        'subtitle': 'Complex topics for fluent speakers',
+        'description': 'Challenging content for experienced listeners. Diverse topics with idiomatic expressions and specialized vocabulary.',
+        'color': const Color(0xFF9C27B0),
+        'icon': Icons.star,
+        'podcasts': 8,
+      },
+      {
+        'title': 'Native',
+        'subtitle': 'Full-speed authentic podcasts',
+        'description': 'Original content created for native speakers. Immerse yourself in the language as it is naturally spoken.',
+        'color': const Color(0xFFFF9800),
+        'icon': Icons.verified,
+        'podcasts': 20,
+      },
+      {
+        'title': 'Special Topics',
+        'subtitle': 'Focused on specific vocabulary themes',
+        'description': 'Content organized by themes like business, travel, culture, and more. Build specialized vocabulary for your interests.',
+        'color': const Color(0xFFF44336),
+        'icon': Icons.topic,
+        'podcasts': 10,
+      },
+    ];
+
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+            (context, index) {
+          final level = levels[index];
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
+            child: _buildVerticalLevelCard(
+              title: level['title'] as String,
+              subtitle: level['subtitle'] as String,
+              description: level['description'] as String,
+              color: level['color'] as Color,
+              icon: level['icon'] as IconData,
+              podcasts: level['podcasts'] as int,
+            ),
+          );
+        },
+        childCount: levels.length,
+      ),
+    );
+  }
+
+  Widget _buildVerticalLevelCard({
+    required String title,
+    required String subtitle,
+    required String description,
+    required Color color,
+    required IconData icon,
+    required int podcasts,
+  }) {
+    return Card(
+      elevation: 6,
+      shadowColor: color.withOpacity(0.4),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Container(
+        height: 130,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              color.withOpacity(0.9),
+              color,
+            ],
+          ),
+        ),
+        child: Material(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PodcastListScreen(
+                    title: '$title Level Podcasts',
+                    level: title,
+                  ),
+                ),
+              );
+            },
+            child: Stack(
+              children: [
+                // Background pattern
+                Positioned(
+                  right: -40,
+                  bottom: -25,
+                  child: Icon(
+                    icon,
+                    size: 120,
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                ),
+
+                // Content
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // Left side - Icon
+                      AnimatedBuilder(
+                        animation: _animationController,
+                        builder: (context, child) {
+                          return Transform.translate(
+                            offset: Offset(0, _floatAnimation.value / 2),
+                            child: Container(
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: color.withOpacity(0.3),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 4),
+                                  ),
+                                ],
+                              ),
                               child: Icon(
-                                Icons.headset,
-                                color: Color(0xFF3F51B5),
-                                size: 40,
+                                icon,
+                                color: color,
+                                size: 26,
                               ),
                             ),
                           );
                         },
                       ),
 
-                      // Gradient overlay
-                      Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.transparent,
-                              Colors.black.withOpacity(0.8),
-                            ],
-                          ),
-                        ),
-                      ),
+                      const SizedBox(width: 16),
 
-                      // Content
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
+                      // Middle - Text content
+                      Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                              decoration: BoxDecoration(
-                                color: Color(0xFF3F51B5),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Text(
-                                'FEATURED',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 8),
                             Text(
-                              'The Daily Tech',
-                              style: TextStyle(
-                                color: Colors.white,
+                              title,
+                              style: const TextStyle(
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 24,
+                                color: Colors.white,
                               ),
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Text(
-                              'Tech news and insights for your daily commute',
+                              subtitle,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
                                 fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white.withOpacity(0.9),
                               ),
                               maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            SizedBox(height: 12),
-                            Row(
-                              children: [
-                                Icon(Icons.mic, color: Colors.white, size: 16),
-                                SizedBox(width: 4),
-                                Text(
-                                  'TechCrunch',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                                Icon(Icons.headset, color: Colors.white, size: 16),
-                                SizedBox(width: 4),
-                                Text(
-                                  '1.2M listeners',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
                             ),
                           ],
                         ),
                       ),
 
-                      // Play button
-                      Positioned(
-                        right: 20,
-                        bottom: 20,
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 8,
-                                offset: Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Icon(
-                            Icons.play_arrow,
-                            color: Color(0xFF3F51B5),
-                            size: 30,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }
-        ),
-      ),
-    );
-  }
+                      const SizedBox(width: 10),
 
-  Widget _buildLevelCategories() {
-    final levels = [
-      {
-        'title': 'Popular',
-        'subtitle': 'Top trending podcasts this week',
-        'color': Color(0xFF4CAF50),
-        'icon': Icons.trending_up,
-        'podcasts': 12,
-      },
-      {
-        'title': 'New Releases',
-        'subtitle': 'Fresh content from your favorite creators',
-        'color': Color(0xFFFF9800),
-        'icon': Icons.fiber_new,
-        'podcasts': 8,
-      },
-      {
-        'title': 'Curated',
-        'subtitle': 'Handpicked podcasts for quality listening',
-        'color': Color(0xFFF44336),
-        'icon': Icons.star,
-        'podcasts': 6,
-      },
-    ];
-
-    return SliverToBoxAdapter(
-      child: Container(
-        height: 180,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          itemCount: levels.length,
-          itemBuilder: (context, index) {
-            final level = levels[index];
-            return _buildLevelCard(
-              title: level['title'] as String,
-              subtitle: level['subtitle'] as String,
-              color: level['color'] as Color,
-              icon: level['icon'] as IconData,
-              podcasts: level['podcasts'] as int,
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildLevelCard({
-    required String title,
-    required String subtitle,
-    required Color color,
-    required IconData icon,
-    required int podcasts,
-  }) {
-    return Container(
-      width: 220,
-      margin: EdgeInsets.only(right: 16),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            color.withOpacity(0.9),
-            color,
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: color.withOpacity(0.3),
-            blurRadius: 8,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(20),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(20),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => PodcastListScreen(
-                  title: '$title Podcasts',
-                  level: title,
-                ),
-              ),
-            );
-          },
-          child: Stack(
-            children: [
-              // Background pattern
-              Positioned(
-                right: -20,
-                bottom: -20,
-                child: Icon(
-                  icon,
-                  size: 100,
-                  color: Colors.white.withOpacity(0.2),
-                ),
-              ),
-
-              // Floating icon
-              Positioned(
-                right: 16,
-                top: 16,
-                child: AnimatedBuilder(
-                    animation: _animationController,
-                    builder: (context, child) {
-                      return Transform.translate(
-                        offset: Offset(0, _floatAnimation.value / 2),
-                        child: Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 4,
-                                offset: Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Icon(
-                            icon,
-                            color: color,
-                            size: 20,
-                          ),
-                        ),
-                      );
-                    }
-                ),
-              ),
-
-              // Content
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 40), // Space for the floating icon
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    Expanded(
-                      child: Text(
-                        subtitle,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white.withOpacity(0.9),
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Row(
+                      // Right side - Podcast count & arrow
+                      Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            '$podcasts podcasts',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.2),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '$podcasts',
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                const Icon(
+                                  Icons.headset,
+                                  color: Colors.white,
+                                  size: 14,
+                                ),
+                              ],
                             ),
                           ),
-                          SizedBox(width: 4),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.white,
-                            size: 12,
+                          const SizedBox(height: 8),
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: color,
+                              size: 14,
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildPodcastCategories() {
-    final categories = [
-      {
-        'title': 'True Crime',
-        'icon': Icons.local_police,
-        'color': Color(0xFF3F51B5),
-        'image': 'assets/images/crime.jpg',
-      },
-      {
-        'title': 'Comedy',
-        'icon': Icons.sentiment_very_satisfied,
-        'color': Color(0xFF4CAF50),
-        'image': 'assets/images/comedy.jpg',
-      },
-      {
-        'title': 'News',
-        'icon': Icons.article,
-        'color': Color(0xFFFF9800),
-        'image': 'assets/images/news.jpg',
-      },
-      {
-        'title': 'Science',
-        'icon': Icons.science,
-        'color': Color(0xFF9C27B0),
-        'image': 'assets/images/science.jpg',
-      },
-      {
-        'title': 'Business',
-        'icon': Icons.business,
-        'color': Color(0xFF2196F3),
-        'image': 'assets/images/business.jpg',
-      },
-      {
-        'title': 'Health',
-        'icon': Icons.favorite,
-        'color': Color(0xFFE91E63),
-        'image': 'assets/images/health.jpg',
-      },
-    ];
-
-    return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      sliver: SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.1,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-        ),
-        delegate: SliverChildBuilderDelegate(
-              (context, index) {
-            final category = categories[index];
-            return _buildCategoryCard(
-              title: category['title'] as String,
-              icon: category['icon'] as IconData,
-              color: category['color'] as Color,
-              image: category['image'] as String,
-            );
-          },
-          childCount: categories.length,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCategoryCard({
-    required String title,
-    required IconData icon,
-    required Color color,
-    required String image,
-  }) {
-    return Material(
-      color: Colors.transparent,
-      borderRadius: BorderRadius.circular(16),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(16),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => PodcastListScreen(
-                title: '$title Podcasts',
-                category: title,
-              ),
-            ),
-          );
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 4,
-                offset: Offset(0, 2),
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                // Image background
-                Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Container(
-                      color: color.withOpacity(0.2),
-                      child: Center(
-                        child: Icon(
-                          icon,
-                          color: color,
-                          size: 40,
-                        ),
-                      ),
-                    );
-                  },
-                ),
-
-                // Gradient overlay
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.transparent,
-                        color.withOpacity(0.8),
-                      ],
-                    ),
-                  ),
-                ),
-
-                // Title at bottom
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                    child: Row(
-                      children: [
-                        Icon(
-                          icon,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                        SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            title,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ],

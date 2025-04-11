@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:ui';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
@@ -13,21 +16,21 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   final List<Map<String, dynamic>> _learningStats = [
     {
-      'title': 'Vocabulary ',
+      'title': 'Vocabulary',
       'value': '450 words',
       'icon': Icons.language,
-      'color': Color(0xFF4CAF50),
+      'color': const Color(0xFF4CAF50),
       'details': [
         {'label': 'Nouns', 'value': '120'},
         {'label': 'Verbs', 'value': '180'},
-        {'label': 'Adjectives', 'value': '150'},
+
       ]
     },
     {
       'title': 'Stories',
       'value': '42 stories',
       'icon': Icons.book,
-      'color': Color(0xFF2196F3),
+      'color': const Color(0xFF2196F3),
       'details': [
         {'label': 'Beginner', 'value': '15'},
         {'label': 'Intermediate', 'value': '20'},
@@ -35,21 +38,21 @@ class _ProfileScreenState extends State<ProfileScreen>
       ]
     },
     {
-      'title': 'Verbs Mastery',
-      'value': 'all level',
+      'title': 'Verbs ',
+      'value': 'All levels',
       'icon': Icons.transform,
-      'color': Color(0xFFFF9800),
+      'color': const Color(0xFFFF9800),
       'details': [
-        {'label': 'Perfekt', 'value': '85% '},
-        {'label': 'Präteritum', 'value': '65% '},
-        {'label': 'Used in Stories', 'value': '32 '},
+        {'label': 'Perfekt', 'value': '85%'},
+        {'label': 'Präteritum', 'value': '65%'},
+        {'label': 'Used in Stories', 'value': '32'},
       ]
     },
     {
-      'title': 'Learning Time',
+      'title': 'Time',
       'value': '126 hrs',
       'icon': Icons.timer,
-      'color': Color(0xFF9C27B0),
+      'color': const Color(0xFF9C27B0),
       'details': [
         {'label': 'Daily Average', 'value': '1.2 hrs'},
         {'label': 'Streak', 'value': '45 days'},
@@ -63,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 3000),
+      duration: const Duration(milliseconds: 3000),
     );
 
     _floatAnimation = Tween<double>(begin: 0, end: 8).animate(
@@ -86,8 +89,9 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     backgroundColor: Colors.grey[50],
       body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: [
           _buildAppBar(),
           _buildSectionTitle('Learning Journey'),
@@ -96,19 +100,21 @@ class _ProfileScreenState extends State<ProfileScreen>
           _buildAboutAppSection(),
           _buildSectionTitle('Connect'),
           _buildContactSection(),
-          SliverToBoxAdapter(child: SizedBox(height: 80)),
+          const SliverToBoxAdapter(child: SizedBox(height: 80)),
         ],
       ),
+      // Adding a floating action button for quick actions
+
     );
   }
 
-  // Previous Silver App Bar Design
+  // Improved app bar with more depth and better animations
   Widget _buildAppBar() {
     return SliverAppBar(
       expandedHeight: 200,
       pinned: true,
-      backgroundColor: Color(0xFF3F51B5),
-      shape: RoundedRectangleBorder(
+      backgroundColor: const Color(0xFF3F51B5),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(32),
           bottomRight: Radius.circular(32),
@@ -120,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen>
           children: [
             // Background gradient
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(32),
                   bottomRight: Radius.circular(32),
@@ -179,7 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
+                  const Text(
                     'My Learning Profile',
                     style: TextStyle(
                       fontSize: 32,
@@ -188,9 +194,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                       letterSpacing: 1.0,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Container(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 12,
                       vertical: 8,
                     ),
@@ -198,7 +204,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Your German Learning Journey',
                       style: TextStyle(
                         fontSize: 16,
@@ -215,8 +221,7 @@ class _ProfileScreenState extends State<ProfileScreen>
       ),
     );
   }
-
-  // Section Title with Icon
+  // Enhanced section title with more polish
   Widget _buildSectionTitle(String title) {
     return SliverToBoxAdapter(
       child: Padding(
@@ -224,16 +229,16 @@ class _ProfileScreenState extends State<ProfileScreen>
         child: Row(
           children: [
             Container(
-              height: 32,
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              height: 40,
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
               decoration: BoxDecoration(
-                color: Color(0xFF3F51B5),
-                borderRadius: BorderRadius.circular(16),
+                color: const Color(0xFF3F51B5),
+                borderRadius: BorderRadius.circular(18),
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xFF3F51B5).withOpacity(0.3),
-                    blurRadius: 8,
-                    offset: Offset(0, 3),
+                    color: const Color(0xFF3F51B5).withOpacity(0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
@@ -242,18 +247,35 @@ class _ProfileScreenState extends State<ProfileScreen>
                   Icon(
                     _getIconForTitle(title),
                     color: Colors.white,
-                    size: 16,
+                    size: 18,
                   ),
-                  SizedBox(width: 6),
+                  const SizedBox(width: 8),
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                 ],
+              ),
+            ),
+            // Add a subtle line to extend the section header
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Container(
+                  height: 1.5,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color(0xFF3F51B5).withOpacity(0.5),
+                        const Color(0xFF3F51B5).withOpacity(0.0),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
@@ -276,14 +298,14 @@ class _ProfileScreenState extends State<ProfileScreen>
     }
   }
 
-  // Learning Statistics Section in Grid
+  // Learning statistics with improved responsiveness
   Widget _buildLearningStatisticsSection() {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       sliver: SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1,
+          childAspectRatio: 0.9,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
         ),
@@ -296,6 +318,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               icon: stat['icon'],
               color: stat['color'],
               details: stat['details'],
+              index: index,
             );
           },
           childCount: _learningStats.length,
@@ -304,98 +327,127 @@ class _ProfileScreenState extends State<ProfileScreen>
     );
   }
 
-  // Learning Stat Card Widget
+  // Improved learning stat card with staggered animation
   Widget _buildLearningStatCard({
     required String title,
     required String value,
     required IconData icon,
     required Color color,
     required List<Map<String, String>> details,
+    required int index,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [color.withOpacity(0.8), color],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: color.withOpacity(0.3),
-            blurRadius: 8,
-            offset: Offset(0, 4),
+    return Hero(
+      tag: 'stat_card_$index',
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [color.withOpacity(0.8), color],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(16),
-          onTap: () {
-            // TODO: Implement detailed view
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Icon(
-                      icon,
-                      color: Colors.white.withOpacity(0.7),
-                      size: 24,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8),
-                Text(
-                  value,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Column(
-                  children: details.map((detail) =>
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 2.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              detail['label']!,
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.8),
-                                fontSize: 12,
-                              ),
-                            ),
-                            Text(
-                              detail['value']!,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: color.withOpacity(0.3),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(20),
+            onTap: () {
+              // _showDetailedStats(
+              //     context,
+              //     title,
+              //     value,
+              //     icon,
+              //     color,
+              //     details,
+              //     index);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
-                      )).toList(),
-                ),
-              ],
+                      ),
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Icon(
+                          icon,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    value,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: details.map((detail) =>
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  detail['label']!,
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.8),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 6, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.25),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    detail['value']!,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )).toList(),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -403,54 +455,106 @@ class _ProfileScreenState extends State<ProfileScreen>
     );
   }
 
-  // About App Section
+  // About App Section with card animation
   Widget _buildAboutAppSection() {
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Card(
-          elevation: 4,
+          elevation: 6,
+          shadowColor: Colors.black26,
           color: Colors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'About Deutsch Lernen',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF3F51B5),
-                  ),
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF3F51B5).withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Icon(
+                        Icons.school,
+                        color: Color(0xFF3F51B5),
+                        size: 24,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    const Text(
+                      'About Deutsch Lernen',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF3F51B5),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 12),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'We make German language learning engaging and fun through interactive stories, comprehensive grammar lessons, and personalized learning paths.',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black87,
+                    height: 1.5,
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 16),
+                // Adding features section
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    _buildFeatureChip('Interactive Stories'),
+                    _buildFeatureChip('Grammar Lessons'),
+                    _buildFeatureChip('Vocabulary Builder'),
+                    _buildFeatureChip('Audio Pronunciation'),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                const Divider(height: 1),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Version 1.2.0',
                       style: TextStyle(
                         color: Colors.black54,
                         fontSize: 14,
                       ),
                     ),
-                    Text(
-                      '© 2024 Language App',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontSize: 14,
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF3F51B5).withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Row(
+                        children: [
+                          Icon(
+                            Icons.copyright,
+                            size: 14,
+                            color: Color(0xFF3F51B5),
+                          ),
+                          SizedBox(width: 4),
+                          Text(
+                            '2024 Language App',
+                            style: TextStyle(
+                              color: Color(0xFF3F51B5),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -463,34 +567,78 @@ class _ProfileScreenState extends State<ProfileScreen>
     );
   }
 
+  // Feature chip widget
+  Widget _buildFeatureChip(String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: const Color(0xFF3F51B5).withOpacity(0.1),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: const Color(0xFF3F51B5).withOpacity(0.3),
+          width: 1,
+        ),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: Color(0xFF3F51B5),
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
 
+  // Improved contact section
   Widget _buildContactSection() {
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Card(
           color: Colors.white,
-          elevation: 4,
+          elevation: 6,
+          shadowColor: Colors.black26,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Get in Touch',
+                const Row(
+                  children: [
+                    Icon(
+                      Icons.connect_without_contact,
+                      color: Color(0xFF3F51B5),
+                      size: 24,
+                    ),
+                    SizedBox(width: 12),
+                    Text(
+                      'Get in Touch',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF3F51B5),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  'We value your feedback and are always happy to help with any questions!',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF3F51B5),
+                    fontSize: 15,
+                    color: Colors.black87,
+                    height: 1.5,
                   ),
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 16),
                 _buildContactButton(
                   icon: Icons.email,
                   label: 'Email Support',
+                  description: 'support@deutschlernen.com',
                   onTap: () async {
                     final Uri emailLaunchUri = Uri(
                       scheme: 'mailto',
@@ -504,10 +652,11 @@ class _ProfileScreenState extends State<ProfileScreen>
                     }
                   },
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 12),
                 _buildContactButton(
                   icon: Icons.web,
                   label: 'Visit Website',
+                  description: 'www.deutschlernen.com',
                   onTap: () async {
                     final Uri websiteUri = Uri.parse(
                         'https://www.deutschlernen.com');
@@ -516,10 +665,11 @@ class _ProfileScreenState extends State<ProfileScreen>
                     }
                   },
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 12),
                 _buildContactButton(
                   icon: Icons.feedback,
                   label: 'Send Feedback',
+                  description: 'Help us improve',
                   onTap: () async {
                     final Uri feedbackUri = Uri.parse(
                         'https://www.deutschlernen.com/feedback');
@@ -528,14 +678,20 @@ class _ProfileScreenState extends State<ProfileScreen>
                     }
                   },
                 ),
-                SizedBox(height: 12),
-                Text(
-                  'We value your feedback and are always happy to help!',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                    fontStyle: FontStyle.italic,
-                  ),
+                const SizedBox(height: 16),
+                // Social media links
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildSocialButton(Icons.facebook, Colors.blue.shade700),
+                    const SizedBox(width: 16),
+                    _buildSocialButton(Icons.language, Colors.green.shade600),
+                    const SizedBox(width: 16),
+                    _buildSocialButton(
+                        Icons.ondemand_video, Colors.red.shade600),
+                    const SizedBox(width: 16),
+                    _buildSocialButton(Icons.discord, Colors.indigo.shade400),
+                  ],
                 ),
               ],
             ),
@@ -545,36 +701,87 @@ class _ProfileScreenState extends State<ProfileScreen>
     );
   }
 
-  // Helper method to create contact buttons
+  // Social media button
+  Widget _buildSocialButton(IconData icon, Color color) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: color.withOpacity(0.3),
+          width: 1.5,
+        ),
+      ),
+      child: Icon(
+        icon,
+        color: color,
+        size: 22,
+      ),
+    );
+  }
+
+  // Enhanced contact button with more information
   Widget _buildContactButton({
     required IconData icon,
     required String label,
+    required String description,
     required VoidCallback onTap,
   }) {
     return InkWell(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(16),
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
         decoration: BoxDecoration(
-          color: Color(0xFF3F51B5).withOpacity(0.1),
-          borderRadius: BorderRadius.circular(12),
+          color: const Color(0xFF3F51B5).withOpacity(0.075),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: const Color(0xFF3F51B5).withOpacity(0.1),
+            width: 1.5,
+          ),
         ),
         child: Row(
           children: [
-            Icon(
-              icon,
-              color: Color(0xFF3F51B5),
-              size: 24,
-            ),
-            SizedBox(width: 12),
-            Text(
-              label,
-              style: TextStyle(
-                color: Color(0xFF3F51B5),
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: const Color(0xFF3F51B5).withOpacity(0.15),
+                borderRadius: BorderRadius.circular(12),
               ),
+              child: Icon(
+                icon,
+                color: const Color(0xFF3F51B5),
+                size: 20,
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: const TextStyle(
+                      color: Color(0xFF3F51B5),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      color: Colors.black87.withOpacity(0.7),
+                      fontSize: 13,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF3F51B5),
+              size: 16,
             ),
           ],
         ),
@@ -589,4 +796,5 @@ class _ProfileScreenState extends State<ProfileScreen>
     '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
   }
+
 }

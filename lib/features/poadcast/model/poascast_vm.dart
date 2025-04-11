@@ -1,11 +1,15 @@
+// lib/model/podcast_vm.dart
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'podcast_model.dart';
 
 class PodcastPlayerViewModel extends ChangeNotifier {
-  // Properties from the original state
-  final Map<String, dynamic> podcast;
+  // Properties
+  final Podcast podcast;
+  PodcastEpisode? currentEpisode;
   bool isPlaying = false;
   int currentIndex = 0;
   double currentPosition = 0.0;
@@ -14,17 +18,17 @@ class PodcastPlayerViewModel extends ChangeNotifier {
   bool isTtsInitialized = false;
   bool isTtsSpeaking = false;
 
-  // Animation controllers - mark them as nullable and with late
+  // Animation controllers
   late AnimationController waveController;
   late AnimationController characterAnimController1;
   late AnimationController characterAnimController2;
 
-  // Animation values - will be initialized with controllers
+  // Animation values
   late Animation<double> _waveAnimation;
   late Animation<double> _speakingAnimation1;
   late Animation<double> _speakingAnimation2;
 
-  // Make sure controllers are initialized flag
+  // Initialization flag
   bool _areControllersInitialized = false;
 
   // Getters for animations
@@ -43,73 +47,66 @@ class PodcastPlayerViewModel extends ChangeNotifier {
   // Total duration in seconds
   late int totalDuration;
 
-  // Mock conversation data - German dialogue with English subtitles
-  final List<Map<String, dynamic>> conversation = [
-    {
-      'speaker': 1,
-      'german': 'Hallo! Wie geht es dir heute?',
-      'english': 'Hello! How are you today?',
-      'duration': 3,
-    },
-    {
-      'speaker': 2,
-      'german': 'Mir geht es gut, danke! Was hast du heute gemacht?',
-      'english': 'I\'m doing well, thank you! What did you do today?',
-      'duration': 4,
-    },
-    {
-      'speaker': 1,
-      'german': 'Ich war im Park und habe ein interessantes Buch gelesen.',
-      'english': 'I was at the park and read an interesting book.',
-      'duration': 4,
-    },
-    {
-      'speaker': 2,
-      'german': 'Oh, welches Buch hast du gelesen?',
-      'english': 'Oh, which book did you read?',
-      'duration': 3,
-    },
-    {
-      'speaker': 1,
-      'german': 'Es war "Die Verwandlung" von Franz Kafka. Ein Klassiker der deutschen Literatur.',
-      'english': 'It was "The Metamorphosis" by Franz Kafka. A classic of German literature.',
-      'duration': 5,
-    },
-    {
-      'speaker': 2,
-      'german': 'Das klingt interessant! Ich liebe Kafka\'s Werke.',
-      'english': 'That sounds interesting! I love Kafka\'s works.',
-      'duration': 4,
-    },
-    {
-      'speaker': 1,
-      'german': 'Ja, seine Geschichten sind surreal und tiefgründig. Hast du eine Lieblingsgeschichte von ihm?',
-      'english': 'Yes, his stories are surreal and profound. Do you have a favorite story by him?',
-      'duration': 5,
-    },
-    {
-      'speaker': 2,
-      'german': 'Ich mag "Der Prozess" sehr. Die Atmosphäre ist bedrückend, aber fesselnd.',
-      'english': 'I really like "The Trial". The atmosphere is oppressive but captivating.',
-      'duration': 4,
-    },
-    {
-      'speaker': 1,
-      'german': 'Eine gute Wahl! Vielleicht können wir nächstes Mal zusammen in der Bibliothek lesen?',
-      'english': 'A good choice! Perhaps next time we can read together at the library?',
-      'duration': 4,
-    },
-    {
-      'speaker': 2,
-      'german': 'Das wäre wunderbar! Ich freue mich darauf.',
-      'english': 'That would be wonderful! I\'m looking forward to it.',
-      'duration': 3,
-    },
-  ];
+  // Get the current conversation
+  List<DialogueEntry> get conversation {
+    if (currentEpisode != null && currentEpisode!.dialogue.isNotEmpty) {
+      return currentEpisode!.dialogue;
+    }
+
+    // If no episode is set, try to get the first episode's dialogue
+    if (podcast.conversations.isNotEmpty && podcast.conversations.first.dialogue.isNotEmpty) {
+      currentEpisode = podcast.conversations.first;
+      return currentEpisode!.dialogue;
+    }
+
+    // If no conversations are found, return an empty list or use default mock data
+    return _getMockConversation();
+  }
+
+  // Mock conversation data as a fallback
+  List<DialogueEntry> _getMockConversation() {
+    return [
+      DialogueEntry(
+        speaker: 1,
+        german: 'Hallo! Wie geht es dir heute?',
+        english: 'Hello! How are you today?',
+        duration: 3,
+      ),
+      DialogueEntry(
+        speaker: 2,
+        german: 'Mir geht es gut, danke! Was hast du heute gemacht?',
+        english: 'I\'m doing well, thank you! What did you do today?',
+        duration: 4,
+      ),
+      DialogueEntry(
+        speaker: 1,
+        german: 'Ich war im Park und habe ein interessantes Buch gelesen.',
+        english: 'I was at the park and read an interesting book.',
+        duration: 4,
+      ),
+      DialogueEntry(
+        speaker: 2,
+        german: 'Oh, welches Buch hast du gelesen?',
+        english: 'Oh, which book did you read?',
+        duration: 3,
+      ),
+      DialogueEntry(
+        speaker: 1,
+        german: 'Es war "Die Verwandlung" von Franz Kafka. Ein Klassiker der deutschen Literatur.',
+        english: 'It was "The Metamorphosis" by Franz Kafka. A classic of German literature.',
+        duration: 5,
+      ),
+    ];
+  }
 
   PodcastPlayerViewModel({required this.podcast}) {
+    // Try to set initial episode if available
+    if (podcast.conversations.isNotEmpty) {
+      currentEpisode = podcast.conversations.first;
+    }
+
     // Calculate total duration
-    totalDuration = conversation.fold(0, (sum, item) => sum + (item['duration'] as int));
+    totalDuration = conversation.fold(0, (sum, item) => sum + item.duration);
 
     // Set initial dialogue
     updateCurrentDialogue();
@@ -121,17 +118,17 @@ class PodcastPlayerViewModel extends ChangeNotifier {
       // Create animation controllers
       waveController = AnimationController(
         vsync: vsync,
-        duration: Duration(milliseconds: 1500),
+        duration: const Duration(milliseconds: 1500),
       );
 
       characterAnimController1 = AnimationController(
         vsync: vsync,
-        duration: Duration(milliseconds: 800),
+        duration: const Duration(milliseconds: 800),
       );
 
       characterAnimController2 = AnimationController(
         vsync: vsync,
-        duration: Duration(milliseconds: 800),
+        duration: const Duration(milliseconds: 800),
       );
 
       // Create animations
@@ -200,13 +197,13 @@ class PodcastPlayerViewModel extends ChangeNotifier {
   // Start progress timer for tracking playback
   void startProgressTimer() {
     progressTimer?.cancel();
-    progressTimer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+    progressTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
       if (isPlaying) {
         currentPosition += 0.1;
 
         // Check if we need to move to the next dialogue
         double positionInCurrentDialogue = getCurrentPositionInDialogue();
-        int currentDuration = conversation[currentIndex]['duration'] as int;
+        int currentDuration = conversation[currentIndex].duration;
 
         if (positionInCurrentDialogue >= currentDuration && currentIndex < conversation.length - 1) {
           // Only auto-advance if TTS has finished speaking
@@ -230,7 +227,7 @@ class PodcastPlayerViewModel extends ChangeNotifier {
   double getCurrentPositionInDialogue() {
     double previousDuration = 0;
     for (int i = 0; i < currentIndex; i++) {
-      previousDuration += conversation[i]['duration'] as int;
+      previousDuration += conversation[i].duration;
     }
     return currentPosition - previousDuration;
   }
@@ -239,9 +236,9 @@ class PodcastPlayerViewModel extends ChangeNotifier {
   void updateCurrentDialogue() {
     if (currentIndex < conversation.length) {
       final dialogue = conversation[currentIndex];
-      currentGermanText = dialogue['german'];
-      currentEnglishText = dialogue['english'];
-      currentSpeaker = dialogue['speaker'];
+      currentGermanText = dialogue.german;
+      currentEnglishText = dialogue.english;
+      currentSpeaker = dialogue.speaker;
 
       // Start speaking if playing and TTS is initialized
       if (isPlaying && isTtsInitialized) {
@@ -263,7 +260,7 @@ class PodcastPlayerViewModel extends ChangeNotifier {
         await flutterTts.stop();
 
         // Small delay to ensure previous speech is fully stopped
-        await Future.delayed(Duration(milliseconds: 100));
+        await Future.delayed(const Duration(milliseconds: 100));
 
         // Start new speech
         await flutterTts.speak(currentGermanText);
@@ -336,7 +333,7 @@ class PodcastPlayerViewModel extends ChangeNotifier {
       // Update position
       double position = 0;
       for (int i = 0; i < currentIndex; i++) {
-        position += conversation[i]['duration'] as int;
+        position += conversation[i].duration;
       }
       currentPosition = position;
 
@@ -363,7 +360,7 @@ class PodcastPlayerViewModel extends ChangeNotifier {
       // Update position
       double position = 0;
       for (int i = 0; i < currentIndex; i++) {
-        position += conversation[i]['duration'] as int;
+        position += conversation[i].duration;
       }
       currentPosition = position;
 
@@ -388,7 +385,7 @@ class PodcastPlayerViewModel extends ChangeNotifier {
       // Find the current dialogue based on position
       double accumulatedTime = 0;
       for (int i = 0; i < conversation.length; i++) {
-        double dialogueDuration = conversation[i]['duration'] as double;
+        double dialogueDuration = conversation[i].duration.toDouble();
         if (value < accumulatedTime + dialogueDuration) {
           currentIndex = i;
           break;

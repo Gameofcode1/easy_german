@@ -1,31 +1,116 @@
-
-// Category Section Model
 import 'package:flutter/material.dart';
-import 'package:flutter_tts/flutter_tts.dart';
 import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
-class CategorySection {
+// Main app entry point
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => VocabularyProvider()),
+        ChangeNotifierProvider(create: (_) => FlashcardProvider()),
+      ],
+      child: MaterialApp(
+        title: 'German Vocabulary',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+          fontFamily: 'Roboto',
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            backgroundColor: Colors.white,
+            foregroundColor: Color(0xFF3F51B5),
+          ),
+        ),
+        home: const VocabularyCategoryScreen(),
+        debugShowCheckedModeBanner: false,
+      ),
+    );
+  }
+}
+
+// ===== MODELS =====
+
+// Models based on your JSON structure
+class VocabularyData {
+  final Map<String, LevelData> levels;
+
+  VocabularyData({required this.levels});
+
+  factory VocabularyData.fromJson(Map<String, dynamic> json) {
+    Map<String, LevelData> levels = {};
+    json['vocabulary']['levels'].forEach((key, value) {
+      levels[key] = LevelData.fromJson(value);
+    });
+    return VocabularyData(levels: levels);
+  }
+}
+
+class LevelData {
+  final String name;
+  final String description;
+  final List<SectionData> sections;
+
+  LevelData({
+    required this.name,
+    required this.description,
+    required this.sections,
+  });
+
+  factory LevelData.fromJson(Map<String, dynamic> json) {
+    List<SectionData> sections = [];
+    for (var section in json['sections']) {
+      sections.add(SectionData.fromJson(section));
+    }
+    return LevelData(
+      name: json['name'],
+      description: json['description'],
+      sections: sections,
+    );
+  }
+}
+
+class SectionData {
   final String title;
-  final List<CategoryItem> items;
+  final List<ItemData> items;
 
-  CategorySection({
+  SectionData({
     required this.title,
     required this.items,
   });
+
+  factory SectionData.fromJson(Map<String, dynamic> json) {
+    List<ItemData> items = [];
+    for (var item in json['items']) {
+      items.add(ItemData.fromJson(item));
+    }
+    return SectionData(
+      title: json['title'],
+      items: items,
+    );
+  }
 }
 
-// Category Item Model
-class CategoryItem {
-  final IconData icon;
-  final Color iconColor;
+class ItemData {
+  final String icon;
+  final String iconColor;
   final String title;
   final int count;
-  double progress;
+  final double progress;
   final String category;
   final String level;
   final bool isNotStarted;
+  final List<FlashcardData> flashcards;
 
-  CategoryItem({
+  ItemData({
     required this.icon,
     required this.iconColor,
     required this.title,
@@ -33,26 +118,29 @@ class CategoryItem {
     required this.progress,
     required this.category,
     required this.level,
-    this.isNotStarted = false,
+    required this.isNotStarted,
+    required this.flashcards,
   });
+
+  factory ItemData.fromJson(Map<String, dynamic> json) {
+    List<FlashcardData> flashcards = [];
+    for (var card in json['flashcards']) {
+      flashcards.add(FlashcardData.fromJson(card));
+    }
+    return ItemData(
+      icon: json['icon'],
+      iconColor: json['iconColor'],
+      title: json['title'],
+      count: json['count'],
+      progress: json['progress'].toDouble(),
+      category: json['category'],
+      level: json['level'],
+      isNotStarted: json['isNotStarted'] ?? false,
+      flashcards: flashcards,
+    );
+  }
 }
 
-// Flashcard Example Model
-class FlashcardExample {
-  final String prefix;
-  final String highlight;
-  final String suffix;
-  final String type;
-
-  FlashcardExample({
-    required this.prefix,
-    required this.highlight,
-    required this.suffix,
-    required this.type,
-  });
-}
-
-// Flashcard Data Model
 class FlashcardData {
   final String id;
   final String german;
@@ -71,188 +159,172 @@ class FlashcardData {
     this.isLearned = false,
     this.isBookmarked = false,
   });
+
+  factory FlashcardData.fromJson(Map<String, dynamic> json) {
+    List<FlashcardExample> examples = [];
+    for (var example in json['examples']) {
+      examples.add(FlashcardExample.fromJson(example));
+    }
+    return FlashcardData(
+      id: json['id'],
+      german: json['german'],
+      english: json['english'],
+      partOfSpeech: json['partOfSpeech'],
+      examples: examples,
+      isLearned: json['isLearned'] ?? false,
+      isBookmarked: json['isBookmarked'] ?? false,
+    );
+  }
 }
 
-// Providers
+class FlashcardExample {
+  final String prefix;
+  final String highlight;
+  final String suffix;
+  final String type;
+  final String? translation;
 
-// Vocabulary Provider for category management
+  FlashcardExample({
+    required this.prefix,
+    required this.highlight,
+    required this.suffix,
+    required this.type,
+    this.translation,
+  });
+
+  factory FlashcardExample.fromJson(Map<String, dynamic> json) {
+    return FlashcardExample(
+      prefix: json['prefix'],
+      highlight: json['highlight'],
+      suffix: json['suffix'],
+      type: json['type'],
+      translation: json['translation'],
+    );
+  }
+}
+
+// ===== PROVIDERS =====
+
 class VocabularyProvider extends ChangeNotifier {
-  // Category data
-  Map<String, List<CategorySection>> levelData = {
-    'A1': [
-      CategorySection(
-        title: 'Basics',
-        items: [
-          CategoryItem(
-            icon: Icons.waving_hand,
-            iconColor: Colors.purple,
-            title: 'Greetings and Introduction',
-            count: 6,
-            progress: 1.0,
-            category: 'greetings',
-            level: 'A1',
-          ),
-          CategoryItem(
-            icon: Icons.family_restroom,
-            iconColor: Colors.teal,
-            title: 'Family',
-            count: 12,
-            progress: 0.7,
-            category: 'family',
-            level: 'A1',
-          ),
-          CategoryItem(
-            icon: Icons.home,
-            iconColor: Colors.brown,
-            title: 'Home',
-            count: 10,
-            progress: 0.4,
-            category: 'home',
-            level: 'A1',
-          ),
-        ],
-      ),
-      CategorySection(
-        title: 'Food & Drink',
-        items: [
-          CategoryItem(
-            icon: Icons.local_drink,
-            iconColor: Colors.blue,
-            title: 'Drinks',
-            count: 7,
-            progress: 0.3,
-            category: 'drinks',
-            level: 'A1',
-          ),
-          CategoryItem(
-            icon: Icons.apple,
-            iconColor: Colors.red,
-            title: 'Fruits',
-            count: 5,
-            progress: 0.5,
-            category: 'fruits',
-            level: 'A1',
-          ),
-        ],
-      ),
-    ],
-    'A2': [
-      CategorySection(
-        title: 'Daily Life',
-        items: [
-          CategoryItem(
-            icon: Icons.shopping_cart,
-            iconColor: Colors.orange,
-            title: 'Shopping',
-            count: 15,
-            progress: 0.2,
-            category: 'shopping',
-            level: 'A2',
-          ),
-          CategoryItem(
-            icon: Icons.directions_walk,
-            iconColor: Colors.green,
-            title: 'Activities',
-            count: 20,
-            progress: 0.5,
-            category: 'activities',
-            level: 'A2',
-          ),
-        ],
-      ),
-      CategorySection(
-        title: 'Health & Body',
-        items: [
-          CategoryItem(
-            icon: Icons.medical_services,
-            iconColor: Colors.red,
-            title: 'Health',
-            count: 18,
-            progress: 0.3,
-            category: 'health',
-            level: 'A2',
-          ),
-          CategoryItem(
-            icon: Icons.accessibility_new,
-            iconColor: Colors.indigo,
-            title: 'Body Parts',
-            count: 14,
-            progress: 0.6,
-            category: 'body_parts',
-            level: 'A2',
-          ),
-        ],
-      ),
-    ],
-    'B1': [
-      CategorySection(
-        title: 'Work & Education',
-        items: [
-          CategoryItem(
-            icon: Icons.work,
-            iconColor: Colors.blueGrey,
-            title: 'Professions',
-            count: 25,
-            progress: 0.1,
-            category: 'professions',
-            level: 'B1',
-          ),
-          CategoryItem(
-            icon: Icons.school,
-            iconColor: Colors.blue,
-            title: 'Education',
-            count: 22,
-            progress: 0.2,
-            category: 'education',
-            level: 'B1',
-          ),
-        ],
-      ),
-      CategorySection(
-        title: 'Abstract Concepts',
-        items: [
-          CategoryItem(
-            icon: Icons.psychology,
-            iconColor: Colors.purple,
-            title: 'Emotions',
-            count: 30,
-            progress: 0.0,
-            category: 'emotions',
-            level: 'B1',
-            isNotStarted: true,
-          ),
-          CategoryItem(
-            icon: Icons.lightbulb,
-            iconColor: Colors.amber,
-            title: 'Ideas & Opinions',
-            count: 35,
-            progress: 0.0,
-            category: 'ideas',
-            level: 'B1',
-            isNotStarted: true,
-          ),
-        ],
-      ),
-    ],
-  };
+  Map<String, List<CategorySection>> levelData = {};
+  bool isLoading = true;
+  Map<String, dynamic>? _jsonCache;
 
-  // Update progress for a category
-  void updateCategoryProgress(String level, String category, double progress) {
-    for (var section in levelData[level] ?? []) {
-      for (var item in section.items) {
-        if (item.category == category) {
-          item.progress = progress;
-          notifyListeners();
-          return;
+  VocabularyProvider() {
+    _loadVocabularyData();
+  }
+
+  Future<void> _loadVocabularyData() async {
+    try {
+      isLoading = true;
+      notifyListeners();
+
+      await preloadJson();
+
+      // Process each level (A1, A2, B1, etc.)
+      _jsonCache!['vocabulary']['levels'].forEach((levelKey, levelValue) {
+        List<dynamic> sectionsJson = levelValue['sections'];
+        List<CategorySection> sections = [];
+
+        // Process each section
+        for (var sectionJson in sectionsJson) {
+          String sectionTitle = sectionJson['title'];
+          List<dynamic> itemsJson = sectionJson['items'];
+          List<CategoryItem> items = [];
+
+          // Process each category item
+          for (var itemJson in itemsJson) {
+            items.add(CategoryItem(
+              icon: _getIconData(itemJson['icon']),
+              iconColor: _getColor(itemJson['iconColor']),
+              title: itemJson['title'],
+              count: itemJson['count'],
+              progress: itemJson['progress'].toDouble(),
+              category: itemJson['category'],
+              level: itemJson['level'],
+              isNotStarted: itemJson['isNotStarted'] ?? false,
+            ));
+          }
+
+          sections.add(CategorySection(
+            title: sectionTitle,
+            items: items,
+          ));
         }
-      }
+
+        levelData[levelKey] = sections;
+      });
+
+      isLoading = false;
+      notifyListeners();
+    } catch (e) {
+      print('Error loading vocabulary data: $e');
+      isLoading = false;
+      notifyListeners();
     }
   }
 
-  // Get flashcards based on category and level
+  Future<void> preloadJson() async {
+    if (_jsonCache != null) return;
+
+    try {
+      // Load JSON from assets folder
+      final String jsonString = await rootBundle.loadString('assets/json/vocabulary.json');
+      _jsonCache = json.decode(jsonString);
+    } catch (e) {
+      print('Error preloading JSON: $e');
+      throw Exception('Failed to load JSON data');
+    }
+  }
+
   List<FlashcardData> getFlashcardsForCategory(String category, String level) {
-    // This would ideally come from a database or API
-    // Here we're creating sample data
+    try {
+      if (_jsonCache == null) {
+        throw Exception('JSON data is not loaded yet');
+      }
+
+      // Find the corresponding flashcards in the JSON data
+      Map<String, dynamic> levelsJson = _jsonCache!['vocabulary']['levels'];
+      List<dynamic> sectionsJson = levelsJson[level]['sections'];
+
+      for (var section in sectionsJson) {
+        for (var item in section['items']) {
+          if (item['category'] == category) {
+            List<dynamic> flashcardsJson = item['flashcards'];
+            List<FlashcardData> flashcards = [];
+
+            for (var cardJson in flashcardsJson) {
+              List<FlashcardExample> examples = [];
+
+              for (var exampleJson in cardJson['examples']) {
+                examples.add(FlashcardExample.fromJson(exampleJson));
+              }
+
+              flashcards.add(FlashcardData(
+                id: cardJson['id'],
+                german: cardJson['german'],
+                english: cardJson['english'],
+                partOfSpeech: cardJson['partOfSpeech'],
+                examples: examples,
+                isLearned: cardJson['isLearned'] ?? false,
+                isBookmarked: cardJson['isBookmarked'] ?? false,
+              ));
+            }
+
+            return flashcards;
+          }
+        }
+      }
+
+      // If category not found in JSON, return the fallback data
+      return _getFallbackFlashcards(category);
+    } catch (e) {
+      print('Error getting flashcards: $e');
+      return _getFallbackFlashcards(category);
+    }
+  }
+
+  List<FlashcardData> _getFallbackFlashcards(String category) {
     switch (category) {
       case 'greetings':
         return [
@@ -267,95 +339,7 @@ class VocabularyProvider extends ChangeNotifier {
                 highlight: 'Hallo',
                 suffix: ' zu meinem Freund.',
                 type: 'INT',
-              ),
-              FlashcardExample(
-                prefix: '',
-                highlight: 'Hallo',
-                suffix: ', wie geht es dir?',
-                type: 'INT',
-              ),
-            ],
-          ),
-          FlashcardData(
-            id: 'greeting_2',
-            german: 'Guten Tag',
-            english: 'Good day',
-            partOfSpeech: 'INT',
-            examples: [
-              FlashcardExample(
-                prefix: '',
-                highlight: 'Guten Tag',
-                suffix: ', Herr Schmidt!',
-                type: 'INT',
-              ),
-              FlashcardExample(
-                prefix: 'Man sagt ',
-                highlight: 'Guten Tag',
-                suffix: ' am Nachmittag.',
-                type: 'INT',
-              ),
-            ],
-          ),
-          FlashcardData(
-            id: 'greeting_3',
-            german: 'Auf Wiedersehen',
-            english: 'Goodbye',
-            partOfSpeech: 'INT',
-            examples: [
-              FlashcardExample(
-                prefix: '',
-                highlight: 'Auf Wiedersehen',
-                suffix: '! Bis morgen!',
-                type: 'INT',
-              ),
-              FlashcardExample(
-                prefix: 'Ich muss jetzt gehen. ',
-                highlight: 'Auf Wiedersehen',
-                suffix: '!',
-                type: 'INT',
-              ),
-            ],
-          ),
-        ];
-      case 'family':
-        return [
-          FlashcardData(
-            id: 'family_1',
-            german: 'die Familie',
-            english: 'the family',
-            partOfSpeech: 'NOU',
-            examples: [
-              FlashcardExample(
-                prefix: 'Meine ',
-                highlight: 'Familie',
-                suffix: ' ist sehr groß.',
-                type: 'NOU',
-              ),
-              FlashcardExample(
-                prefix: 'Wie groß ist deine ',
-                highlight: 'Familie',
-                suffix: '?',
-                type: 'NOU',
-              ),
-            ],
-          ),
-          FlashcardData(
-            id: 'family_2',
-            german: 'die Mutter',
-            english: 'the mother',
-            partOfSpeech: 'NOU',
-            examples: [
-              FlashcardExample(
-                prefix: 'Meine ',
-                highlight: 'Mutter',
-                suffix: ' kocht sehr gut.',
-                type: 'NOU',
-              ),
-              FlashcardExample(
-                prefix: 'Die ',
-                highlight: 'Mutter',
-                suffix: ' von meinem Freund ist Ärztin.',
-                type: 'NOU',
+                translation: 'I say hello to my friend.',
               ),
             ],
           ),
@@ -373,30 +357,23 @@ class VocabularyProvider extends ChangeNotifier {
                 highlight: 'einzelnen',
                 suffix: ' Kugel getötet.',
                 type: 'ADJ',
-              ),
-              FlashcardExample(
-                prefix: 'die ',
-                highlight: 'einzelnen',
-                suffix: ' Zimmer waren komplett ausgebucht.',
-                type: 'ADJ',
-              ),
-            ],
-          ),
-          FlashcardData(
-            id: 'default_2',
-            german: 'das Einzelzimmer',
-            english: 'single room',
-            partOfSpeech: 'NOU',
-            examples: [
-              FlashcardExample(
-                prefix: 'ich hätte gern ein ',
-                highlight: 'Einzelzimmer',
-                suffix: ' mit Dusche, bitte.',
-                type: 'NOU',
+                translation: 'He was killed with a single bullet.',
               ),
             ],
           ),
         ];
+    }
+  }
+
+  void updateCategoryProgress(String level, String category, double progress) {
+    for (var section in levelData[level] ?? []) {
+      for (var item in section.items) {
+        if (item.category == category) {
+          item.progress = progress;
+          notifyListeners();
+          return;
+        }
+      }
     }
   }
 
@@ -431,9 +408,48 @@ class VocabularyProvider extends ChangeNotifier {
         return type;
     }
   }
+
+  IconData _getIconData(String iconName) {
+    switch (iconName) {
+      case 'waving_hand':
+        return Icons.waving_hand;
+      case 'family_restroom':
+        return Icons.family_restroom;
+      case 'home':
+        return Icons.home;
+      case 'local_drink':
+        return Icons.local_drink;
+      case 'apple':
+        return Icons.apple;
+      case 'shopping_cart':
+        return Icons.shopping_cart;
+      case 'directions_walk':
+        return Icons.directions_walk;
+      case 'medical_services':
+        return Icons.medical_services;
+      case 'accessibility_new':
+        return Icons.accessibility_new;
+      case 'work':
+        return Icons.work;
+      case 'school':
+        return Icons.school;
+      case 'psychology':
+        return Icons.psychology;
+      case 'lightbulb':
+        return Icons.lightbulb;
+      default:
+        return Icons.book;
+    }
+  }
+
+  Color _getColor(String colorHex) {
+    if (colorHex.startsWith('#')) {
+      return Color(int.parse(colorHex.substring(1), radix: 16) | 0xFF000000);
+    }
+    return Colors.blue;
+  }
 }
 
-// Flashcard Provider for flashcard interactions
 class FlashcardProvider extends ChangeNotifier {
   int currentIndex = 0;
   bool isFlipped = false;
@@ -448,7 +464,6 @@ class FlashcardProvider extends ChangeNotifier {
 
   final FlutterTts flutterTts = FlutterTts();
 
-  // Initialize the TTS engine
   Future<void> initTts() async {
     if (!initialized) {
       await flutterTts.setLanguage('de-DE');
@@ -464,7 +479,6 @@ class FlashcardProvider extends ChangeNotifier {
     }
   }
 
-  // Load the flashcards for a category
   void loadFlashcards(String category, String level, String title, List<FlashcardData> cards) {
     currentCategory = category;
     currentLevel = level;
@@ -476,7 +490,6 @@ class FlashcardProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Play pronunciation using TTS
   Future<void> playPronunciation() async {
     if (isPlaying) {
       await flutterTts.stop();
@@ -500,7 +513,6 @@ class FlashcardProvider extends ChangeNotifier {
     }
   }
 
-  // Play example using TTS
   Future<void> playExample() async {
     if (isPlaying) {
       await flutterTts.stop();
@@ -525,13 +537,11 @@ class FlashcardProvider extends ChangeNotifier {
     }
   }
 
-  // Flip the card
   void flipCard() {
     isFlipped = !isFlipped;
     notifyListeners();
   }
 
-  // Move to next card
   void nextCard() {
     if (currentIndex < flashcards.length - 1) {
       currentIndex++;
@@ -543,7 +553,6 @@ class FlashcardProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Move to previous card
   void previousCard() {
     if (currentIndex > 0) {
       currentIndex--;
@@ -555,7 +564,6 @@ class FlashcardProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Mark card as learned
   void markAsLearned() {
     if (currentIndex < flashcards.length) {
       flashcards[currentIndex].isLearned = true;
@@ -564,7 +572,6 @@ class FlashcardProvider extends ChangeNotifier {
     }
   }
 
-  // Toggle bookmark status
   void toggleBookmark() {
     if (currentIndex < flashcards.length) {
       flashcards[currentIndex].isBookmarked = !flashcards[currentIndex].isBookmarked;
@@ -572,58 +579,112 @@ class FlashcardProvider extends ChangeNotifier {
     }
   }
 
-  // Clean up resources
+  @override
   void dispose() {
     flutterTts.stop();
     super.dispose();
   }
 }
 
-// UI Screens
+// ===== MODEL CLASSES =====
 
-// Main Vocabulary Screen with Levels
-class VocabularyCategoryScreen extends StatelessWidget {
+class CategorySection {
+  final String title;
+  final List<CategoryItem> items;
+
+  CategorySection({
+    required this.title,
+    required this.items,
+  });
+}
+
+class CategoryItem {
+  final IconData icon;
+  final Color iconColor;
+  final String title;
+  final int count;
+  double progress;
+  final String category;
+  final String level;
+  final bool isNotStarted;
+
+  CategoryItem({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    required this.count,
+    required this.progress,
+    required this.category,
+    required this.level,
+    this.isNotStarted = false,
+  });
+}
+
+// ===== UI COMPONENTS =====
+
+class VocabularyCategoryScreen extends StatefulWidget {
   const VocabularyCategoryScreen({Key? key}) : super(key: key);
 
   @override
+  State<VocabularyCategoryScreen> createState() => _VocabularyCategoryScreenState();
+}
+
+class _VocabularyCategoryScreenState extends State<VocabularyCategoryScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final provider = Provider.of<VocabularyProvider>(context, listen: false);
+      provider.preloadJson();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Vocabulary'),
-          backgroundColor: Colors.white,
-          foregroundColor: const Color(0xFF3F51B5),
-          elevation: 0,
-          bottom: const TabBar(
-            labelColor: Color(0xFF3F51B5),
-            unselectedLabelColor: Colors.grey,
-            indicatorColor: Color(0xFF3F51B5),
-            tabs: [
-              Tab(text: 'A1 - Beginner'),
-              Tab(text: 'A2 - Elementary'),
-              Tab(text: 'B1 - Intermediate'),
-            ],
+    return Consumer<VocabularyProvider>(
+      builder: (context, vocabularyProvider, child) {
+        if (vocabularyProvider.isLoading) {
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+
+        return DefaultTabController(
+          length: 3,
+          child: Scaffold(
+            backgroundColor: Colors.grey[50],
+            appBar: AppBar(
+              title: const Text('German Vocabulary'),
+              backgroundColor: Colors.white,
+              foregroundColor: const Color(0xFF3F51B5),
+              elevation: 0,
+              bottom: const TabBar(
+                labelColor: Color(0xFF3F51B5),
+                unselectedLabelColor: Colors.grey,
+                indicatorColor: Color(0xFF3F51B5),
+                tabs: [
+                  Tab(text: 'A1 - Beginner'),
+                  Tab(text: 'A2 - Elementary'),
+                  Tab(text: 'B1 - Intermediate'),
+                ],
+              ),
+            ),
+            body: const TabBarView(
+              children: [
+                LevelContentWidget(level: 'A1'),
+                LevelContentWidget(level: 'A2'),
+                LevelContentWidget(level: 'B1'),
+              ],
+            ),
           ),
-        ),
-        body: TabBarView(
-          children: [
-            // A1 Level Vocabulary
-            LevelContentWidget(level: 'A1'),
-
-            // A2 Level Vocabulary
-            LevelContentWidget(level: 'A2'),
-
-            // B1 Level Vocabulary
-            LevelContentWidget(level: 'B1'),
-          ],
-        ),
-      ),
+        );
+      },
     );
   }
 }
 
-// Level Content Widget
 class LevelContentWidget extends StatelessWidget {
   final String level;
 
@@ -653,13 +714,12 @@ class LevelContentWidget extends StatelessWidget {
         ...sections.map((section) => CategorySectionWidget(
           title: section.title,
           items: section.items,
-        )).toList(),
+        )),
       ],
     );
   }
 }
 
-// Category Section Widget
 class CategorySectionWidget extends StatelessWidget {
   final String title;
   final List<CategoryItem> items;
@@ -686,13 +746,12 @@ class CategorySectionWidget extends StatelessWidget {
             ),
           ),
         ),
-        ...items.map((item) => CategoryItemWidget(item: item)).toList(),
+        ...items.map((item) => CategoryItemWidget(item: item)),
       ],
     );
   }
 }
 
-// Category Item Widget
 class CategoryItemWidget extends StatelessWidget {
   final CategoryItem item;
 
@@ -797,7 +856,6 @@ class CategoryItemWidget extends StatelessWidget {
   }
 }
 
-
 class FlashcardScreen extends StatefulWidget {
   const FlashcardScreen({Key? key}) : super(key: key);
 
@@ -834,6 +892,14 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
     }
   }
 
+  @override
+  void dispose() {
+    _flipController.dispose();
+    final provider = Provider.of<FlashcardProvider>(context, listen: false);
+    provider.removeListener(_onFlipChanged);
+    super.dispose();
+  }
+
   Widget _buildProgressBar(BuildContext context) {
     final flashcardProvider = Provider.of<FlashcardProvider>(context);
     final totalCards = flashcardProvider.flashcards.length;
@@ -857,14 +923,14 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
               ),
               Row(
                 children: [
-                  Icon(Icons.remove_red_eye, color: const Color(0xFF3F51B5), size: 16),
+                  const Icon(Icons.remove_red_eye, color: Color(0xFF3F51B5), size: 16),
                   const SizedBox(width: 4),
                   Text(
                     '${flashcardProvider.wordsViewed}',
                     style: TextStyle(color: Colors.grey.shade600, fontSize: 14),
                   ),
                   const SizedBox(width: 12),
-                  Icon(Icons.check_circle, color: const Color(0xFF3F51B5), size: 16),
+                  const Icon(Icons.check_circle, color: Color(0xFF3F51B5), size: 16),
                   const SizedBox(width: 4),
                   Text(
                     '${flashcardProvider.wordsCompleted}',
@@ -880,7 +946,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
             child: LinearProgressIndicator(
               value: ((currentIndex + 1) / totalCards),
               backgroundColor: Colors.grey.shade200,
-              valueColor: AlwaysStoppedAnimation<Color>(const Color(0xFF3F51B5)),
+              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF3F51B5)),
               minHeight: 4,
             ),
           ),
@@ -914,12 +980,43 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
     );
   }
 
-  @override
-  void dispose() {
-    _flipController.dispose();
-    final provider = Provider.of<FlashcardProvider>(context, listen: false);
-    provider.removeListener(_onFlipChanged);
-    super.dispose();
+  Widget _buildNavButton({
+    required IconData icon,
+    required VoidCallback onTap,
+    bool highlighted = false,
+    bool isActive = false,
+  }) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: highlighted
+                ? isActive
+                ? const Color(0xFF3F51B5)
+                : const Color(0xFF3F51B5).withOpacity(0.1)
+                : isActive
+                ? const Color(0xFF3F51B5).withOpacity(0.1)
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(
+            icon,
+            color: highlighted
+                ? isActive
+                ? Colors.white
+                : const Color(0xFF3F51B5)
+                : isActive
+                ? const Color(0xFF3F51B5)
+                : const Color(0xFF3F51B5),
+            size: 24,
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -1129,12 +1226,12 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(24),
-                                        gradient: LinearGradient(
+                                        gradient: const LinearGradient(
                                           begin: Alignment.topLeft,
                                           end: Alignment.bottomRight,
                                           colors: [
                                             Colors.white,
-                                            const Color(0xFFF5F7FF),
+                                            Color(0xFFF5F7FF),
                                           ],
                                         ),
                                       ),
@@ -1214,7 +1311,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
                                                     const Divider(),
                                                     const SizedBox(height: 6),
                                                     Text(
-                                                      _getTranslatedExample(currentCard),
+                                                      currentCard.examples[0].translation ?? _getTranslatedExample(currentCard),
                                                       style: TextStyle(
                                                         fontSize: 14,
                                                         color: Colors.grey.shade700,
@@ -1340,65 +1437,26 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
 
   String _getTranslatedExample(FlashcardData card) {
     // This would ideally come from a database with actual translations
-    // Here we're simply creating a simulated translation
+    // Here we're using the translation from the JSON if available
     if (card.examples.isEmpty) return '';
 
     final example = card.examples[0];
-    final fullExample = example.prefix + example.highlight + example.suffix;
+    if (example.translation != null) {
+      return example.translation!;
+    }
 
+    // Fallback translations if not available in JSON
     switch (card.id) {
       case 'greeting_1':
         return "I say hello to my friend.";
       case 'greeting_2':
         return "Good day, Mr. Schmidt!";
-      case 'greeting_3':
-        return "Goodbye! See you tomorrow!";
       case 'family_1':
         return "My family is very big.";
       case 'family_2':
         return "My mother cooks very well.";
       default:
-      // Generate a simplistic translation for demo purposes
-        return "Translation: ${card.english} ${fullExample.contains('?') ? '?' : '.'}";
+        return "Translation: ${card.english} ${example.suffix.contains('?') ? '?' : '.'}";
     }
-  }
-
-  Widget _buildNavButton({
-    required IconData icon,
-    required VoidCallback onTap,
-    bool highlighted = false,
-    bool isActive = false,
-  }) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: highlighted
-                ? isActive
-                ? const Color(0xFF3F51B5)
-                : const Color(0xFF3F51B5).withOpacity(0.1)
-                : isActive
-                ? const Color(0xFF3F51B5).withOpacity(0.1)
-                : Colors.transparent,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Icon(
-            icon,
-            color: highlighted
-                ? isActive
-                ? Colors.white
-                : const Color(0xFF3F51B5)
-                : isActive
-                ? const Color(0xFF3F51B5)
-                : const Color(0xFF3F51B5),
-            size: 24,
-          ),
-        ),
-      ),
-    );
   }
 }

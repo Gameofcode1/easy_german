@@ -4244,7 +4244,7 @@
                 "progress": 0.0,
                 "category": "family_members",
                 "level": "A1",
-                "isNotStarted": true,
+                "isNotStarted": false,
                 "flashcards": [
                   {
                     "id": "family_1",
@@ -4496,7 +4496,7 @@
                 "progress": 0.0,
                 "category": "romantic",
                 "level": "A1",
-                "isNotStarted": true,
+                "isNotStarted": false,
                 "flashcards": [
                   {
                     "id": "romantic_1",
@@ -4700,7 +4700,7 @@
                 "progress": 0.0,
                 "category": "friendships",
                 "level": "A1",
-                "isNotStarted": true,
+                "isNotStarted": false,
                 "flashcards": [
                   {
                     "id": "friend_1",
@@ -4880,7 +4880,7 @@
                 "progress": 0.0,
                 "category": "professional",
                 "level": "A1",
-                "isNotStarted": true,
+                "isNotStarted": false,
                 "flashcards": [
                   {
                     "id": "prof_1",

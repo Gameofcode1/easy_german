@@ -1,45 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:job_finder/features/vocabscreen/viewmodel/vocab_screen.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-// Main app entry point
-void main() {
-  runApp(const MyApp());
-}
+import '../models/vocabulary_model.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => VocabularyProvider()),
-        ChangeNotifierProvider(create: (_) => FlashcardProvider()),
-      ],
-      child: MaterialApp(
-        title: 'German Vocabulary',
-        theme: ThemeData(
-          primarySwatch: Colors.indigo,
-          fontFamily: 'Roboto',
-          appBarTheme: const AppBarTheme(
-            elevation: 0,
-            backgroundColor: Colors.white,
-            foregroundColor: Color(0xFF3F51B5),
-          ),
-        ),
-        home: const VocabularyCategoryScreen(),
-        debugShowCheckedModeBanner: false,
-      ),
-    );
-  }
-}
-
-// ===== MODELS =====
-
-// Models based on your JSON structure
 class VocabularyData {
   final Map<String, LevelData> levels;
 
@@ -209,10 +178,63 @@ class VocabularyProvider extends ChangeNotifier {
   Map<String, List<CategorySection>> levelData = {};
   bool isLoading = true;
   Map<String, dynamic>? _jsonCache;
+  SharedPreferences? _prefs;
 
   VocabularyProvider() {
+    _initPrefs();
+  }
+
+  Future<void> _initPrefs() async {
+    _prefs = await SharedPreferences.getInstance();
     _loadVocabularyData();
   }
+
+  int getLearnedCardCount(String level, String category) {
+    if (_prefs == null) return 0;
+
+    int count = 0;
+    // Get all keys that match the pattern for this category
+    Set<String> allKeys = _prefs!.getKeys();
+
+    // Filter keys that match our pattern for learned cards
+    String pattern = '${level}_${category}_';
+    for (String key in allKeys) {
+      if (key.startsWith(pattern) && key.endsWith('_learned')) {
+        bool isLearned = _prefs!.getBool(key) ?? false;
+        if (isLearned) {
+          count++;
+        }
+      }
+    }
+
+    return count;
+  }
+
+// Modify the updateCategoryProgress method to also update the learned count for display
+  void updateCategoryProgress(String level, String category, double progress) {
+    // Mark category as started
+    _prefs?.setBool('${level}_${category}_started', true);
+
+    // Save progress
+    _prefs?.setDouble('${level}_${category}_progress', progress);
+
+    // Update in-memory data
+    for (var section in levelData[level] ?? []) {
+      for (var item in section.items) {
+        if (item.category == category) {
+          item.progress = progress;
+          item.isNotStarted = false;
+
+          // Update the learned count
+          item.learnedCount = getLearnedCardCount(level, category);
+
+          notifyListeners();
+          return;
+        }
+      }
+    }
+  }
+
 
   Future<void> _loadVocabularyData() async {
     try {
@@ -234,15 +256,55 @@ class VocabularyProvider extends ChangeNotifier {
 
           // Process each category item
           for (var itemJson in itemsJson) {
+            String category = itemJson['category'];
+            String level = itemJson['level'];
+
+            // Get actual count of flashcards in this category from JSON
+            int actualCount = 0;
+            try {
+              actualCount = itemJson['flashcards']?.length ?? 0;
+            } catch (e) {
+              print('Error getting flashcard count: $e');
+              actualCount = itemJson['count']; // Fall back to the static count
+            }
+
+            // Load progress from SharedPreferences if available
+            double progress = _prefs?.getDouble('${level}_${category}_progress') ??
+                itemJson['progress'].toDouble();
+
+            bool isNotStarted = !(_prefs?.getBool('${level}_${category}_started') ?? false);
+            if (progress > 0) {
+              isNotStarted = false;
+            }
+
+            // Calculate learned count from SharedPreferences
+            int learnedCount = 0;
+            if (_prefs != null && !isNotStarted) {
+              // Get all keys that match the pattern for this category
+              Set<String> allKeys = _prefs!.getKeys();
+
+              // Filter keys that match our pattern for learned cards
+              String pattern = '${level}_${category}_';
+              for (String key in allKeys) {
+                if (key.startsWith(pattern) && key.endsWith('_learned')) {
+                  bool isLearned = _prefs!.getBool(key) ?? false;
+                  if (isLearned) {
+                    learnedCount++;
+                  }
+                }
+              }
+            }
+
             items.add(CategoryItem(
               icon: _getIconData(itemJson['icon']),
               iconColor: _getColor(itemJson['iconColor']),
               title: itemJson['title'],
-              count: itemJson['count'],
-              progress: itemJson['progress'].toDouble(),
-              category: itemJson['category'],
-              level: itemJson['level'],
-              isNotStarted: itemJson['isNotStarted'] ?? false,
+              count: actualCount, // Use the actual count instead of the static one
+              learnedCount: learnedCount, // Add the learned count
+              progress: progress,
+              category: category,
+              level: level,
+              isNotStarted: isNotStarted,
             ));
           }
 
@@ -263,6 +325,24 @@ class VocabularyProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  // Add a method to mark categories as started
+  void markCategoryAsStarted(String level, String category) {
+    _prefs?.setBool('${level}_${category}_started', true);
+
+    // Update in-memory data
+    for (var section in levelData[level] ?? []) {
+      for (var item in section.items) {
+        if (item.category == category) {
+          item.isNotStarted = false;
+          notifyListeners();
+          return;
+        }
+      }
+    }
+  }
+
+  // Update the updateCategoryProgress method
 
   Future<void> preloadJson() async {
     if (_jsonCache != null) return;
@@ -365,17 +445,6 @@ class VocabularyProvider extends ChangeNotifier {
     }
   }
 
-  void updateCategoryProgress(String level, String category, double progress) {
-    for (var section in levelData[level] ?? []) {
-      for (var item in section.items) {
-        if (item.category == category) {
-          item.progress = progress;
-          notifyListeners();
-          return;
-        }
-      }
-    }
-  }
 
   Color getLevelColor(String level) {
     switch (level) {
@@ -450,141 +519,7 @@ class VocabularyProvider extends ChangeNotifier {
   }
 }
 
-class FlashcardProvider extends ChangeNotifier {
-  int currentIndex = 0;
-  bool isFlipped = false;
-  bool isPlaying = false;
-  List<FlashcardData> flashcards = [];
-  String currentCategory = '';
-  String currentLevel = '';
-  String currentTitle = '';
-  int wordsViewed = 0;
-  int wordsCompleted = 0;
-  bool initialized = false;
 
-  final FlutterTts flutterTts = FlutterTts();
-
-  Future<void> initTts() async {
-    if (!initialized) {
-      await flutterTts.setLanguage('de-DE');
-      await flutterTts.setSpeechRate(0.5);
-      await flutterTts.setVolume(1.0);
-
-      flutterTts.setCompletionHandler(() {
-        isPlaying = false;
-        notifyListeners();
-      });
-
-      initialized = true;
-    }
-  }
-
-  void loadFlashcards(String category, String level, String title, List<FlashcardData> cards) {
-    currentCategory = category;
-    currentLevel = level;
-    currentTitle = title;
-    flashcards = cards;
-    currentIndex = 0;
-    isFlipped = false;
-    initTts();
-    notifyListeners();
-  }
-
-  Future<void> playPronunciation() async {
-    if (isPlaying) {
-      await flutterTts.stop();
-      isPlaying = false;
-      notifyListeners();
-      return;
-    }
-
-    if (currentIndex < flashcards.length) {
-      isPlaying = true;
-      wordsViewed++;
-      notifyListeners();
-
-      try {
-        await flutterTts.speak(flashcards[currentIndex].german);
-      } catch (e) {
-        print('Error playing TTS: $e');
-        isPlaying = false;
-        notifyListeners();
-      }
-    }
-  }
-
-  Future<void> playExample() async {
-    if (isPlaying) {
-      await flutterTts.stop();
-      isPlaying = false;
-      notifyListeners();
-      return;
-    }
-
-    if (currentIndex < flashcards.length && flashcards[currentIndex].examples.isNotEmpty) {
-      isPlaying = true;
-      notifyListeners();
-
-      try {
-        final example = flashcards[currentIndex].examples[0];
-        final fullText = example.prefix + example.highlight + example.suffix;
-        await flutterTts.speak(fullText);
-      } catch (e) {
-        print('Error playing TTS: $e');
-        isPlaying = false;
-        notifyListeners();
-      }
-    }
-  }
-
-  void flipCard() {
-    isFlipped = !isFlipped;
-    notifyListeners();
-  }
-
-  void nextCard() {
-    if (currentIndex < flashcards.length - 1) {
-      currentIndex++;
-    } else {
-      currentIndex = 0; // Loop back to first card
-    }
-
-    isFlipped = false;
-    notifyListeners();
-  }
-
-  void previousCard() {
-    if (currentIndex > 0) {
-      currentIndex--;
-    } else {
-      currentIndex = flashcards.length - 1; // Loop to last card
-    }
-
-    isFlipped = false;
-    notifyListeners();
-  }
-
-  void markAsLearned() {
-    if (currentIndex < flashcards.length) {
-      flashcards[currentIndex].isLearned = true;
-      wordsCompleted++;
-      notifyListeners();
-    }
-  }
-
-  void toggleBookmark() {
-    if (currentIndex < flashcards.length) {
-      flashcards[currentIndex].isBookmarked = !flashcards[currentIndex].isBookmarked;
-      notifyListeners();
-    }
-  }
-
-  @override
-  void dispose() {
-    flutterTts.stop();
-    super.dispose();
-  }
-}
 
 // ===== MODEL CLASSES =====
 
@@ -598,27 +533,7 @@ class CategorySection {
   });
 }
 
-class CategoryItem {
-  final IconData icon;
-  final Color iconColor;
-  final String title;
-  final int count;
-  double progress;
-  final String category;
-  final String level;
-  final bool isNotStarted;
 
-  CategoryItem({
-    required this.icon,
-    required this.iconColor,
-    required this.title,
-    required this.count,
-    required this.progress,
-    required this.category,
-    required this.level,
-    this.isNotStarted = false,
-  });
-}
 
 // ===== UI COMPONENTS =====
 
@@ -752,6 +667,8 @@ class CategorySectionWidget extends StatelessWidget {
   }
 }
 
+
+
 class CategoryItemWidget extends StatelessWidget {
   final CategoryItem item;
 
@@ -765,11 +682,14 @@ class CategoryItemWidget extends StatelessWidget {
     final vocabularyProvider = Provider.of<VocabularyProvider>(context);
     final flashcardProvider = Provider.of<FlashcardProvider>(context, listen: false);
 
+    // Consider it not started if learnedCount is 0
+    final bool effectivelyNotStarted = item.isNotStarted || item.learnedCount == 0;
+
     return InkWell(
       onTap: () {
         // Load flashcards and navigate to flashcard screen
         final flashcards = vocabularyProvider.getFlashcardsForCategory(item.category, item.level);
-        flashcardProvider.loadFlashcards(item.category, item.level, item.title, flashcards);
+        flashcardProvider.loadFlashcards(item.category, item.level, item.title, flashcards, context);
 
         Navigator.push(
           context,
@@ -821,15 +741,21 @@ class CategoryItemWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 8),
+            // Show just the total count number
             Text(
-              item.count.toString(),
+              '${item.count}',  // Just show total count
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.grey.shade600,
+                color: effectivelyNotStarted
+                    ? Colors.grey.shade600
+                    : item.learnedCount == item.count
+                    ? Colors.green
+                    : const Color(0xFF3F51B5),
+                fontWeight: !effectivelyNotStarted ? FontWeight.bold : FontWeight.normal,
               ),
             ),
             const SizedBox(width: 16),
-            if (item.isNotStarted)
+            if (effectivelyNotStarted)
               Text(
                 'Not Started',
                 style: TextStyle(color: Colors.grey.shade600),
@@ -843,7 +769,7 @@ class CategoryItemWidget extends StatelessWidget {
                     value: item.progress,
                     backgroundColor: Colors.grey.shade300,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      item.progress == 1.0 ? const Color(0xFF3F51B5) : Colors.orange,
+                      item.progress == 1.0 ? Colors.green : const Color(0xFF3F51B5),
                     ),
                     minHeight: 8,
                   ),
@@ -856,6 +782,7 @@ class CategoryItemWidget extends StatelessWidget {
   }
 }
 
+
 class FlashcardScreen extends StatefulWidget {
   const FlashcardScreen({Key? key}) : super(key: key);
 
@@ -866,6 +793,45 @@ class FlashcardScreen extends StatefulWidget {
 class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProviderStateMixin {
   late AnimationController _flipController;
   late Animation<double> _flipAnimation;
+
+
+
+// Update your _buildLearnedButton method in FlashcardScreen
+
+  Widget _buildLearnedButton(FlashcardProvider provider, FlashcardData card) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: card.isLearned ? Colors.green : const Color(0xFF3F51B5),
+          foregroundColor: Colors.white,
+          minimumSize: const Size(double.infinity, 48),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        onPressed: () {
+          if (!card.isLearned) {
+            // Pass context to the markAsLearned method
+            provider.markAsLearned(context);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Marked as learned!'),
+                duration: Duration(seconds: 1),
+                backgroundColor: Colors.green,
+              ),
+            );
+          }
+        },
+        child: Text(
+          card.isLearned ? 'Learned ✓' : 'Mark as Learned',
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+
+
 
   @override
   void initState() {
@@ -899,6 +865,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
     provider.removeListener(_onFlipChanged);
     super.dispose();
   }
+
+
+  // This is the new method to build the learned button
 
   Widget _buildProgressBar(BuildContext context) {
     final flashcardProvider = Provider.of<FlashcardProvider>(context);
@@ -1353,6 +1322,8 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
                                                 ),
                                               ],
                                             ),
+                                            if (!currentCard.isLearned)
+                                              _buildLearnedButton(flashcardProvider, currentCard),
                                           ],
                                         ),
                                       ),

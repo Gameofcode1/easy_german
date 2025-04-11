@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
+
 class VocabularyModel {
   final String level;
   final List<CategorySection> categories;
@@ -10,11 +11,11 @@ class VocabularyModel {
     required this.categories,
   });
 
-  factory VocabularyModel.fromJson(Map<String, dynamic> json) {
+  factory VocabularyModel.fromJson(Map<String, dynamic> json, IconData Function(String) getIconData) {
     return VocabularyModel(
       level: json['level'],
       categories: (json['categories'] as List)
-          .map((category) => CategorySection.fromJson(category))
+          .map((category) => CategorySection.fromJson(category, getIconData))
           .toList(),
     );
   }
@@ -29,49 +30,50 @@ class CategorySection {
     required this.items,
   });
 
-  factory CategorySection.fromJson(Map<String, dynamic> json) {
+  factory CategorySection.fromJson(Map<String, dynamic> json, IconData Function(String) getIconData) {
     return CategorySection(
       title: json['title'],
       items: (json['items'] as List)
-          .map((item) => CategoryItem.fromJson(item))
+          .map((item) => CategoryItem.fromJson(item, getIconData))
           .toList(),
     );
   }
 }
 
 class CategoryItem {
-  final String icon;
+  final IconData icon;
   final Color iconColor;
   final String title;
-  final int count;
+  final int count;  // Total count of cards
+  int learnedCount; // Count of learned cards
   double progress;
   final String category;
   final String level;
-  final List<VocabularyWord> words;
+  bool isNotStarted;
 
   CategoryItem({
     required this.icon,
     required this.iconColor,
     required this.title,
     required this.count,
+    this.learnedCount = 0,
     required this.progress,
     required this.category,
     required this.level,
-    required this.words,
+    this.isNotStarted = false,
   });
 
-  factory CategoryItem.fromJson(Map<String, dynamic> json) {
+  factory CategoryItem.fromJson(Map<String, dynamic> json, IconData Function(String) getIconData) {
     return CategoryItem(
-      icon: json['icon'],
+      icon: getIconData(json['icon']),
       iconColor: Color(int.parse(json['iconColor'].substring(1), radix: 16) + 0xFF000000),
       title: json['title'],
       count: json['count'],
+      learnedCount: 0, // Initialize to 0, will be updated from SharedPreferences
       progress: json['progress'].toDouble(),
       category: json['category'],
       level: json['level'],
-      words: (json['words'] as List)
-          .map((word) => VocabularyWord.fromJson(word))
-          .toList(),
+      isNotStarted: json['isNotStarted'] ?? false,
     );
   }
 }

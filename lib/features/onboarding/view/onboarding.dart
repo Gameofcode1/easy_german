@@ -72,30 +72,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
   void initState() {
     super.initState();
 
+    // Use shorter animation duration for smoother transitions
     _fadeController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 400),
     );
 
     _slideController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 400),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _fadeController,
-        curve: Curves.easeIn,
+        curve: Curves.easeOutCubic, // Use a smoother curve
       ),
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.1),
+      begin: const Offset(0, 0.05), // Reduced slide distance for subtler effect
       end: Offset.zero,
     ).animate(
       CurvedAnimation(
         parent: _slideController,
-        curve: Curves.easeOut,
+        curve: Curves.easeOutCubic, // Match the fade animation curve
       ),
     );
 
@@ -125,7 +126,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
   }
 
   Future<void> _completeOnboarding() async {
-
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (context) => HomeScreen()),
     );
@@ -133,8 +133,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -169,6 +167,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                 controller: _pageController,
                 onPageChanged: _onPageChanged,
                 itemCount: onboardingPages.length,
+                physics: const ClampingScrollPhysics(), // Improved physics for smoother scrolling
                 itemBuilder: (context, index) {
                   final page = onboardingPages[index];
                   return FadeTransition(
@@ -201,59 +200,87 @@ class _OnboardingScreenState extends State<OnboardingScreen> with TickerProvider
                     controller: _pageController,
                     count: onboardingPages.length,
                     effect: CustomizableEffect(
+                      spacing: 8.0, // More space between dots
                       activeDotDecoration: DotDecoration(
                         width: 20,
                         height: 8,
                         color: onboardingPages[_currentPage].bgColor,
                         borderRadius: BorderRadius.circular(4),
+                        rotationAngle: 0.0,
+                        dotBorder: DotBorder(
+                          padding: 0,
+                          width: 0,
+                          color: Colors.transparent,
+                        ),
                       ),
                       dotDecoration: DotDecoration(
                         width: 8,
                         height: 8,
                         color: const Color(0xFFD1D1D1),
                         borderRadius: BorderRadius.circular(4),
+                        dotBorder: DotBorder(
+                          padding: 0,
+                          width: 0,
+                          color: Colors.transparent,
+                        ),
                       ),
                     ),
                   ),
 
                   // Next/Done button
-                  AnimatedContainer(
+                  TweenAnimationBuilder<double>(
                     duration: const Duration(milliseconds: 300),
-                    width: _isLastPage ? 160 : 60,
-                    height: 60,
-                    child: ElevatedButton(
-                      onPressed: _isLastPage
-                          ? _completeOnboarding
-                          : () => _pageController.nextPage(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: onboardingPages[_currentPage].bgColor,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        padding: EdgeInsets.zero,
-                        elevation: 5,
-                      ),
-                      child: _isLastPage
-                          ? const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Get Started',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
+                    tween: Tween<double>(
+                      begin: _isLastPage ? 60 : 160,
+                      end: _isLastPage ? 160 : 60,
+                    ),
+                    builder: (context, value, child) {
+                      return Container(
+                        width: value,
+                        height: 60,
+                        child: ElevatedButton(
+                          onPressed: _isLastPage
+                              ? _completeOnboarding
+                              : () => _pageController.nextPage(
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeOutCubic, // Match other animations
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: onboardingPages[_currentPage].bgColor,
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            padding: EdgeInsets.zero,
+                            elevation: 5,
+                          ),
+                          child: AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 300),
+                            child: _isLastPage
+                                ? const Row(
+                              key: ValueKey('get_started'),
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Get Started',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Icon(Icons.arrow_forward, size: 20),
+                              ],
+                            )
+                                : const Icon(
+                              Icons.arrow_forward,
+                              size: 24,
+                              key: ValueKey('arrow'),
                             ),
                           ),
-                          SizedBox(width: 8),
-                          Icon(Icons.arrow_forward, size: 20),
-                        ],
-                      )
-                          : const Icon(Icons.arrow_forward, size: 24),
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -274,7 +301,8 @@ class EnhancedOnboardingPageContent extends StatefulWidget {
   final IconData icon;
   final bool isCurrentPage;
 
-  const EnhancedOnboardingPageContent({super.key, 
+  const EnhancedOnboardingPageContent({
+    super.key,
     required this.title,
     required this.description,
     required this.imagePath,
@@ -298,12 +326,14 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
   void initState() {
     super.initState();
 
+    // Slower animation for smoother floating effect
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 3000),
     )..repeat(reverse: true);
 
-    _floatAnimation = Tween<double>(begin: 0, end: 10).animate(
+    // Reduced float distance for subtler animation
+    _floatAnimation = Tween<double>(begin: 0, end: 6).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: Curves.easeInOut,
@@ -321,10 +351,12 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
   void didUpdateWidget(EnhancedOnboardingPageContent oldWidget) {
     super.didUpdateWidget(oldWidget);
 
+    // Don't reset animation when page changes - this keeps it smooth
     if (widget.isCurrentPage && !oldWidget.isCurrentPage) {
-      // Restart animation when this page becomes active
-      _animationController.reset();
-      _animationController.repeat(reverse: true);
+      // Just ensure the animation is running
+      if (!_animationController.isAnimating) {
+        _animationController.repeat(reverse: true);
+      }
     }
   }
 
@@ -357,74 +389,76 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
               ),
             ],
           ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Background icon
-              Positioned(
-                right: 20,
-                bottom: 20,
-                child: Icon(
-                  widget.icon,
-                  size: 100,
-                  color: widget.bgColor.withOpacity(0.1),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Background icon
+                Positioned(
+                  right: 20,
+                  bottom: 20,
+                  child: Icon(
+                    widget.icon,
+                    size: 100,
+                    color: widget.bgColor.withOpacity(0.1),
+                  ),
                 ),
-              ),
 
-              // Main image with floating animation
-              AnimatedBuilder(
-                animation: _animationController,
-                builder: (context, child) {
-                  return Transform.translate(
-                    offset: Offset(0, _floatAnimation.value),
-                    child: child,
-                  );
-                },
-                child: Hero(
-                  tag: widget.imagePath,
+                // Main image with floating animation
+                AnimatedBuilder(
+                  animation: _animationController,
+                  builder: (context, child) {
+                    return Transform.translate(
+                      offset: Offset(0, _floatAnimation.value),
+                      child: child,
+                    );
+                  },
                   child: Image.asset(
                     widget.imagePath,
                     height: size.height * 0.3,
                     fit: BoxFit.contain,
                   ),
                 ),
-              ),
 
-              // Decorative elements
-              Positioned(
-                top: 20,
-                left: 20,
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: widget.bgColor.withOpacity(0.1),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 30,
-                left: 50,
-                child: AnimatedBuilder(
-                  animation: _animationController,
-                  builder: (context, child) {
-                    return Transform.rotate(
-                      angle: _animationController.value * 2 * math.pi,
-                      child: child,
-                    );
-                  },
+                // Decorative elements
+                Positioned(
+                  top: 20,
+                  left: 20,
                   child: Container(
-                    width: 20,
-                    height: 20,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
-                      color: widget.bgColor.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(5),
+                      color: widget.bgColor.withOpacity(0.1),
+                      shape: BoxShape.circle,
                     ),
                   ),
                 ),
-              ),
-            ],
+
+                // Animated rotating square with slower animation
+                Positioned(
+                  bottom: 30,
+                  left: 50,
+                  child: AnimatedBuilder(
+                    animation: _animationController,
+                    builder: (context, child) {
+                      return Transform.rotate(
+                        angle: _animationController.value * math.pi, // Half rotation for smoother effect
+                        child: child,
+                      );
+                    },
+                    child: Container(
+                      width: 20,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        color: widget.bgColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
 
@@ -465,7 +499,6 @@ class _EnhancedOnboardingPageContentState extends State<EnhancedOnboardingPageCo
   }
 }
 
-
 class OnboardingPage {
   final String title;
   final String description;
@@ -483,4 +516,3 @@ class OnboardingPage {
     required this.icon,
   });
 }
-

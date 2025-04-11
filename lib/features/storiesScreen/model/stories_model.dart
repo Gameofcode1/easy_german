@@ -1,5 +1,3 @@
-// story_model.dart
-
 class StoryItem {
   final String germanText;
   final String englishText;
@@ -15,6 +13,7 @@ class StoryModel {
   final String level;
   final String duration;
   bool favorite;
+  bool isRead; // Added isRead property
   final List<StoryItem> storyItems;
   final List<QuestionModel> questions;
 
@@ -26,6 +25,7 @@ class StoryModel {
     required this.level,
     required this.duration,
     this.favorite = false,
+    this.isRead = false, // Default to false
     required this.storyItems,
     required this.questions,
   });
@@ -39,6 +39,7 @@ class StoryModel {
       level: json['level'],
       duration: json['duration'],
       favorite: json['favorite'] ?? false,
+      isRead: json['isRead'] ?? false, // Initialize from JSON if available
       storyItems: items,
       questions: questions,
     );
@@ -54,9 +55,37 @@ class StoryModel {
       'level': level,
       'duration': duration,
       'favorite': favorite,
+      'isRead': isRead, // Include read status in map
       'storyItems': storyItems,
       'questions': questions.map((q) => q.toMap()).toList(),
     };
+  }
+
+  // Create a copy of the story with updated properties
+  StoryModel copyWith({
+    String? id,
+    String? title,
+    String? description,
+    String? image,
+    String? level,
+    String? duration,
+    bool? favorite,
+    bool? isRead,
+    List<StoryItem>? storyItems,
+    List<QuestionModel>? questions,
+  }) {
+    return StoryModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      image: image ?? this.image,
+      level: level ?? this.level,
+      duration: duration ?? this.duration,
+      favorite: favorite ?? this.favorite,
+      isRead: isRead ?? this.isRead,
+      storyItems: storyItems ?? this.storyItems,
+      questions: questions ?? this.questions,
+    );
   }
 }
 

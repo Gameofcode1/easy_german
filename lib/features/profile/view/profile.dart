@@ -1,6 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:ui';
+import '../../../config/tracker/app_usage_tracker.dart';
+import '../../storiesScreen/model/stories_services.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -9,56 +14,22 @@ class ProfileScreen extends StatefulWidget {
   _ProfileScreenState createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen>
-    with SingleTickerProviderStateMixin {
+class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _floatAnimation;
+  final StoryService _storyService = StoryService();
+  final AppUsageTracker _appUsageTracker = AppUsageTracker();
 
-  final List<Map<String, dynamic>> _learningStats = [
-    {
-      'title': 'Vocabulary',
-      'value': '450 words',
-      'icon': Icons.language,
-      'color': const Color(0xFF4CAF50),
-      'details': [
-        {'label': 'Nouns', 'value': '120'},
-        {'label': 'Verbs', 'value': '180'},
+  // Stats variables
+  int _totalVocabularyLearned = 0;
+  int _totalStoriesRead = 0;
+  int _totalLearningTimeMinutes = 0;
+  String _formattedLearningTime = "0 mins";
+  int _learningStreakDays = 0;
+  String _dailyAverageTime = "0 mins";
 
-      ]
-    },
-    {
-      'title': 'Stories',
-      'value': '42 stories',
-      'icon': Icons.book,
-      'color': const Color(0xFF2196F3),
-      'details': [
-        {'label': 'Beginner', 'value': '15'},
-        {'label': 'Intermediate', 'value': '20'},
-        {'label': 'Advanced', 'value': '7'},
-      ]
-    },
-    {
-      'title': 'Verbs ',
-      'value': 'All levels',
-      'icon': Icons.transform,
-      'color': const Color(0xFFFF9800),
-      'details': [
-        {'label': 'Perfekt', 'value': '85%'},
-        {'label': 'Präteritum', 'value': '65%'},
-        {'label': 'Used in Stories', 'value': '32'},
-      ]
-    },
-    {
-      'title': 'Time',
-      'value': '126 hrs',
-      'icon': Icons.timer,
-      'color': const Color(0xFF9C27B0),
-      'details': [
-        {'label': 'Daily Average', 'value': '1.2 hrs'},
-        {'label': 'Streak', 'value': '45 days'},
-      ]
-    }
-  ];
+  // Learning stats will be updated once we load the data
+  List<Map<String, dynamic>> _learningStats = [];
 
   @override
   void initState() {
@@ -78,6 +49,96 @@ class _ProfileScreenState extends State<ProfileScreen>
 
     _animationController.forward();
     _animationController.repeat(reverse: true);
+
+    // Load learning stats when screen initializes
+    _loadLearningStats();
+  }
+
+  // Load all the learning stats from SharedPreferences
+  Future<void> _loadLearningStats() async {
+    // Get the current active session time from the tracker
+    // This ensures we get the most up-to-date time data
+    await _appUsageTracker.saveCurrentSession();
+
+    // Now load all the stats
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // Get stories read count
+    _totalStoriesRead = await _storyService.getTotalStoriesRead();
+
+    // Get vocabulary stats
+    _totalVocabularyLearned = prefs.getInt('total_words_completed') ?? 0;
+
+    // Get learning time data
+    _totalLearningTimeMinutes = await _appUsageTracker.getTotalLearningTimeMinutes();
+    _formattedLearningTime = _appUsageTracker.formatLearningTime(_totalLearningTimeMinutes);
+
+    // Get streak data
+    _learningStreakDays = prefs.getInt('learning_streak_days') ?? 0;
+
+    // Calculate daily average (if we have data for more than 1 day)
+    final int daysUsed = prefs.getInt('days_app_used') ?? 1;
+    final int averageMinutesPerDay = daysUsed > 0 ? (_totalLearningTimeMinutes ~/ daysUsed) : 0;
+    _dailyAverageTime = _appUsageTracker.formatLearningTime(averageMinutesPerDay);
+
+    // Get vocabulary details
+    int nounsLearned = prefs.getInt('vocab_nouns_learned') ?? (_totalVocabularyLearned ~/ 3);
+    int verbsLearned = prefs.getInt('vocab_verbs_learned') ?? (_totalVocabularyLearned ~/ 3);
+    int adjectivesLearned = prefs.getInt('vocab_adjectives_learned') ?? (_totalVocabularyLearned ~/ 3);
+
+    // Get story level details
+    int beginnerStoriesRead = prefs.getInt('beginner_stories_read') ?? (_totalStoriesRead ~/ 3);
+    int intermediateStoriesRead = prefs.getInt('intermediate_stories_read') ?? (_totalStoriesRead ~/ 3);
+    int advancedStoriesRead = prefs.getInt('advanced_stories_read') ?? (_totalStoriesRead ~/ 3);
+
+    // Now update the _learningStats array with real data
+    setState(() {
+      _learningStats = [
+        {
+          'title': 'Vocabulary',
+          'value': '$_totalVocabularyLearned words',
+          'icon': Icons.language,
+          'color': const Color(0xFF4CAF50),
+          'details': [
+            {'label': 'Nouns', 'value': '$nounsLearned'},
+            {'label': 'Verbs', 'value': '$verbsLearned'},
+            {'label': 'Adjectives', 'value': '$adjectivesLearned'},
+          ]
+        },
+        {
+          'title': 'Stories',
+          'value': '$_totalStoriesRead stories',
+          'icon': Icons.auto_stories,
+          'color': const Color(0xFF2196F3),
+          'details': [
+            {'label': 'Beginner', 'value': '$beginnerStoriesRead'},
+            {'label': 'Intermediate', 'value': '$intermediateStoriesRead'},
+            {'label': 'Advanced', 'value': '$advancedStoriesRead'},
+          ]
+        },
+        {
+          'title': 'Verbs ',
+          'value': 'All levels',
+          'icon': Icons.transform,
+          'color': const Color(0xFFFF9800),
+          'details': [
+            {'label': 'Perfekt', 'value': '85%'},
+            {'label': 'Präteritum', 'value': '65%'},
+            {'label': 'Used in Stories', 'value': '32'},
+          ]
+        },
+        {
+          'title': 'Time',
+          'value': _formattedLearningTime,
+          'icon': Icons.timer,
+          'color': const Color(0xFF9C27B0),
+          'details': [
+            {'label': 'Daily Average', 'value': _dailyAverageTime},
+            {'label': 'Streak', 'value': '$_learningStreakDays days'},
+          ]
+        }
+      ];
+    });
   }
 
   @override
@@ -89,7 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     backgroundColor: Colors.grey[50],
+      backgroundColor: Colors.grey[50],
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
@@ -103,12 +164,10 @@ class _ProfileScreenState extends State<ProfileScreen>
           const SliverToBoxAdapter(child: SizedBox(height: 80)),
         ],
       ),
-      // Adding a floating action button for quick actions
-
     );
   }
 
-  // Improved app bar with more depth and better animations
+  // App bar with user's learning summary
   Widget _buildAppBar() {
     return SliverAppBar(
       expandedHeight: 200,
@@ -204,13 +263,24 @@ class _ProfileScreenState extends State<ProfileScreen>
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: const Text(
-                      'Your German Learning Journey',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(
+                          Icons.insights,
+                          color: Colors.white,
+                          size: 16,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          '$_totalVocabularyLearned words · $_totalStoriesRead stories',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -221,6 +291,7 @@ class _ProfileScreenState extends State<ProfileScreen>
       ),
     );
   }
+
   // Enhanced section title with more polish
   Widget _buildSectionTitle(String title) {
     return SliverToBoxAdapter(
@@ -305,7 +376,7 @@ class _ProfileScreenState extends State<ProfileScreen>
       sliver: SliverGrid(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.9,
+          childAspectRatio: 1.5,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
         ),
@@ -359,14 +430,7 @@ class _ProfileScreenState extends State<ProfileScreen>
           child: InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: () {
-              // _showDetailedStats(
-              //     context,
-              //     title,
-              //     value,
-              //     icon,
-              //     color,
-              //     details,
-              //     index);
+              // Show detailed stats if needed
             },
             child: Padding(
               padding: const EdgeInsets.all(14.0),
@@ -409,43 +473,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     ),
                   ),
                   const SizedBox(height: 12),
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: details.map((detail) =>
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 2.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  detail['label']!,
-                                  style: TextStyle(
-                                    color: Colors.white.withOpacity(0.8),
-                                    fontSize: 12,
-                                  ),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 6, vertical: 2),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.25),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Text(
-                                    detail['value']!,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          )).toList(),
-                    ),
-                  ),
+
                 ],
               ),
             ),
@@ -454,7 +482,6 @@ class _ProfileScreenState extends State<ProfileScreen>
       ),
     );
   }
-
   // About App Section with card animation
   Widget _buildAboutAppSection() {
     return SliverToBoxAdapter(

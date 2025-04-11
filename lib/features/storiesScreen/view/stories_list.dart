@@ -26,6 +26,8 @@ class _StoriesListScreenState extends State<StoriesListScreen>
   bool _isLoading = true;
   late List<StoryModel> _stories;
   final StoryService _storyService = StoryService();
+  int _totalStoriesRead = 0; // Track total stories read
+
 
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
@@ -68,7 +70,7 @@ class _StoriesListScreenState extends State<StoriesListScreen>
   @override
   void initState() {
     super.initState();
-
+    _loadStoriesAndStats();
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 3000), // Match the animation duration
@@ -103,6 +105,111 @@ class _StoriesListScreenState extends State<StoriesListScreen>
     _animationController.forward();
     _animationController.repeat(reverse: true);
   }
+
+
+  // Update this method to load stories and stats
+  Future<void> _loadStoriesAndStats() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    // Simulate loading delay
+    await Future.delayed(const Duration(milliseconds: 800));
+
+    try {
+      // Load total read count
+      _totalStoriesRead = await _storyService.getTotalStoriesRead();
+
+      // Load stories using the service
+      final stories = await _storyService.getStories(
+          level: widget.level,
+          category: widget.category
+      );
+
+      // Load read status and favorites for each story
+      for (var story in stories) {
+        story.isRead = await _storyService.isStoryRead(story.id);
+        story.favorite = await _storyService.isStoryFavorite(story.id);
+      }
+
+      setState(() {
+        _stories = stories;
+        _isLoading = false;
+      });
+    } catch (e) {
+      print('Error loading stories: $e');
+      setState(() {
+        _isLoading = false;
+        _stories = [];
+      });
+    }
+  }
+
+  // Update the toggle favorite method to use SharedPreferences
+  void _toggleFavorite(int index) async {
+    // Toggle in SharedPreferences and get new status
+    bool newStatus = await _storyService.toggleFavorite(_stories[index].id);
+
+    setState(() {
+      _stories[index].favorite = newStatus;
+    });
+
+    // Add a haptic feedback
+    HapticFeedback.lightImpact();
+
+    // Show a snackbar for feedback
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          _stories[index].favorite
+              ? 'Added to favorites'
+              : 'Removed from favorites',
+          style: const TextStyle(color: Colors.white),
+        ),
+        duration: const Duration(seconds: 1),
+        backgroundColor: const Color(0xFF424242),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        margin: const EdgeInsets.all(16),
+      ),
+    );
+  }
+
+  // Add this method to navigate to story detail and mark as read
+  void _navigateToStoryDetail(StoryModel story) async {
+    // Navigate to story detail screen
+    await Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return StoryDetailScreen(
+            title: story.title,
+            storyItems: story.storyItems,
+            level: story.level,
+            duration: story.duration,
+            description: story.description,
+            questions: story.questions,
+          );
+        },
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+        transitionDuration: const Duration(milliseconds: 300),
+      ),
+    );
+
+    // Mark story as read if not already read
+    if (!story.isRead) {
+      await _storyService.markStoryAsRead(story.id);
+      setState(() {
+        story.isRead = true;
+        _totalStoriesRead = _totalStoriesRead + 1;
+      });
+    }
+  }
+
 
   @override
   void dispose() {
@@ -174,33 +281,6 @@ class _StoriesListScreenState extends State<StoriesListScreen>
     }
   }
 
-  void _toggleFavorite(int index) {
-    setState(() {
-      _stories[index].favorite = !_stories[index].favorite;
-    });
-
-    // Add a haptic feedback
-    HapticFeedback.lightImpact();
-
-    // Show a snackbar for feedback
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          _stories[index].favorite
-              ? 'Added to favorites'
-              : 'Removed from favorites',
-          style: const TextStyle(color: Colors.white),
-        ),
-        duration: const Duration(seconds: 1),
-        backgroundColor: const Color(0xFF424242),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        margin: const EdgeInsets.all(16),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -633,12 +713,77 @@ class _StoriesListScreenState extends State<StoriesListScreen>
                               ],
                             ),
                           ),
+                          if (story.isRead)
+                            Positioned(
+                              top: 20,
+                              left: 20,
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF4CAF50),
+                                  borderRadius: BorderRadius.circular(12),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: const Row(
+                                  children: [
+                                    Icon(
+                                      Icons.check_circle,
+                                      color: Colors.white,
+                                      size: 12,
+                                    ),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      'READ',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.0,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                          // Content
+                          Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(0.2),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: const Text(
+                                    'FEATURED',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1.2,
+                                    ),
+                                  ),
+                                ),
+                                // Rest of existing content...
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
                 );
-              }
+              },
           ),
         ),
       ),
@@ -661,6 +806,7 @@ class _StoriesListScreenState extends State<StoriesListScreen>
     );
   }
 
+  // Update the story card to show read status
   Widget _buildStoryCard(StoryModel story, int index) {
     final gradientColors = _getGradientForStory(index);
     final storyIcon = _getIconForStory(story);
@@ -676,95 +822,97 @@ class _StoriesListScreenState extends State<StoriesListScreen>
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          onTap: () {
-            // Navigate to story detail screen
-            Navigator.push(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) {
-                  return StoryDetailScreen(
-                    title: story.title,
-                    storyItems: story.storyItems,
-                    level: story.level,
-                    duration: story.duration,
-                    description: story.description,
-                    questions: story.questions,
-                  );
-                },
-                transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                  return FadeTransition(opacity: animation, child: child);
-                },
-                transitionDuration: const Duration(milliseconds: 300),
-              ),
-            );
-          },
+          onTap: () => _navigateToStoryDetail(story),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Gradient thumbnail with icon
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: gradientColors,
+                Stack(
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: gradientColors,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: gradientColors[0].withOpacity(0.2),
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Stack(
+                        children: [
+                          // Decorative circle
+                          Positioned(
+                            top: -15,
+                            right: -15,
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.1),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                          // Center icon
+                          Center(
+                            child: Icon(
+                              storyIcon,
+                              color: Colors.white,
+                              size: 36,
+                            ),
+                          ),
+                          // Play button
+                          Positioned(
+                            right: 4,
+                            bottom: 4,
+                            child: Container(
+                              width: 26,
+                              height: 26,
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.play_arrow,
+                                color: gradientColors[1],
+                                size: 16,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: gradientColors[0].withOpacity(0.2),
-                        blurRadius: 4,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Stack(
-                    children: [
-                      // Decorative circle
+
+                    // Add read badge if the story has been read
+                    if (story.isRead)
                       Positioned(
-                        top: -15,
-                        right: -15,
+                        top: 0,
+                        left: 0,
                         child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                      // Center icon
-                      Center(
-                        child: Icon(
-                          storyIcon,
-                          color: Colors.white,
-                          size: 36,
-                        ),
-                      ),
-                      // Play button
-                      Positioned(
-                        right: 4,
-                        bottom: 4,
-                        child: Container(
-                          width: 26,
-                          height: 26,
+                          padding: const EdgeInsets.all(4),
                           decoration: const BoxDecoration(
-                            color: Colors.white,
+                            color: Color(0xFF4CAF50),
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
-                            Icons.play_arrow,
-                            color: gradientColors[1],
-                            size: 16,
+                          child: const Icon(
+                            Icons.check,
+                            color: Colors.white,
+                            size: 12,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                  ],
                 ),
                 const SizedBox(width: 16),
                 // Story details
@@ -774,16 +922,18 @@ class _StoriesListScreenState extends State<StoriesListScreen>
                     children: [
                       Text(
                         story.title,
-                        style:const TextStyle(
+                        style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF212121),
+                          color: story.isRead
+                              ? const Color(0xFF3F51B5) // Highlight if read
+                              : const Color(0xFF212121),
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         story.description,
-                        style:const TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           color: Color(0xFF757575),
                         ),
@@ -795,7 +945,7 @@ class _StoriesListScreenState extends State<StoriesListScreen>
                         children: [
                           // Level pill
                           Container(
-                            padding:const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                             decoration: BoxDecoration(
                               color: _getLevelColor(story.level).withOpacity(0.2),
                               borderRadius: BorderRadius.circular(8),
@@ -810,7 +960,7 @@ class _StoriesListScreenState extends State<StoriesListScreen>
                             ),
                           ),
                           const SizedBox(width: 8),
-                          const  Icon(
+                          const Icon(
                             Icons.access_time,
                             color: Color(0xFF757575),
                             size: 12,
@@ -818,11 +968,34 @@ class _StoriesListScreenState extends State<StoriesListScreen>
                           const SizedBox(width: 4),
                           Text(
                             story.duration,
-                            style:const TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF757575),
                               fontSize: 12,
                             ),
                           ),
+
+                          const SizedBox(width: 10,),
+                          // Add "Read" badge if the story has been read
+                          if (story.isRead) ...[
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF4CAF50).withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: const Row(
+                                children: [
+                                  Icon(
+                                    Icons.check_circle,
+                                    color: Color(0xFF4CAF50),
+                                    size: 10,
+                                  ),
+
+                                ],
+                              ),
+                            ),
+                          ],
                         ],
                       ),
                     ],
@@ -862,4 +1035,6 @@ class _StoriesListScreenState extends State<StoriesListScreen>
       ),
     );
   }
+
+
 }

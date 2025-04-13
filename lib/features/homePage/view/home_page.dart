@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../exceriseSections/view/excerice_sections.dart';
 import '../../poadcast/view/pordCast.dart';
 import '../../profile/view/profile.dart';
 import '../../storiesScreen/model/stories_model.dart';
@@ -7,6 +6,7 @@ import '../../storiesScreen/model/stories_services.dart';
 import '../../storiesScreen/view/stories_player.dart';
 import '../../storiesScreen/view/stories_screen.dart';
 import '../../vocabscreen/view/vocab_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
     _tabController.addListener(() {
       setState(() {
         _currentIndex = _tabController.index;
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             StoriesCategoryScreen(),
             PodcastCategoryScreen(),
            VocabularyCategoryScreen(),
-           // ExerciseScreen(),
+            Text("sa"),
            ProfileScreen(),
         ],
       ),
@@ -100,12 +100,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   padding: EdgeInsets.only(bottom: 2),
                 ),
               ),
-              // Tab(
-              //   icon: Icon(Icons.play_lesson, size: 30),
-              //   child: Padding(
-              //     padding: EdgeInsets.only(bottom: 2),
-              //   ),
-              // ),
+              Tab(
+                icon: Icon(Icons.gamepad, size: 30),
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 2),
+                ),
+              ),
               Tab(
                 icon: Icon(Icons.person, size: 30),
                 child: Padding(

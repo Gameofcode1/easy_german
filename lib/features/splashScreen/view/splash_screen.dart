@@ -191,7 +191,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                         ),
                         child: Center(
                           child: Image.asset(
-                            cat,
+                            spark,
                             width: size.width * 0.25,
                             fit: BoxFit.contain,
                           ),

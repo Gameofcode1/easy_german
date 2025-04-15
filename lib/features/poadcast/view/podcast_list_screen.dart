@@ -1,7 +1,7 @@
 // lib/screens/podcast_list_screen.dart
 
 import 'package:flutter/material.dart';
-import 'package:job_finder/features/poadcast/view/pod_detail.dart';
+import 'package:German_Spark/features/poadcast/view/pod_detail.dart';
 import 'dart:ui';
 import '../model/podcast_model.dart';
 import '../service/podcast_service.dart';

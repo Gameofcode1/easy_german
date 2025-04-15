@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:job_finder/features/storiesScreen/view/stories_player.dart';
+import 'package:German_Spark/features/storiesScreen/view/stories_player.dart';
 import 'dart:ui';
 import 'dart:math';
 import '../model/stories_model.dart';

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "job_finder" "\0"
+            VALUE "FileDescription", "germanspark" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "job_finder" "\0"
+            VALUE "InternalName", "germanspark" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "job_finder.exe" "\0"
-            VALUE "ProductName", "job_finder" "\0"
+            VALUE "OriginalFilename", "germanspark.exe" "\0"
+            VALUE "ProductName", "germanspark" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

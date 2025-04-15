@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'config/tracker/app_usage_tracker.dart';
-import 'features/exceriseSections/viewmodel/match_makring_viewmodel.dart';
 import 'features/homePage/viewModel/home_page.dart';
 import 'features/splashScreen/view/splash_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +13,6 @@ import 'features/vocabscreen/viewmodel/vocab_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
   await SharedPreferences.getInstance();
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
@@ -31,9 +29,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (context) => VocabularyProvider()),
         ChangeNotifierProvider(create: (context) => FlashcardProvider()),
-        ChangeNotifierProvider(create: (_) => AppProvider()),
-        ChangeNotifierProvider(create: (_) => WordMatchGameViewModel()),
-
+        ChangeNotifierProvider(create: (_) => AppProvider())
       ],
       child: MyApp(appUsageTracker: appUsageTracker),
     ),

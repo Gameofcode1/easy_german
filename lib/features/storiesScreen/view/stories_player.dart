@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:job_finder/features/storiesScreen/model/stories_model.dart';
+import 'package:German_Spark/features/storiesScreen/model/stories_model.dart';
 import 'package:provider/provider.dart';
 import 'dart:io';
 import 'dart:async';

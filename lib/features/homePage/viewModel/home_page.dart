@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:job_finder/features/homePage/model/model.dart';
+import 'package:German_Spark/features/homePage/model/model.dart';
 
 class AppProvider with ChangeNotifier {
   // Stories data
@@ -141,26 +141,7 @@ class AppProvider with ChangeNotifier {
     _stories = [..._beginnerStories, ..._intermediateStories, ..._advancedStories];
 
     // Initialize podcasts (simplified for now)
-    _podcasts = [
-      Podcast(
-        id: 'p1',
-        title: 'Alltag in Deutschland',
-        description: 'Daily life conversations in Germany.',
-        imageUrl: 'assets/images/podcasts/daily_life.jpg',
-        audioUrl: 'assets/audio/alltag.mp3',
-        duration: '15:30',
-        favorite: false,
-      ),
-      Podcast(
-        id: 'p2',
-        title: 'Deutsche Kultur',
-        description: 'Learn about German culture and traditions.',
-        imageUrl: 'assets/images/podcasts/culture.jpg',
-        audioUrl: 'assets/audio/kultur.mp3',
-        duration: '20:45',
-        favorite: false,
-      ),
-    ];
+
 
     // Initialize vocabulary (simplified for now)
     _vocabularyWords = [
@@ -257,7 +238,7 @@ class AppProvider with ChangeNotifier {
 
   // Methods to manage podcasts
   void togglePodcastFavorite(String podcastId) {
-    final podcastIndex = _podcasts.indexWhere((podcast) => podcast.id == podcastId);
+    final podcastIndex = _podcasts.indexWhere((podcast) => podcast?.id == podcastId);
     if (podcastIndex >= 0) {
       _podcasts[podcastIndex].favorite = !_podcasts[podcastIndex].favorite;
 

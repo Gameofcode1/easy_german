@@ -6,6 +6,7 @@ import '../../storiesScreen/model/stories_services.dart';
 import '../../storiesScreen/view/stories_player.dart';
 import '../../storiesScreen/view/stories_screen.dart';
 import '../../vocabscreen/view/vocab_screen.dart';
+import '../../gamescreen/view/game_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -43,12 +44,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       body: TabBarView(
         controller: _tabController,
         physics: const NeverScrollableScrollPhysics(), // Disable swipe to change tabs
-        children:const [
-            StoriesCategoryScreen(),
-            PodcastCategoryScreen(),
-           VocabularyCategoryScreen(),
-            Text("sa"),
-           ProfileScreen(),
+        children: [
+            const StoriesCategoryScreen(),
+            const PodcastCategoryScreen(),
+            const VocabularyCategoryScreen(),
+            const GameScreen(),
+            const ProfileScreen(),
         ],
       ),
       bottomNavigationBar: Container(

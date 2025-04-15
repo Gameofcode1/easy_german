@@ -115,27 +115,6 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
             {'label': 'Intermediate', 'value': '$intermediateStoriesRead'},
             {'label': 'Advanced', 'value': '$advancedStoriesRead'},
           ]
-        },
-        {
-          'title': 'Verbs ',
-          'value': 'All levels',
-          'icon': Icons.transform,
-          'color': const Color(0xFFFF9800),
-          'details': [
-            {'label': 'Perfekt', 'value': '85%'},
-            {'label': 'Präteritum', 'value': '65%'},
-            {'label': 'Used in Stories', 'value': '32'},
-          ]
-        },
-        {
-          'title': 'Time',
-          'value': _formattedLearningTime,
-          'icon': Icons.timer,
-          'color': const Color(0xFF9C27B0),
-          'details': [
-            {'label': 'Daily Average', 'value': _dailyAverageTime},
-            {'label': 'Streak', 'value': '$_learningStreakDays days'},
-          ]
         }
       ];
     });
@@ -273,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          '$_totalVocabularyLearned words · $_totalStoriesRead stories',
+                          'My Learning Curve and about the App',
                           style: const TextStyle(
                             fontSize: 14,
                             color: Colors.white,
@@ -370,29 +349,305 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
   }
 
   // Learning statistics with improved responsiveness
+// Enhanced Learning Statistics Section
   Widget _buildLearningStatisticsSection() {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      sliver: SliverGrid(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.5,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Learning Progress Overview Cards
+            Row(
+              children: [
+                _buildStatCard(
+                  'Total Words',
+                  _totalVocabularyLearned.toString(),
+                  Icons.library_books,
+                  Colors.blue,
+                ),
+                const SizedBox(width: 16),
+                _buildStatCard(
+                  'Stories Read',
+                  _totalStoriesRead.toString(),
+                  Icons.auto_stories,
+                  Colors.green,
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+
+          ],
         ),
-        delegate: SliverChildBuilderDelegate(
-              (context, index) {
-            final stat = _learningStats[index];
-            return _buildLearningStatCard(
-              title: stat['title'],
-              value: stat['value'],
-              icon: stat['icon'],
-              color: stat['color'],
-              details: stat['details'],
-              index: index,
-            );
-          },
-          childCount: _learningStats.length,
+      ),
+    );
+  }
+
+// Progress Row Widget
+  Widget _buildProgressRow(
+      String title,
+      int value,
+      IconData icon,
+      Color color
+      ) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(icon, color: color, size: 20),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Container(
+                width: double.infinity,
+                height: 6,
+                decoration: BoxDecoration(
+                  color: color.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: FractionallySizedBox(
+                  widthFactor: _calculateProgressFactor(value),
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: color,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 12),
+        Text(
+          '$value',
+          style: TextStyle(
+            color: color,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+// Insight Row Widget
+  Widget _buildInsightRow(
+      String title,
+      String value,
+      IconData icon,
+      Color color
+      ) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(icon, color: color, size: 20),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            title,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        Text(
+          value,
+          style: TextStyle(
+            color: color,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+// Helper method to calculate progress factor
+  double _calculateProgressFactor(int value) {
+    // Adjust the scaling as needed
+    return value > 100 ? 1.0 : value / 100.0;
+  }
+
+// Calculate progress rate
+
+// Detailed Learning Breakdown Widget
+
+
+// Learning Breakdown Row
+  Widget _buildLearningBreakdownRow(
+      String title,
+      int value,
+      IconData icon,
+      Color color
+      ) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(icon, color: color, size: 20),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Container(
+                width: double.infinity,
+                height: 6,
+                decoration: BoxDecoration(
+                  color: color.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: FractionallySizedBox(
+                  widthFactor: value / (value + 50), // Adjust scaling as needed
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: color,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 12),
+        Text(
+          '$value',
+          style: TextStyle(
+            color: color,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+// Detailed Stat Row
+  Widget _buildDetailStatRow(
+      String title,
+      int value,
+      IconData icon,
+      Color color
+      ) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(icon, color: color, size: 20),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            title,
+            style: TextStyle(
+              color: Colors.grey[800],
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        Text(
+          '$value',
+          style: TextStyle(
+            color: color,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+
+// Existing stat card method (keep the one from the current implementation)
+  Widget _buildStatCard(
+      String title,
+      String value,
+      IconData icon,
+      Color color
+      ) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: color.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(icon, color: color, size: 24),
+            const SizedBox(height: 12),
+            Text(
+              value,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey[600],
+              ),
+            ),
+          ],
         ),
       ),
     );

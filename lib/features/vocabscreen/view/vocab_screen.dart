@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:job_finder/features/vocabscreen/viewmodel/vocab_screen.dart';
+import 'package:German_Spark/features/vocabscreen/viewmodel/vocab_screen.dart';
 import 'package:provider/provider.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -520,18 +520,6 @@ class VocabularyProvider extends ChangeNotifier {
 }
 
 
-
-// ===== MODEL CLASSES =====
-
-class CategorySection {
-  final String title;
-  final List<CategoryItem> items;
-
-  CategorySection({
-    required this.title,
-    required this.items,
-  });
-}
 
 
 

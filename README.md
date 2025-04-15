@@ -1,4 +1,4 @@
-# job_finder
+# germanspark
 
 A new Flutter project.
 

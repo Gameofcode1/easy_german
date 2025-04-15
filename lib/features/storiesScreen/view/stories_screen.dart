@@ -137,7 +137,7 @@ class _StoriesCategoryScreenState extends State<StoriesCategoryScreen>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text(
-                    'Deutsch Lernen',
+                    'German Spark',
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,

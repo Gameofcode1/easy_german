@@ -1,6 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:job_finder/features/poadcast/view/podcast_list_screen.dart';
+import 'package:German_Spark/features/poadcast/view/pod_detail.dart';
+import 'package:German_Spark/features/poadcast/view/podcast_list_screen.dart';
 import 'dart:ui';
+import '../model/podcast_model.dart';
+import '../service/podcast_service.dart';
 
 class PodcastCategoryScreen extends StatefulWidget {
   const PodcastCategoryScreen({super.key});
@@ -33,6 +38,32 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
     _animationController.forward();
     _animationController.repeat(reverse: true);
   }
+
+  final PodcastService _podcastService = PodcastService();
+
+  Future<Podcast?> _getRandomBeginnerPodcast() async {
+    try {
+      // Load podcast data if not already loaded
+      await _podcastService.loadPodcastData();
+
+      // Get beginner level podcasts
+      List<Podcast> beginnerPodcasts = _podcastService.getPodcastsByCategory('Beginner');
+
+      // If no beginner podcasts, return null
+      if (beginnerPodcasts.isEmpty) return null;
+
+      // Use current timestamp as seed for consistent randomness
+      final seed = DateTime.now().millisecondsSinceEpoch;
+      final random = Random(seed);
+
+      // Return a random beginner podcast
+      return beginnerPodcasts[random.nextInt(beginnerPodcasts.length)];
+    } catch (e) {
+      print('Error fetching random beginner podcast: $e');
+      return null;
+    }
+  }
+
 
   @override
   void dispose() {
@@ -228,157 +259,171 @@ class _PodcastCategoryScreenState extends State<PodcastCategoryScreen>
 
   Widget _buildFeaturedPodcast() {
     return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-        child: Card(
-          elevation: 6,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Container(
-            height: 180,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Color(0xFF3F51B5),
-                  Color(0xFF5C6BC0),
-                ],
-              ),
-            ),
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                // Background decorative elements
+      child: FutureBuilder<Podcast?>(
+        future: _getRandomBeginnerPodcast(),
+        builder: (context, snapshot) {
+          // If no podcast found or still loading
+          if (!snapshot.hasData) {
+            return const SizedBox.shrink(); // Or a loading indicator
+          }
 
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          final podcast = snapshot.data!;
+
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+            child: GestureDetector(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        PodcastDetailScreen(podcast: podcast),
+                  ),
+                );
+              },
+              child: Card(
+                elevation: 6,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Container(
+                  height: 180,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        podcast.color.withOpacity(0.8),
+                        podcast.color,
+                      ],
+                    ),
+                  ),
+                  child: Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      // Top section
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
-                              Icons.star,
-                              color: Colors.white,
-                              size: 12,
-                            ),
-                            SizedBox(width: 4),
-                            Text(
-                              'FEATURED',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
+                            // Featured tag
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.white,
+                                    size: 12,
+                                  ),
+                                  SizedBox(width: 4),
+                                  Text(
+                                    'FEATURED BEGINNER PODCAST',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
+
+                            // Podcast info
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  podcast.title,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 22,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  podcast.description,
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontSize: 14,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+
+                            // Bottom section with stats
+                            // Bottom section with stats
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                // Creator and stats
+                                Expanded(
+                                  child: Row(
+                                    children: [
+                                      const Icon(Icons.person, color: Colors.white, size: 16),
+                                      const SizedBox(width: 4),
+                                      Expanded(
+                                        child: Text(
+                                          podcast.author,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 14,
+                                          ),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                // Play button with some left margin
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.1),
+                                          blurRadius: 4,
+                                          offset: const Offset(0, 2),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Icon(
+                                      Icons.play_arrow,
+                                      color: podcast.color,
+                                      size: 24,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
-                      ),
-
-                      // Podcast info
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'The Daily Tech',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            'Tech news and insights for your daily commute',
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
-                              fontSize: 14,
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-
-                      // Bottom section with stats
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // Creator and stats
-                          const Row(
-                            children: [
-                              Icon(Icons.mic, color: Colors.white, size: 16),
-                              SizedBox(width: 4),
-                              Text(
-                                'TechCrunch',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              SizedBox(width: 12),
-                              Icon(Icons.people, color: Colors.white, size: 16),
-                              SizedBox(width: 4),
-                              Text(
-                                '1.2M',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                ),
-                              ),
-                            ],
-                          ),
-
-                          // Play button with small bubble accent
-                          Stack(
-                            clipBehavior: Clip.none,
-                            children: [
-                              // Small accent bubble
-
-                              // Play button
-                              Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.1),
-                                      blurRadius: 4,
-                                      offset: const Offset(0, 2),
-                                    ),
-                                  ],
-                                ),
-                                child: const Icon(
-                                  Icons.play_arrow,
-                                  color: Color(0xFF3F51B5),
-                                  size: 24,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
                       ),
                     ],
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

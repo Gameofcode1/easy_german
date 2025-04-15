@@ -7,5 +7,6 @@ const unDrawSwipe = "assets/images/undraw_swipe_profiles1_i6mr.svg";
 const jobOffer = "assets/images/undraw_job_offers_kw5d.svg";
 const businessDeal = "assets/images/undraw_business_deal_cpi9.svg";
 const cat = "assets/images/cat.jpg";
+const spark = "assets/images/spark.png";
 
 

@@ -13,6 +13,7 @@ import 'features/vocabscreen/viewmodel/vocab_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
   await SharedPreferences.getInstance();
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([

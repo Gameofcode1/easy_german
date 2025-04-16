@@ -149,6 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
   // App bar with user's learning summary
   Widget _buildAppBar() {
     return SliverAppBar(
+      iconTheme:const IconThemeData(color: Colors.white),
       expandedHeight: 200,
       pinned: true,
       backgroundColor: const Color(0xFF3F51B5),

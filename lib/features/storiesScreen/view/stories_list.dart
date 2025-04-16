@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:German_Spark/features/storiesScreen/view/stories_player.dart';
 import 'dart:ui';
 import 'dart:math';
+import '../../profile/view/profile.dart';
 import '../model/stories_model.dart';
 import '../model/stories_services.dart';
 
@@ -425,20 +426,7 @@ class _StoriesListScreenState extends State<StoriesListScreen>
                             ),
                           ),
                           // Tiny circles for a starry effect
-                          ...List.generate(12, (index) {
-                            return Positioned(
-                              left: 50.0 + (index * 25) % 300,
-                              top: 20.0 + (index * 30) % 150,
-                              child: Container(
-                                width: 4,
-                                height: 4,
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.2),
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                            );
-                          }),
+
                         ],
                       );
                     }
@@ -465,15 +453,20 @@ class _StoriesListScreenState extends State<StoriesListScreen>
       ),
       actions: [
         // Profile icon
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.white.withOpacity(0.2),
-            radius: 18,
-            child: const Icon(
-              Icons.person,
-              color: Colors.white,
-              size: 20,
+        InkWell(
+       onTap: (){
+         Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+       },
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: CircleAvatar(
+              backgroundColor: Colors.white.withOpacity(0.2),
+              radius: 18,
+              child: const Icon(
+                Icons.person,
+                color: Colors.white,
+                size: 20,
+              ),
             ),
           ),
         ),

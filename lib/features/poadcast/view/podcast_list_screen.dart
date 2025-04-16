@@ -117,7 +117,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
 
   Widget _buildAppBar() {
     return SliverAppBar(
-      expandedHeight: 150,
+      expandedHeight: 200,
       pinned: true,
       backgroundColor:const Color(0xFF3F51B5),
       shape:const RoundedRectangleBorder(
@@ -227,21 +227,7 @@ class _PodcastListScreenState extends State<PodcastListScreen>
         icon:const Icon(Icons.arrow_back, color: Colors.white),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: [
-        IconButton(
-          icon:const Icon(Icons.search, color: Colors.white),
-          onPressed: () {
-            // Implement search functionality
-          },
-        ),
-        IconButton(
-          icon:const Icon(Icons.filter_list, color: Colors.white),
-          onPressed: () {
-            // Implement filter functionality
-          },
-        ),
-        const SizedBox(width: 8),
-      ],
+
     );
   }
 

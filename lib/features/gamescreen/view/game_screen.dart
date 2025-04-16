@@ -1,9 +1,10 @@
-// Updated GameScreen implementation with word counts from SharedPreferences
 import 'package:flutter/material.dart';
-import 'package:German_Spark/features/gamescreen/view/game_play.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../viremodel/game_viewmodel.dart';
+import '../../../features/vocabscreen/view/vocab_screen.dart';
+import '../../../features/vocabscreen/models/vocabulary_model.dart';
+
+
+
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -15,12 +16,6 @@ class GameScreen extends StatefulWidget {
 class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _floatAnimation;
-
-  // Track word counts for display
-  int totalWords = 0;
-  int learnedWords = 0;
-  int unlearnedWords = 0;
-  bool isLoading = true;
 
   @override
   void initState() {
@@ -39,40 +34,6 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
 
     _animationController.forward();
     _animationController.repeat(reverse: true);
-
-    // Load word counts
-    _loadWordCounts();
-  }
-
-  // Load word counts from SharedPreferences
-  Future<void> _loadWordCounts() async {
-    // Create a temporary provider to get the counts
-    final gameProvider = LanguageMatchingGameProvider();
-
-    // Get the counts
-    final counts = await gameProvider.getWordCounts();
-
-    // Verify SharedPreferences content
-    final prefs = await SharedPreferences.getInstance();
-    print('\nSharedPreferences Learned Words:');
-    prefs.getKeys().where((key) => key.endsWith('_learned')).forEach((key) {
-      bool? value = prefs.getBool(key);
-      if (value == true) {
-        print('Learned: $key');
-      }
-    });
-
-    setState(() {
-      totalWords = counts['total'] ?? 0;
-      learnedWords = counts['learned'] ?? 0;
-      unlearnedWords = counts['unlearned'] ?? 0;
-      isLoading = false;
-    });
-
-    // Print detailed breakdown
-    print('Total Words: $totalWords');
-    print('Learned Words: $learnedWords');
-    print('Unlearned Words: $unlearnedWords');
   }
 
   @override
@@ -116,37 +77,37 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
 
             // Animated background patterns
             AnimatedBuilder(
-                animation: _animationController,
-                builder: (context, child) {
-                  return Stack(
-                    children: [
-                      Positioned(
-                        right: -30,
-                        top: -30 + _floatAnimation.value,
-                        child: Container(
-                          width: 180,
-                          height: 180,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
-                            shape: BoxShape.circle,
-                          ),
+              animation: _animationController,
+              builder: (context, child) {
+                return Stack(
+                  children: [
+                    Positioned(
+                      right: -30,
+                      top: -30 + _floatAnimation.value,
+                      child: Container(
+                        width: 180,
+                        height: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.1),
+                          shape: BoxShape.circle,
                         ),
                       ),
-                      Positioned(
-                        left: -20,
-                        bottom: -20 + _floatAnimation.value,
-                        child: Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
-                            shape: BoxShape.circle,
-                          ),
+                    ),
+                    Positioned(
+                      left: -20,
+                      bottom: -20 + _floatAnimation.value,
+                      child: Container(
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.1),
+                          shape: BoxShape.circle,
                         ),
                       ),
-                    ],
-                  );
-                }
+                    ),
+                  ],
+                );
+              }
             ),
 
             // Content
@@ -194,153 +155,154 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
     );
   }
 
-  // Launch the game with the selected game mode
-  void _launchGame(BuildContext context, GameMode gameMode) {
-    final gameProvider = LanguageMatchingGameProvider();
-    gameProvider.setGameMode(gameMode);
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ChangeNotifierProvider.value(
-          value: gameProvider,
-          child: FutureBuilder(
-            future: gameProvider.initialize(),
-            builder: (context, snapshot) {
-
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Scaffold(
-                  body: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                );
-              }
-              return const LanguageMatchingGame();
-            },
-          ),
-        ),
-      ),
-    ).then((_) {
-      // Refresh word counts when returning from the game
-      _loadWordCounts();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[50],
-      body: isLoading
-          ? const Center(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF3F51B5)),
-        ),
-      )
-          : CustomScrollView(
-        slivers: [
-          _buildAppBar(),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Statistics Cards
-                  Row(
-                    children: [
-                      _buildStatCard(
-                        'Total Words',
-                        totalWords.toString(),
-                        Icons.library_books,
-                        Colors.blue,
-                      ),
-                      const SizedBox(width: 16),
-                      _buildStatCard(
-                        'Learned',
-                        learnedWords.toString(),
-                        Icons.check_circle,
-                        Colors.green,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      _buildStatCard(
-                        'To Learn',
-                        unlearnedWords.toString(),
-                        Icons.school,
-                        Colors.orange,
-                      ),
-                      const SizedBox(width: 16),
-                      _buildStatCard(
-                        'Success Rate',
-                        totalWords > 0
-                            ? '${(learnedWords / totalWords * 100).toStringAsFixed(1)}%'
-                            : '0.0%',
-                        Icons.trending_up,
-                        Colors.purple,
-                      ),
-                    ],
-                  ),
+    return Consumer<VocabularyProvider>(
+      builder: (context, vocabularyProvider, child) {
+        // Calculate total words, learned words, and unlearned words
+        int totalWords = 0;
+        int learnedWords = 0;
 
-                  const SizedBox(height: 32),
+        vocabularyProvider.levelData?.forEach((level, sections) {
+          for (var section in sections) {
+            for (var item in section.items) {
+              totalWords += (item.count as int);
+              learnedWords += (item.learnedCount as int);
+            }
+          }
+        });
 
-                  // Game Modes Section
-                  Container(
-                    height: 40,
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF3F51B5),
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFF3F51B5).withOpacity(0.3),
-                          blurRadius: 8,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.gamepad,
-                          color: Colors.white,
-                          size: 16,
-                        ),
-                        SizedBox(width: 6),
-                        Text(
-                          'Game Modes',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+        int unlearnedWords = totalWords - learnedWords;
+        double successRate = totalWords > 0 ? (learnedWords / totalWords) * 100 : 0;
+
+        return Scaffold(
+          backgroundColor: Colors.grey[50],
+          body: CustomScrollView(
+            slivers: [
+              _buildAppBar(),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Statistics Cards
+                      Row(
+                        children: [
+                          _buildStatCard(
+                            'Total Words',
+                            totalWords.toString(),
+                            Icons.library_books,
+                            Colors.blue,
                           ),
+                          const SizedBox(width: 16),
+                          _buildStatCard(
+                            'Learned',
+                            learnedWords.toString(),
+                            Icons.check_circle,
+                            Colors.green,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        children: [
+                          _buildStatCard(
+                            'To Learn',
+                            unlearnedWords.toString(),
+                            Icons.school,
+                            Colors.orange,
+                          ),
+                          const SizedBox(width: 16),
+                          _buildStatCard(
+                            'Success Rate',
+                            '${successRate.toStringAsFixed(1)}%',
+                            Icons.trending_up,
+                            Colors.purple,
+                          ),
+                        ],
+                      ),
+
+                      const SizedBox(height: 32),
+
+                      // Game Modes Section
+                      Container(
+                        height: 40,
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF3F51B5),
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF3F51B5).withOpacity(0.3),
+                              blurRadius: 8,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 16),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.gamepad,
+                              color: Colors.white,
+                              size: 16,
+                            ),
+                            SizedBox(width: 6),
+                            Text(
+                              'Game Modes',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
 
-                  // Game Mode Cards
-
-                  const SizedBox(height: 16),
-                  _buildGameModeCard(
-                    context,
-                    'Start Game',
-                    'Test yourself with a mix of all words',
-                    Icons.shuffle,
-                    Color(0xFF3F51B5),
-                        () => _launchGame(context, GameMode.mixedChallenge),
-                    totalWords,
+                      // Game Mode Cards
+                      _buildGameModeCard(
+                        context,
+                        'Learn New Words',
+                        'Practice vocabulary you haven\'t learned yet',
+                        Icons.lightbulb,
+                        Colors.amber,
+                        () {
+                          // TODO: Implement unlearned words game
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildGameModeCard(
+                        context,
+                        'Review Learned Words',
+                        'Reinforce your knowledge of learned words',
+                        Icons.replay,
+                        Colors.green,
+                        () {
+                          // TODO: Implement learned words review
+                        },
+                      ),
+                      const SizedBox(height: 16),
+                      _buildGameModeCard(
+                        context,
+                        'Mixed Challenge',
+                        'Test yourself with a mix of all words',
+                        Icons.shuffle,
+                        Colors.purple,
+                        () {
+                          // TODO: Implement mixed words game
+                        },
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -387,16 +349,15 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
   }
 
   Widget _buildGameModeCard(
-      BuildContext context,
-      String title,
-      String description,
-      IconData icon,
-      Color color,
-      VoidCallback onTap,
-      int wordCount,
-      ) {
+    BuildContext context,
+    String title,
+    String description,
+    IconData icon,
+    Color color,
+    VoidCallback onTap,
+  ) {
     return InkWell(
-      onTap: wordCount > 0 ? onTap : null, // Disable if no words available
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -415,10 +376,10 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: wordCount > 0 ? color.withOpacity(0.1) : Colors.grey.withOpacity(0.1),
+                color: color.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Icon(icon, color: wordCount > 0 ? color : Colors.grey, size: 24),
+              child: Icon(icon, color: color, size: 24),
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -427,10 +388,10 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: wordCount > 0 ? Colors.black87 : Colors.grey,
+                      color: Colors.black87,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -438,26 +399,7 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
                     description,
                     style: TextStyle(
                       fontSize: 14,
-                      color: wordCount > 0 ? Colors.grey[600] : Colors.grey[400],
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                    decoration: BoxDecoration(
-                      color: wordCount > 0 ? color.withOpacity(0.1) : Colors.grey.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: wordCount > 0 ? color.withOpacity(0.3) : Colors.grey.withOpacity(0.3),
-                      ),
-                    ),
-                    child: Text(
-                      '$wordCount words available',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: wordCount > 0 ? color : Colors.grey,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      color: Colors.grey[600],
                     ),
                   ),
                 ],
@@ -465,7 +407,7 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: wordCount > 0 ? Colors.grey[400] : Colors.grey[300],
+              color: Colors.grey[400],
               size: 16,
             ),
           ],
@@ -473,4 +415,4 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
       ),
     );
   }
-}
+} 

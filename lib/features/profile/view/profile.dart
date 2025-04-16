@@ -149,6 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
   // App bar with user's learning summary
   Widget _buildAppBar() {
     return SliverAppBar(
+      iconTheme: IconThemeData(color: Colors.white),
       expandedHeight: 200,
       pinned: true,
       backgroundColor: const Color(0xFF3F51B5),
@@ -242,18 +243,18 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Row(
+                    child:const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(
+                         Icon(
                           Icons.insights,
                           color: Colors.white,
                           size: 16,
                         ),
-                        const SizedBox(width: 6),
+                         SizedBox(width: 6),
                         Text(
                           'My Learning Curve and about the App',
-                          style: const TextStyle(
+                          style:  TextStyle(
                             fontSize: 14,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
@@ -738,6 +739,8 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
     );
   }
   // About App Section with card animation
+
+  // About App Section with updated content and social media links
   Widget _buildAboutAppSection() {
     return SliverToBoxAdapter(
       child: Padding(
@@ -770,7 +773,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                     ),
                     const SizedBox(width: 12),
                     const Text(
-                      'About Deutsch Lernen',
+                      'About German Spark',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -781,7 +784,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'We make German language learning engaging and fun through interactive stories, comprehensive grammar lessons, and personalized learning paths.',
+                  'German Spark is a comprehensive offline learning platform designed to make German language learning engaging and fun. We teach German through interactive stories, podcasts, verb exercises, games, and more, with the aim of making language acquisition an enjoyable experience.',
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black87,
@@ -795,8 +798,10 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                   runSpacing: 8,
                   children: [
                     _buildFeatureChip('Interactive Stories'),
-                    _buildFeatureChip('Grammar Lessons'),
-                    _buildFeatureChip('Vocabulary Builder'),
+                    _buildFeatureChip('Offline Learning'),
+                    _buildFeatureChip('German Podcasts'),
+                    _buildFeatureChip('Verb Exercises'),
+                    _buildFeatureChip('Fun Games'),
                     _buildFeatureChip('Audio Pronunciation'),
                   ],
                 ),
@@ -829,7 +834,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                           ),
                           SizedBox(width: 4),
                           Text(
-                            '2024 Language App',
+                            '2024 German Spark',
                             style: TextStyle(
                               color: Color(0xFF3F51B5),
                               fontSize: 14,
@@ -848,6 +853,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
       ),
     );
   }
+
 
   // Feature chip widget
   Widget _buildFeatureChip(String label) {
@@ -873,6 +879,11 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
   }
 
   // Improved contact section
+
+  // Improved contact section with updated social media links
+
+
+  // Updated contact section with improved URL handling
   Widget _buildContactSection() {
     return SliverToBoxAdapter(
       child: Padding(
@@ -898,7 +909,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                     ),
                     SizedBox(width: 12),
                     Text(
-                      'Get in Touch',
+                      'Connect With Us',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -909,7 +920,7 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'We value your feedback and are always happy to help with any questions!',
+                  'Follow us on social media to get the latest updates, learning tips, and join our growing community of German language enthusiasts!',
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.black87,
@@ -920,59 +931,64 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                 _buildContactButton(
                   icon: Icons.email,
                   label: 'Email Support',
-                  description: 'support@deutschlernen.com',
-                  onTap: () async {
-                    final Uri emailLaunchUri = Uri(
-                      scheme: 'mailto',
-                      path: 'support@deutschlernen.com',
-                      query: _encodeQueryParameters(<String, String>{
-                        'subject': 'App Support Request',
-                      }),
-                    );
-                    if (await canLaunchUrl(emailLaunchUri)) {
-                      await launchUrl(emailLaunchUri);
-                    }
-                  },
+                  description: 'support@germanspark.com',
+                  url: 'mailto:support@germanspark.com?subject=German%20Spark%20Support%20Request',
                 ),
                 const SizedBox(height: 12),
                 _buildContactButton(
                   icon: Icons.web,
-                  label: 'Visit Website',
-                  description: 'www.deutschlernen.com',
-                  onTap: () async {
-                    final Uri websiteUri = Uri.parse(
-                        'https://www.deutschlernen.com');
-                    if (await canLaunchUrl(websiteUri)) {
-                      await launchUrl(websiteUri);
-                    }
-                  },
+                  label: 'Visit Our Website',
+                  description: 'www.germanspark.com',
+                  url: 'https://www.germanspark.com',
                 ),
                 const SizedBox(height: 12),
                 _buildContactButton(
                   icon: Icons.feedback,
                   label: 'Send Feedback',
-                  description: 'Help us improve',
-                  onTap: () async {
-                    final Uri feedbackUri = Uri.parse(
-                        'https://www.deutschlernen.com/feedback');
-                    if (await canLaunchUrl(feedbackUri)) {
-                      await launchUrl(feedbackUri);
-                    }
-                  },
+                  description: 'Help us improve German Spark',
+                  url: 'https://www.germanspark.com/feedback',
+                ),
+                const SizedBox(height: 20),
+                // Social media section title
+                const Center(
+                  child: Text(
+                    'FOLLOW US',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF3F51B5),
+                      letterSpacing: 1.5,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 16),
-                // Social media links
+                // Social media links with real URLs
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildSocialButton(Icons.facebook, Colors.blue.shade700),
-                    const SizedBox(width: 16),
-                    _buildSocialButton(Icons.language, Colors.green.shade600),
-                    const SizedBox(width: 16),
-                    _buildSocialButton(
-                        Icons.ondemand_video, Colors.red.shade600),
-                    const SizedBox(width: 16),
-                    _buildSocialButton(Icons.discord, Colors.indigo.shade400),
+                    _buildSocialButtonWithUrl(
+                        Icons.facebook,
+                        Colors.blue.shade700,
+                        'https://www.facebook.com/mithopiroo/'
+                    ),
+                    const SizedBox(width: 20),
+                    _buildSocialButtonWithUrl(
+                        Icons.camera_alt,
+                        Colors.purple.shade600,
+                        'https://www.instagram.com/sajilo_german/'
+                    ),
+                    const SizedBox(width: 20),
+                    _buildSocialButtonWithUrl(
+                        Icons.music_note,
+                        Colors.black87,
+                        'https://www.tiktok.com/@sajilo_german'
+                    ),
+                    const SizedBox(width: 20),
+                    _buildSocialButtonWithUrl(
+                        Icons.language,
+                        Colors.green.shade600,
+                        'https://www.germanspark.com'
+                    ),
                   ],
                 ),
               ],
@@ -982,6 +998,11 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
       ),
     );
   }
+
+
+
+
+
 
   // Social media button
   Widget _buildSocialButton(IconData icon, Color color) {
@@ -1004,15 +1025,116 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
   }
 
   // Enhanced contact button with more information
+
+
+  // Helper method to encode query parameters for email
+  String? _encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
+  // Updated social media button with improved URL handling
+  Widget _buildSocialButtonWithUrl(IconData icon, Color color, String url) {
+    return InkWell(
+      onTap: () async {
+        _launchURL(url);
+      },
+      borderRadius: BorderRadius.circular(30),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.1),
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: color.withOpacity(0.3),
+            width: 1.5,
+          ),
+        ),
+        child: Icon(
+          icon,
+          color: color,
+          size: 24,
+        ),
+      ),
+    );
+  }
+
+// Improved URL launcher method with better error handling
+// Enhanced URL launcher method with debug information
+  Future<void> _launchURL(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    try {
+      // Print debug information
+      print('Attempting to launch URL: $urlString');
+
+      // Check if the URL can be launched
+      final bool canLaunch = await canLaunchUrl(url);
+      print('Can launch URL: $canLaunch');
+
+      if (canLaunch) {
+        // Use universal_links mode for https URLs - this works more reliably
+        final bool launched = await launchUrl(
+          url,
+          mode: LaunchMode.externalApplication,
+          webViewConfiguration: const WebViewConfiguration(
+            enableJavaScript: true,
+            enableDomStorage: true,
+          ),
+        );
+
+        print('Launch result: $launched');
+
+        if (!launched) {
+          // This shouldn't happen if canLaunchUrl returned true, but just in case
+          _showErrorSnackBar('Could not open the link. Please try again.');
+        }
+      } else {
+        // Show specific error for different URL types
+        if (urlString.startsWith('https://')) {
+          _showErrorSnackBar('Could not open web browser. Is it installed on your device?');
+        } else if (urlString.startsWith('mailto:')) {
+          _showErrorSnackBar('Could not open email app. Is it set up on your device?');
+        } else {
+          _showErrorSnackBar('Could not open: $urlString');
+        }
+      }
+    } catch (e) {
+      print('Error launching URL: $e');
+      _showErrorSnackBar('Error opening link: $e');
+    }
+  }
+
+// Helper method to show error messages
+  void _showErrorSnackBar(String message) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: Colors.red.shade700,
+          duration: const Duration(seconds: 3),
+          action: SnackBarAction(
+            label: 'OK',
+            textColor: Colors.white,
+            onPressed: () {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            },
+          ),
+        ),
+      );
+    }
+  }
+// Also update the contact buttons to use this method
   Widget _buildContactButton({
     required IconData icon,
     required String label,
     required String description,
-    required VoidCallback onTap,
+    required String url, // Changed from VoidCallback to String
   }) {
     return InkWell(
       borderRadius: BorderRadius.circular(16),
-      onTap: onTap,
+      onTap: () => _launchURL(url),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
         decoration: BoxDecoration(
@@ -1071,12 +1193,5 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
     );
   }
 
-  // Helper method to encode query parameters for email
-  String? _encodeQueryParameters(Map<String, String> params) {
-    return params.entries
-        .map((MapEntry<String, String> e) =>
-    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-        .join('&');
-  }
 
 }

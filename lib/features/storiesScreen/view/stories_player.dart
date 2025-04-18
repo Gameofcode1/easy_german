@@ -568,9 +568,10 @@ class _StoryDetailScreenState extends State<StoryDetailScreen>
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+        backgroundColor: const Color(0xFF3F51B5),
         content: Text(_autoPlayOnLoad
             ? 'Auto-play on open enabled'
-            : 'Auto-play on open disabled'),
+            : 'Auto-play on open disabled',style:const TextStyle(color: Colors.white),),
         duration: const Duration(seconds: 2),
       ),
     );

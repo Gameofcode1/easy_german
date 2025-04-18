@@ -804,9 +804,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> with SingleTickerProv
             provider.markAsLearned(context);
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text('Marked as learned!'),
+                content: Text('Marked as learned!',style: TextStyle(color: Colors.white),),
                 duration: Duration(seconds: 1),
-                backgroundColor: Colors.green,
+                backgroundColor: const Color(0xFF3F51B5),
               ),
             );
           }

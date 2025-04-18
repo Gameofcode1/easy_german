@@ -1,0 +1,358 @@
+{
+  "categories": [
+    {
+      "title": "Alphabets",
+      "subtitle": "Learn German alphabet pronunciation",
+      "color": "0xFF4CAF50",
+      "icon": "font_download",
+      "items": [
+        {
+          "german": "A",
+          "english": "A as in father",
+          "example": "Apfel (apple)"
+        },
+        {
+          "german": "Ä",
+          "english": "A-umlaut",
+          "example": "Äpfel (apples)"
+        },
+        {
+          "german": "B",
+          "english": "B as in boy",
+          "example": "Buch (book)"
+        },
+        {
+          "german": "C",
+          "english": "C as in cats",
+          "example": "Computer (computer)"
+        },
+        {
+          "german": "D",
+          "english": "D as in dog",
+          "example": "Danke (thank you)"
+        },
+        {
+          "german": "E",
+          "english": "E as in elephant",
+          "example": "Essen (food/to eat)"
+        },
+        {
+          "german": "F",
+          "english": "F as in father",
+          "example": "Freund (friend)"
+        },
+        {
+          "german": "G",
+          "english": "G as in good",
+          "example": "Garten (garden)"
+        },
+        {
+          "german": "H",
+          "english": "H as in house",
+          "example": "Haus (house)"
+        },
+        {
+          "german": "I",
+          "english": "I as in machine",
+          "example": "Insel (island)"
+        }
+      ]
+    },
+    {
+      "title": "Numbers",
+      "subtitle": "Count from 1 to 100 in German",
+      "color": "0xFF2196F3",
+      "icon": "format_list_numbered",
+      "items": [
+        {
+          "german": "eins",
+          "english": "one",
+          "example": "Ich habe ein Buch. (I have one book.)"
+        },
+        {
+          "german": "zwei",
+          "english": "two",
+          "example": "Ich habe zwei Katzen. (I have two cats.)"
+        },
+        {
+          "german": "drei",
+          "english": "three",
+          "example": "Drei Männer gehen in eine Bar. (Three men walk into a bar.)"
+        },
+        {
+          "german": "vier",
+          "english": "four",
+          "example": "Sie hat vier Kinder. (She has four children.)"
+        },
+        {
+          "german": "fünf",
+          "english": "five",
+          "example": "Die Schule beginnt um fünf Uhr. (School starts at five o'clock.)"
+        },
+        {
+          "german": "sechs",
+          "english": "six",
+          "example": "Wir brauchen sechs Stühle. (We need six chairs.)"
+        },
+        {
+          "german": "sieben",
+          "english": "seven",
+          "example": "Die Woche hat sieben Tage. (The week has seven days.)"
+        },
+        {
+          "german": "acht",
+          "english": "eight",
+          "example": "Sie ist acht Jahre alt. (She is eight years old.)"
+        },
+        {
+          "german": "neun",
+          "english": "nine",
+          "example": "Meine Telefonnummer endet mit neun. (My phone number ends with nine.)"
+        },
+        {
+          "german": "zehn",
+          "english": "ten",
+          "example": "Ich gebe dir zehn Euro. (I'll give you ten euros.)"
+        }
+      ]
+    },
+    {
+      "title": "Colors",
+      "subtitle": "Learn colors in German",
+      "color": "0xFFFF9800",
+      "icon": "palette",
+      "items": [
+        {
+          "german": "rot",
+          "english": "red",
+          "example": "Das Auto ist rot. (The car is red.)"
+        },
+        {
+          "german": "blau",
+          "english": "blue",
+          "example": "Der Himmel ist blau. (The sky is blue.)"
+        },
+        {
+          "german": "grün",
+          "english": "green",
+          "example": "Das Gras ist grün. (The grass is green.)"
+        },
+        {
+          "german": "gelb",
+          "english": "yellow",
+          "example": "Die Sonne ist gelb. (The sun is yellow.)"
+        },
+        {
+          "german": "schwarz",
+          "english": "black",
+          "example": "Die Katze ist schwarz. (The cat is black.)"
+        },
+        {
+          "german": "weiß",
+          "english": "white",
+          "example": "Der Schnee ist weiß. (The snow is white.)"
+        },
+        {
+          "german": "grau",
+          "english": "gray",
+          "example": "Die Wolken sind grau. (The clouds are gray.)"
+        },
+        {
+          "german": "braun",
+          "english": "brown",
+          "example": "Meine Haare sind braun. (My hair is brown.)"
+        },
+        {
+          "german": "lila",
+          "english": "purple",
+          "example": "Ihre Bluse ist lila. (Her blouse is purple.)"
+        },
+        {
+          "german": "rosa",
+          "english": "pink",
+          "example": "Die Blumen sind rosa. (The flowers are pink.)"
+        }
+      ]
+    },
+    {
+      "title": "Months",
+      "subtitle": "Names of months in German",
+      "color": "0xFF9C27B0",
+      "icon": "calendar_today",
+      "items": [
+        {
+          "german": "Januar",
+          "english": "January",
+          "example": "Im Januar ist es kalt. (It is cold in January.)"
+        },
+        {
+          "german": "Februar",
+          "english": "February",
+          "example": "Mein Geburtstag ist im Februar. (My birthday is in February.)"
+        },
+        {
+          "german": "März",
+          "english": "March",
+          "example": "Im März beginnt der Frühling. (Spring begins in March.)"
+        },
+        {
+          "german": "April",
+          "english": "April",
+          "example": "Im April regnet es oft. (It often rains in April.)"
+        },
+        {
+          "german": "Mai",
+          "english": "May",
+          "example": "Die Blumen blühen im Mai. (Flowers bloom in May.)"
+        },
+        {
+          "german": "Juni",
+          "english": "June",
+          "example": "Im Juni wird es wärmer. (It gets warmer in June.)"
+        },
+        {
+          "german": "Juli",
+          "english": "July",
+          "example": "Der Juli ist normalerweise heiß. (July is usually hot.)"
+        },
+        {
+          "german": "August",
+          "english": "August",
+          "example": "Viele Leute haben im August Urlaub. (Many people have vacation in August.)"
+        },
+        {
+          "german": "September",
+          "english": "September",
+          "example": "Die Schule beginnt im September. (School starts in September.)"
+        },
+        {
+          "german": "Oktober",
+          "english": "October",
+          "example": "Im Oktober werden die Blätter bunt. (In October, the leaves turn colorful.)"
+        },
+        {
+          "german": "November",
+          "english": "November",
+          "example": "Der November ist oft neblig. (November is often foggy.)"
+        },
+        {
+          "german": "Dezember",
+          "english": "December",
+          "example": "Weihnachten ist im Dezember. (Christmas is in December.)"
+        }
+      ]
+    },
+    {
+      "title": "Seasons",
+      "subtitle": "The four seasons in German",
+      "color": "0xFF795548",
+      "icon": "eco",
+      "items": [
+        {
+          "german": "Frühling",
+          "english": "Spring",
+          "example": "Im Frühling blühen die Blumen. (Flowers bloom in spring.)"
+        },
+        {
+          "german": "Sommer",
+          "english": "Summer",
+          "example": "Im Sommer ist es heiß. (It is hot in summer.)"
+        },
+        {
+          "german": "Herbst",
+          "english": "Autumn/Fall",
+          "example": "Im Herbst fallen die Blätter. (Leaves fall in autumn.)"
+        },
+        {
+          "german": "Winter",
+          "english": "Winter",
+          "example": "Im Winter schneit es. (It snows in winter.)"
+        }
+      ]
+    },
+    {
+      "title": "Basic Grammar",
+      "subtitle": "Essential German grammar rules",
+      "color": "0xFFF44336",
+      "icon": "menu_book",
+      "items": [
+        {
+          "german": "Der, Die, Das",
+          "english": "The (masculine, feminine, neuter)",
+          "example": "Der Mann, die Frau, das Kind. (The man, the woman, the child.)"
+        },
+        {
+          "german": "Ich, Du, Er/Sie/Es",
+          "english": "I, You, He/She/It",
+          "example": "Ich bin, du bist, er/sie/es ist. (I am, you are, he/she/it is.)"
+        },
+        {
+          "german": "Wir, Ihr, Sie",
+          "english": "We, You (plural), They",
+          "example": "Wir sind, ihr seid, sie sind. (We are, you are, they are.)"
+        },
+        {
+          "german": "Präsens",
+          "english": "Present tense",
+          "example": "Ich lerne Deutsch. (I am learning German.)"
+        },
+        {
+          "german": "Perfekt",
+          "english": "Perfect tense (past)",
+          "example": "Ich habe Deutsch gelernt. (I have learned German.)"
+        },
+        {
+          "german": "Negation mit nicht",
+          "english": "Negation with not",
+          "example": "Ich verstehe nicht. (I don't understand.)"
+        },
+        {
+          "german": "Fragesätze",
+          "english": "Question sentences",
+          "example": "Sprichst du Deutsch? (Do you speak German?)"
+        },
+        {
+          "german": "W-Fragen",
+          "english": "W-questions",
+          "example": "Wo wohnst du? (Where do you live?)"
+        },
+        {
+          "german": "Akkusativ",
+          "english": "Accusative case",
+          "example": "Ich sehe den Mann. (I see the man.)"
+        },
+        {
+          "german": "Dativ",
+          "english": "Dative case",
+          "example": "Ich gebe dem Kind ein Buch. (I give the child a book.)"
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "title": "Flashcards",
+      "subtitle": "Test your vocabulary knowledge",
+      "color": "0xFF3F51B5",
+      "icon": "flash_on"
+    },
+    {
+      "title": "Pronunciation",
+      "subtitle": "Practice your German accent",
+      "color": "0xFFE91E63",
+      "icon": "record_voice_over"
+    },
+    {
+      "title": "Listening",
+      "subtitle": "Audio exercises for comprehension",
+      "color": "0xFF009688",
+      "icon": "headset"
+    },
+    {
+      "title": "Writing",
+      "subtitle": "Practice writing in German",
+      "color": "0xFF607D8B",
+      "icon": "create"
+    }
+  ]
+}

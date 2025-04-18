@@ -85,8 +85,8 @@ class _PodcastListScreenState extends State<PodcastListScreen>
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Failed to load podcasts: $e'),
-          backgroundColor: Colors.red,
+          content: Text('Failed to load podcasts: $e' , style: TextStyle(color: Colors.white),),
+          backgroundColor:const Color(0xFF3F51B5),
         ),
       );
     }

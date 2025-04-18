@@ -35,6 +35,7 @@ flutter:
     - assets/json/stories.json
     - assets/json/podcast.json
     - assets/json/vocabulary.json
+    - assets/json/germanbasics.json
   fonts:
     - family: Lato
       fonts:

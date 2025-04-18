@@ -938,8 +938,8 @@ class _ProfileScreenState extends State<ProfileScreen> with SingleTickerProvider
                 _buildContactButton(
                   icon: Icons.web,
                   label: 'Visit Our Website',
-                  description: 'www.germanspark.com',
-                  url: 'https://www.germanspark.com',
+                  description: 'www.sajilogerman.com',
+                  url: 'https://www.sajilogerman.com/germanspark.com',
                 ),
                 const SizedBox(height: 12),
                 _buildContactButton(

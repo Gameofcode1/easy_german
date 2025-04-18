@@ -44,12 +44,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       body: TabBarView(
         controller: _tabController,
         physics: const NeverScrollableScrollPhysics(), // Disable swipe to change tabs
-        children: [
-            const StoriesCategoryScreen(),
-            const PodcastCategoryScreen(),
-            const VocabularyCategoryScreen(),
-            const GameScreen(),
-            const ProfileScreen(),
+        children:const [
+             StoriesCategoryScreen(),
+             PodcastCategoryScreen(),
+             VocabularyCategoryScreen(),
+             GameScreen(),
+             ProfileScreen(),
         ],
       ),
       bottomNavigationBar: Container(

@@ -65,12 +65,7 @@ class _GermanCategoryDetailScreenState
   void _speakAllItems() {
     if (widget.items.isEmpty) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Playing all ${widget.title} items'),
-        duration: const Duration(seconds: 2),
-      ),
-    );
+
 
     // Speak the first item
     final item = widget.items[0];

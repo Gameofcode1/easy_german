@@ -71,7 +71,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
                       _buildProgressBar(primaryColor),
                       _buildControlButtons(primaryColor),
                       const SizedBox(height: 20),
-                      _buildEpisodeInfo(primaryColor),
+                      _buildEpisodeInfo(primaryColor , viewModel),
                     ],
                   ),
                 )
@@ -97,15 +97,8 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
             icon: Icon(Icons.arrow_back_ios, color: primaryColor),
             onPressed: () => Navigator.pop(context),
           ),
-          const Spacer(),
-          IconButton(
-            icon: Icon(Icons.share, color: primaryColor),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.playlist_add, color: primaryColor),
-            onPressed: () {},
-          ),
+
+
         ],
       ),
     );
@@ -603,7 +596,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
     );
   }
 
-  Widget _buildEpisodeInfo(Color primaryColor) {
+  Widget _buildEpisodeInfo(Color primaryColor , PodcastPlayerViewModel model) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(16),
@@ -621,16 +614,16 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Episode: Deutsche Gespräche für Anfänger',
-            style: TextStyle(
+           Text(
+            'Episode: ${model.podcast.title}',
+            style:const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 8),
           Text(
-            'This episode features common German conversations to help beginners practice their listening and speaking skills with natural dialogue.',
+            model.podcast.description,
             style: TextStyle(
               fontSize: 14,
               color: Colors.grey[700],
@@ -645,13 +638,7 @@ class _PodcastDetailScreenState extends State<PodcastDetailScreen>
             ],
           ),
           const SizedBox(height: 12),
-          Row(
-            children: [
-              _buildActionButton('Download', Icons.download, primaryColor),
-              const SizedBox(width: 12),
-              _buildActionButton('Share', Icons.share, primaryColor),
-            ],
-          ),
+
         ],
       ),
     );

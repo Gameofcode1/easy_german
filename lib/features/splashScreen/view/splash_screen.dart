@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/constants/app_images.dart';
+import '../../homePage/view/home_page.dart';
 import '../../onboarding/view/onboarding.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,6 +26,9 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   late Animation<double> _subtitleFadeAnimation;
   late Animation<double> _backgroundAnimation;
   late Animation<double> _loaderAnimation;
+
+  // Shared preference key
+  static const String _isFirstTimeKey = 'is_first_time';
 
   @override
   void initState() {
@@ -98,26 +103,52 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       _textAnimationController.forward();
     });
 
-    // Navigate to onboarding screen after 3.5 seconds
+    // Check firstTimeUser and navigate accordingly after animations
     Timer(const Duration(milliseconds: 3500), () {
-      Navigator.of(context).pushReplacement(
-        PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => OnboardingScreen(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            var begin = const Offset(0.0, 1.0);
-            var end = Offset.zero;
-            var curve = Curves.easeOutCubic;
-
-            var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-            return SlideTransition(
-              position: animation.drive(tween),
-              child: child,
-            );
-          },
-          transitionDuration: const Duration(milliseconds: 800),
-        ),
-      );
+      _checkFirstTimeAndNavigate();
     });
+  }
+
+  // Check if it's first time and navigate to appropriate screen
+  Future<void> _checkFirstTimeAndNavigate() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool isFirstTime = prefs.getBool(_isFirstTimeKey) ?? true;
+
+    if (isFirstTime) {
+      // First time user - save the preference for next time
+      await prefs.setBool(_isFirstTimeKey, false);
+
+      // Navigate to onboarding screen
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+          _createPageRoute(const OnboardingScreen())
+      );
+    } else {
+      // Returning user - navigate to home screen
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+          _createPageRoute(const HomeScreen())
+      );
+    }
+  }
+
+  // Helper method to create consistent page route transitions
+  PageRouteBuilder _createPageRoute(Widget destination) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => destination,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        var begin = const Offset(0.0, 1.0);
+        var end = Offset.zero;
+        var curve = Curves.easeOutCubic;
+
+        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 800),
+    );
   }
 
   @override
@@ -199,7 +230,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
                       ),
                     ),
                   ),
-                 const SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   // Animated title
                   Opacity(
                     opacity: _titleFadeAnimation.value,

@@ -105,15 +105,6 @@ class GermanBasicsModel extends ChangeNotifier {
       _isSpeaking = true;
       notifyListeners();
 
-      // Show feedback if requested and context is provided
-      if (showFeedback && context != null) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Speaking: "$text"'),
-            duration: const Duration(seconds: 2),
-          ),
-        );
-      }
     } catch (e) {
       debugPrint('Error speaking text: $e');
 

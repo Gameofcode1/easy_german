@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import '../../../services/app_ratingservice.dart';
 import '../../germanBasic/view/german_basic_screen.dart';
 import 'stories_list.dart';
 
@@ -77,6 +78,8 @@ class _StoriesCategoryScreenState extends State<StoriesCategoryScreen>
             _buildLevelCategories(),
             _buildSectionTitle('Story Categories'),
             _buildStoryCategories(),
+            // Create a debug button that forces rating to show
+
             const SliverToBoxAdapter(
               key: ValueKey('bottom_padding'),
               child: SizedBox(height: 80),

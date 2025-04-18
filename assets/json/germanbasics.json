@@ -13,7 +13,7 @@
         },
         {
           "german": "Ä",
-          "english": "A-umlaut",
+          "english": "A-umlaut, like 'e' in 'bed'",
           "example": "Äpfel (apples)"
         },
         {
@@ -55,6 +55,106 @@
           "german": "I",
           "english": "I as in machine",
           "example": "Insel (island)"
+        },
+        {
+          "german": "J",
+          "english": "Y as in yes",
+          "example": "Jahr (year)"
+        },
+        {
+          "german": "K",
+          "english": "K as in king",
+          "example": "Kind (child)"
+        },
+        {
+          "german": "L",
+          "english": "L as in love",
+          "example": "Lampe (lamp)"
+        },
+        {
+          "german": "M",
+          "english": "M as in mother",
+          "example": "Mutter (mother)"
+        },
+        {
+          "german": "N",
+          "english": "N as in no",
+          "example": "Nacht (night)"
+        },
+        {
+          "german": "O",
+          "english": "O as in order",
+          "example": "Ort (place)"
+        },
+        {
+          "german": "Ö",
+          "english": "O-umlaut, like 'i' in 'bird'",
+          "example": "Öl (oil)"
+        },
+        {
+          "german": "P",
+          "english": "P as in pen",
+          "example": "Park (park)"
+        },
+        {
+          "german": "Q",
+          "english": "Q as in queen",
+          "example": "Quelle (source)"
+        },
+        {
+          "german": "R",
+          "english": "Guttural R, pronounced at the back of the throat",
+          "example": "Rot (red)"
+        },
+        {
+          "german": "S",
+          "english": "S as in sun or z as in zebra",
+          "example": "Sonne (sun)"
+        },
+        {
+          "german": "ß",
+          "english": "Sharp S or Eszett, like 'ss'",
+          "example": "Straße (street)"
+        },
+        {
+          "german": "T",
+          "english": "T as in table",
+          "example": "Tag (day)"
+        },
+        {
+          "german": "U",
+          "english": "U as in rule",
+          "example": "Uhr (clock)"
+        },
+        {
+          "german": "Ü",
+          "english": "U-umlaut, like 'ew' with rounded lips",
+          "example": "Über (over)"
+        },
+        {
+          "german": "V",
+          "english": "F as in father or V as in voice",
+          "example": "Vater (father)"
+        },
+        {
+          "german": "W",
+          "english": "V as in voice",
+          "example": "Wasser (water)"
+        },
+        {
+          "german": "X",
+          "english": "X as in box",
+          "example": "Xylophon (xylophone)"
+        },
+        {
+          "german": "Y",
+          "english": "Ü as in über or Y as in yes",
+          "example": "Yoga (yoga)"
+        },
+        {
+          "german": "Z",
+          "english": "TS as in cats",
+          "example": "Zeit (time)"
         }
       ]
     },
@@ -272,59 +372,121 @@
     },
     {
       "title": "Basic Grammar",
-      "subtitle": "Essential German grammar rules",
+      "subtitle": "Essential German grammar rules with detailed explanations",
       "color": "0xFFF44336",
       "icon": "menu_book",
       "items": [
         {
           "german": "Der, Die, Das",
           "english": "The (masculine, feminine, neuter)",
-          "example": "Der Mann, die Frau, das Kind. (The man, the woman, the child.)"
+          "explanation": "Unlike English, every German noun has a grammatical gender (masculine, feminine, or neuter) that determines its article. Memorizing the gender with each noun is essential.",
+          "example": "Der Mann, die Frau, das Kind. (The man, the woman, the child.)",
+          "tips": "Some patterns can help: male people use 'der', female people use 'die', and diminutives ending in -chen or -lein use 'das'."
+        },
+        {
+          "german": "Ein, Eine, Ein",
+          "english": "A/An (masculine, feminine, neuter)",
+          "explanation": "Indefinite articles in German also change based on the gender of the noun they accompany.",
+          "example": "Ein Mann, eine Frau, ein Kind. (A man, a woman, a child.)",
+          "tips": "The indefinite article for both masculine and neuter nouns is 'ein', while for feminine nouns it's 'eine'."
         },
         {
           "german": "Ich, Du, Er/Sie/Es",
           "english": "I, You, He/She/It",
-          "example": "Ich bin, du bist, er/sie/es ist. (I am, you are, he/she/it is.)"
+          "explanation": "Personal pronouns in German change form based on case. These are the nominative (subject) forms for singular persons.",
+          "example": "Ich bin, du bist, er/sie/es ist. (I am, you are, he/she/it is.)",
+          "tips": "The conjugation of verbs changes for each pronoun, similar to English 'I am' vs 'he is'."
         },
         {
           "german": "Wir, Ihr, Sie",
           "english": "We, You (plural), They",
-          "example": "Wir sind, ihr seid, sie sind. (We are, you are, they are.)"
+          "explanation": "These are the plural personal pronouns in the nominative case. 'Sie' (capitalized) is also the formal 'you' for both singular and plural.",
+          "example": "Wir sind, ihr seid, sie sind. (We are, you are, they are.)",
+          "tips": "Always capitalize 'Sie' when it means the formal 'you' to distinguish it from 'sie' (she/they)."
         },
         {
           "german": "Präsens",
           "english": "Present tense",
-          "example": "Ich lerne Deutsch. (I am learning German.)"
+          "explanation": "Used for current actions, habits, and general truths. The present tense in German can also express future actions with a time reference.",
+          "example": "Ich lerne Deutsch. (I am learning German.) / Ich fahre morgen nach Berlin. (I'm going to Berlin tomorrow.)",
+          "tips": "Regular verbs follow predictable patterns, but many common verbs are irregular."
         },
         {
           "german": "Perfekt",
           "english": "Perfect tense (past)",
-          "example": "Ich habe Deutsch gelernt. (I have learned German.)"
+          "explanation": "The most common past tense in spoken German, formed with a helping verb (haben/sein) + past participle. The participle goes to the end of the sentence.",
+          "example": "Ich habe Deutsch gelernt. (I have learned German.) / Sie ist nach Hause gegangen. (She went home.)",
+          "tips": "Most verbs use 'haben', but verbs of motion and state change use 'sein'."
+        },
+        {
+          "german": "Präteritum",
+          "english": "Simple past tense",
+          "explanation": "Used mainly in written German and for certain common verbs like 'sein' (to be), 'haben' (to have), and modal verbs in spoken language.",
+          "example": "Ich war in Berlin. (I was in Berlin.) / Er hatte keine Zeit. (He had no time.)",
+          "tips": "In conversation, Germans often use Perfekt instead of Präteritum, except for these common verbs."
         },
         {
           "german": "Negation mit nicht",
           "english": "Negation with not",
-          "example": "Ich verstehe nicht. (I don't understand.)"
+          "explanation": "Generally, 'nicht' comes at the end of a simple sentence or before the element being negated. For negating nouns, use 'kein/keine' instead.",
+          "example": "Ich verstehe nicht. (I don't understand.) / Das ist nicht mein Buch. (That is not my book.) / Ich habe keine Zeit. (I don't have time.)",
+          "tips": "Word order is crucial: 'nicht' typically comes after the verb and before adjectives or adverbs."
         },
         {
           "german": "Fragesätze",
           "english": "Question sentences",
-          "example": "Sprichst du Deutsch? (Do you speak German?)"
+          "explanation": "Yes/no questions invert the subject and verb. The verb comes first, followed by the subject.",
+          "example": "Sprichst du Deutsch? (Do you speak German?) / Ist das dein Auto? (Is that your car?)",
+          "tips": "The intonation rises at the end of the question, similar to English."
         },
         {
           "german": "W-Fragen",
-          "english": "W-questions",
-          "example": "Wo wohnst du? (Where do you live?)"
+          "english": "W-questions (interrogative questions)",
+          "explanation": "Questions that start with interrogative words (wer, was, wo, wann, warum, wie). The W-word comes first, then the verb, then the subject.",
+          "example": "Wo wohnst du? (Where do you live?) / Was machst du heute? (What are you doing today?)",
+          "tips": "The most common W-words are: wer (who), was (what), wo (where), wann (when), warum (why), wie (how)."
+        },
+        {
+          "german": "Nominativ",
+          "english": "Nominative case",
+          "explanation": "Used for the subject of a sentence and after certain verbs like 'sein' (to be).",
+          "example": "Der Mann ist alt. (The man is old.) / Ich bin eine Studentin. (I am a student.)",
+          "tips": "Articles in the nominative: der (masc.), die (fem.), das (neut.), die (plural)"
         },
         {
           "german": "Akkusativ",
           "english": "Accusative case",
-          "example": "Ich sehe den Mann. (I see the man.)"
+          "explanation": "Used for the direct object of a sentence and after certain prepositions (durch, für, gegen, ohne, um).",
+          "example": "Ich sehe den Mann. (I see the man.) / Ich kaufe ein Buch. (I'm buying a book.)",
+          "tips": "Only masculine articles change in the accusative: 'der' becomes 'den', but 'die' and 'das' stay the same."
         },
         {
           "german": "Dativ",
           "english": "Dative case",
-          "example": "Ich gebe dem Kind ein Buch. (I give the child a book.)"
+          "explanation": "Used for the indirect object and after certain prepositions (aus, bei, mit, nach, seit, von, zu).",
+          "example": "Ich gebe dem Kind ein Buch. (I give the child a book.) / Ich helfe meiner Mutter. (I help my mother.)",
+          "tips": "Articles change to: dem (masc.), der (fem.), dem (neut.), den + n (plural)"
+        },
+        {
+          "german": "Genitiv",
+          "english": "Genitive case",
+          "explanation": "Used to show possession and after certain prepositions (während, wegen, trotz).",
+          "example": "Das Auto des Mannes ist rot. (The man's car is red.) / Wegen des Regens bleibe ich zu Hause. (Because of the rain, I'm staying at home.)",
+          "tips": "Articles change to: des (masc.), der (fem.), des (neut.), der (plural). Masculine and neuter nouns typically add -s or -es."
+        },
+        {
+          "german": "Modalverben",
+          "english": "Modal verbs",
+          "explanation": "Express ability, permission, obligation, etc. (können, dürfen, müssen, sollen, wollen, mögen). They push the main verb to the end of the sentence in its infinitive form.",
+          "example": "Ich kann Deutsch sprechen. (I can speak German.) / Du musst jetzt gehen. (You must go now.)",
+          "tips": "Modal verbs have irregular conjugations and are often used in the simple past (Präteritum) even in spoken German."
+        },
+        {
+          "german": "Imperativ",
+          "english": "Imperative (commands)",
+          "explanation": "Used to give orders or instructions. Forms differ for du, ihr, and Sie.",
+          "example": "Komm hier! (Come here! - informal singular) / Kommt hier! (Come here! - informal plural) / Kommen Sie hier! (Come here! - formal)",
+          "tips": "For 'du' commands, drop the -st ending and sometimes the final -e. For 'ihr', use the present tense form without the pronoun."
         }
       ]
     }

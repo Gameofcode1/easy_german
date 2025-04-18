@@ -1,3 +1,4 @@
+import 'package:German_Spark/services/app_ratingservice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +51,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    // Start tracking when the app starts
     widget.appUsageTracker.startTracking();
   }
 
@@ -68,10 +68,29 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     if (state == AppLifecycleState.resumed) {
       // App is in the foreground
       widget.appUsageTracker.startTracking();
+
+      // Check if we should show rating dialog when app is resumed
+      _checkAndShowRating();
     } else if (state == AppLifecycleState.paused) {
       // App is not visible
       widget.appUsageTracker.stopTracking();
     }
+  }
+
+  // Check conditions and show rating dialog if appropriate
+  Future<void> _checkAndShowRating() async {
+    // Wait a moment after app launch to not interrupt initial user experience
+    await Future.delayed(const Duration(seconds: 2));
+
+    // Only proceed if context is still valid
+    if (!mounted) return;
+
+    // Show rating dialog based on usage statistics
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        RatingDialog.show(context);
+      }
+    });
   }
 
   @override
@@ -79,6 +98,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     return MaterialApp(
       title: 'German Language Learning',
       debugShowCheckedModeBanner: false,
+
       theme: ThemeData(
         primaryColor: const Color(0xFF3F51B5),
         colorScheme: ColorScheme.fromSeed(

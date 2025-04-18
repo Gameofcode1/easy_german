@@ -1,3 +1,5 @@
+import 'package:German_Spark/features/homePage/widget/rating_dialouge.dart';
+import 'package:German_Spark/services/app_ratingservice.dart';
 import 'package:flutter/material.dart';
 import '../../poadcast/view/pordCast.dart';
 import '../../profile/view/profile.dart';
@@ -25,6 +27,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   void initState() {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        EnhancedRatingDialog.show(context);
+      }
+    });
     _tabController.addListener(() {
       setState(() {
         _currentIndex = _tabController.index;

@@ -202,7 +202,8 @@ class _GermanBasicsScreenState extends State<GermanBasicsScreen>
           bottomRight: Radius.circular(32),
         ),
         child: FlexibleSpaceBar(
-          titlePadding: const EdgeInsets.only(left: 20, bottom: 16),
+          centerTitle: false,
+          titlePadding: const EdgeInsets.only(left: 18, bottom: 16),
           title: AnimatedOpacity(
             opacity: _appBarOpacity < 0.5 ? 1.0 : 0.0,
             duration: const Duration(milliseconds: 300),
